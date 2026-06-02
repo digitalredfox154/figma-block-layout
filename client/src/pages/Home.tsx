@@ -104,9 +104,9 @@ export default function Home() {
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
             className="bg-white/85 backdrop-blur-md p-6 sm:p-8 rounded-[24px] border border-white/60 shadow-[0_8px_25px_rgba(78,91,166,0.02)] hover:shadow-[0_15px_35px_rgba(78,91,166,0.05)] flex flex-col justify-between space-y-4 transition-all duration-300 group"
           >
-            <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center border border-[#E2E8F0] shadow-sm group-hover:border-[#4E5BA6]/30 transition-all duration-300">
-              <div className="w-11 h-11 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
-                <Heart className="w-5 h-5" />
+            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center border border-[#E2E8F0] shadow-sm group-hover:border-[#4E5BA6]/30 transition-all duration-300">
+              <div className="w-10 h-10 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
+                <Heart className="w-4.5 h-4.5" />
               </div>
             </div>
             <div className="space-y-2">
@@ -125,9 +125,9 @@ export default function Home() {
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
             className="bg-white/85 backdrop-blur-md p-6 sm:p-8 rounded-[24px] border border-white/60 shadow-[0_8px_25px_rgba(78,91,166,0.02)] hover:shadow-[0_15px_35px_rgba(78,91,166,0.05)] flex flex-col justify-between space-y-4 transition-all duration-300 group"
           >
-            <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center border border-[#E2E8F0] shadow-sm group-hover:border-[#4E5BA6]/30 transition-all duration-300">
-              <div className="w-11 h-11 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
-                <Target className="w-5 h-5" />
+            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center border border-[#E2E8F0] shadow-sm group-hover:border-[#4E5BA6]/30 transition-all duration-300">
+              <div className="w-10 h-10 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
+                <Target className="w-4.5 h-4.5" />
               </div>
             </div>
             <div className="space-y-2">
@@ -146,9 +146,9 @@ export default function Home() {
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
             className="bg-white/85 backdrop-blur-md p-6 sm:p-8 rounded-[24px] border border-white/60 shadow-[0_8px_25px_rgba(78,91,166,0.02)] hover:shadow-[0_15px_35px_rgba(78,91,166,0.05)] flex flex-col justify-between space-y-4 transition-all duration-300 group"
           >
-            <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center border border-[#E2E8F0] shadow-sm group-hover:border-[#4E5BA6]/30 transition-all duration-300">
-              <div className="w-11 h-11 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
-                <Search className="w-5 h-5" />
+            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center border border-[#E2E8F0] shadow-sm group-hover:border-[#4E5BA6]/30 transition-all duration-300">
+              <div className="w-10 h-10 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
+                <Search className="w-4.5 h-4.5" />
               </div>
             </div>
             <div className="space-y-2">
