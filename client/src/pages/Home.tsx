@@ -293,7 +293,7 @@ export default function Home() {
                 Четкий запрос не обязателен
               </h3>
               <p className="text-[12px] sm:text-[13px] text-[#5A6082] font-medium leading-relaxed">
-                ИРТ решает проблему even if you don't fully understand what is wrong or aren't ready to share details.
+                ИРТ решает проблему даже если вы не до конца понимаете, что именно не так или не готовы делиться деталями.
               </p>
             </div>
           </motion.div>
