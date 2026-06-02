@@ -2763,7 +2763,7 @@ export default function Home() {
       </motion.section>
 
       {/* Официальный подвал (Footer) */}
-      <footer className="bg-[#0E0F19] text-white py-12 md:py-16 border-t border-gray-800/20 relative z-10">
+      <footer className="bg-[#0E0F19] text-white pt-24 pb-12 border-t border-gray-800/10 relative z-10">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
             
@@ -2773,20 +2773,20 @@ export default function Home() {
                 <img
                   src="/manus-storage/Group789633(1)_348015d8.png"
                   alt="IRT Logo"
-                  className="h-12 md:h-14 object-contain brightness-0 invert"
+                  className="h-10 md:h-12 object-contain brightness-0 invert"
                 />
               </div>
-              <div className="text-[11px] md:text-[12px] text-gray-500 space-y-1.5 leading-relaxed">
+              <div className="text-[11px] md:text-[12px] text-gray-500 space-y-1 leading-relaxed">
                 <p>Индивидуальный предприниматель</p>
-                <p className="font-semibold text-gray-400">Миргородская Яна</p>
+                <p className="text-gray-400">Миргородская Яна</p>
                 <p>ИНН 971302319475</p>
               </div>
             </div>
 
             {/* Средняя колонка: Ссылки и соцсети */}
-            <div className="md:col-span-4 flex flex-col items-center md:items-center space-y-6">
+            <div className="md:col-span-4 flex flex-col items-center md:items-center space-y-6 md:pt-2">
               {/* Ссылки */}
-              <nav className="flex items-center space-x-8 text-[14px] md:text-[15px] font-medium text-gray-400">
+              <nav className="flex items-center space-x-8 text-[13px] md:text-[14px] font-medium text-gray-400">
                 <a href="#hero" className="hover:text-white transition-colors duration-300">Главная</a>
                 <a href="#blog" className="hover:text-white transition-colors duration-300">Блог</a>
                 <a href="#reviews" className="hover:text-white transition-colors duration-300">Отзывы</a>
@@ -2797,40 +2797,40 @@ export default function Home() {
                 <img
                   src="/manus-storage/Group2087331105_9ec126df.png"
                   alt="Social Icons"
-                  className="h-8 md:h-9 object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity duration-300"
+                  className="h-7 md:h-8 object-contain brightness-0 invert opacity-75 hover:opacity-100 transition-opacity duration-300"
                 />
               </div>
             </div>
 
             {/* Правая колонка: Контакты и кнопка звонка */}
-            <div className="md:col-span-4 flex flex-col items-start md:items-end space-y-4">
+            <div className="md:col-span-4 flex flex-col items-start md:items-end space-y-3.5">
               <div className="text-left md:text-right">
-                <p className="text-[11px] text-gray-500 uppercase tracking-wider mb-1">Специалист готов ответить на звонок</p>
-                <a href="tel:+77770000000" className="text-[18px] md:text-[20px] font-bold text-white hover:text-[#4E5BA6] transition-colors duration-300">
+                <p className="text-[10px] text-gray-500 uppercase tracking-wider mb-1">Специалист готов ответить на звонок</p>
+                <a href="tel:+77770000000" className="text-[18px] md:text-[20px] font-bold text-white hover:text-[#4E5BA6] transition-colors duration-300 font-unbounded">
                   +7 (777) 000-00-00
                 </a>
               </div>
               <div>
-                <button className="border border-gray-700 hover:border-white text-white hover:bg-white hover:text-[#0E0F19] font-semibold px-6 py-2.5 rounded-full text-[13px] md:text-[14px] transition-all duration-300">
+                <button className="border border-gray-800 hover:border-white text-gray-400 hover:text-white hover:bg-white hover:text-[#0E0F19] font-medium px-5 py-2 rounded-full text-[12px] md:text-[13px] transition-all duration-300">
                   Заказать звонок
                 </button>
               </div>
-              <div className="flex items-center space-x-2 text-[13px] md:text-[14px] text-gray-400 hover:text-white transition-colors duration-300">
+              <div className="flex items-center space-x-2 text-[12px] md:text-[13px] text-gray-500 hover:text-white transition-colors duration-300">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <a href="mailto:info@irt-method.ru">info@irt-method.ru</a>
+                <a href="mailto:name@domain">name@domain</a>
               </div>
             </div>
 
           </div>
 
           {/* Нижняя плашка копирайта */}
-          <div className="border-t border-gray-800/30 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] md:text-[12px] text-gray-600">
-            <p>© {new Date().getFullYear()} Метод IRT. Все права защищены.</p>
+          <div className="border-t border-gray-900/40 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] md:text-[12px] text-gray-600">
             <p className="hover:text-gray-400 transition-colors duration-300">
               Создатель сайта — <span className="font-semibold text-gray-500">Асташко Никита</span>
             </p>
+            <p>© {new Date().getFullYear()} Метод IRT. Все права защищены.</p>
           </div>
         </div>
       </footer>
@@ -2871,43 +2871,43 @@ function FAQSection() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-      className="py-16 md:py-24 px-4 max-w-7xl mx-auto"
+      className="py-12 md:py-16 px-4 max-w-7xl mx-auto"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-        {/* Левая колонка: Заголовок */}
-        <div className="lg:col-span-5 lg:sticky lg:top-24">
-          <h2 className="font-unbounded text-[28px] md:text-[38px] font-bold leading-[1.2] tracking-tight text-[#1E2238]">
-            Есть вопрос? <br />
-            <span className="text-[#4E5BA6]">Мы подготовили</span> <br />
+      {/* Большой белый контейнер FAQ */}
+      <div className="bg-white rounded-[32px] md:rounded-[48px] p-8 md:p-12 lg:p-16 border border-[#E2E7F3] shadow-[0_15px_40px_rgba(78,91,166,0.04)]">
+        {/* Заголовок сверху */}
+        <div className="mb-10 md:mb-14">
+          <h2 className="font-unbounded text-[26px] md:text-[36px] lg:text-[40px] font-bold leading-[1.2] tracking-tight text-[#1E2238]">
+            Есть вопрос? <span className="text-[#4E5BA6]">Мы подготовили</span> <br className="hidden md:inline" />
             ответы для вас
           </h2>
         </div>
 
-        {/* Правая колонка: Список вопросов */}
-        <div className="lg:col-span-7 space-y-4">
+        {/* Сетка вопросов в 2 колонки */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
           {faqs.map((faq, idx) => {
             const isExpanded = expandedIndex === idx;
             return (
               <div
                 key={idx}
-                className="bg-[#F1F4F9] rounded-[20px] md:rounded-[24px] overflow-hidden border border-gray-100/50 transition-all duration-300"
+                className="bg-[#F8FAFC] rounded-[20px] md:rounded-[24px] overflow-hidden border border-gray-100 transition-all duration-300 self-start"
               >
                 <button
                   onClick={() => setExpandedIndex(isExpanded ? null : idx)}
-                  className="w-full text-left p-6 md:p-7 flex items-center justify-between gap-4 focus:outline-none"
+                  className="w-full text-left p-5 md:p-6 flex items-center justify-between gap-4 focus:outline-none"
                 >
-                  <span className="text-[16px] md:text-[18px] font-bold text-[#1E2238] leading-snug">
+                  <span className="text-[15px] md:text-[16px] font-bold text-[#1E2238] leading-snug">
                     {faq.question}
                   </span>
                   <div
-                    className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 flex-shrink-0 ${
+                    className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 flex-shrink-0 ${
                       isExpanded
                         ? "bg-[#1E2238] text-white rotate-45"
                         : "bg-[#4E5BA6] text-white"
                     }`}
                   >
                     <svg
-                      className="w-5 h-5 fill-none stroke-current"
+                      className="w-4 h-4 fill-none stroke-current"
                       viewBox="0 0 24 24"
                       strokeWidth="2.5"
                     >
@@ -2924,7 +2924,7 @@ function FAQSection() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
                     >
-                      <div className="px-6 pb-6 md:px-7 md:pb-7 text-[14px] md:text-[15px] text-gray-600 leading-relaxed border-t border-gray-200/20 pt-2">
+                      <div className="px-5 pb-5 md:px-6 md:pb-6 text-[13px] md:text-[14px] text-gray-500 leading-relaxed border-t border-gray-100 pt-3">
                         {faq.answer}
                       </div>
                     </motion.div>
@@ -2950,34 +2950,34 @@ function BlueCTABanner() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-      className="py-12 px-4 max-w-7xl mx-auto"
+      className="px-4 max-w-7xl mx-auto relative z-20 -mb-16 md:-mb-24"
     >
       <div className="relative overflow-hidden bg-gradient-to-br from-[#4E5BA6] to-[#6375B8] rounded-[32px] md:rounded-[48px] shadow-[0_20px_50px_rgba(78,91,166,0.15)]">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0 items-center min-h-[420px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0 items-center min-h-[400px] lg:min-h-[440px]">
           
           {/* Левая колонка: Текст и кнопка */}
           <div className="lg:col-span-7 p-8 md:p-12 lg:p-16 flex flex-col justify-center text-white relative z-10">
-            <h2 className="font-unbounded text-[22px] md:text-[32px] lg:text-[36px] font-bold leading-[1.25] tracking-tight mb-4">
+            <h2 className="font-unbounded text-[22px] md:text-[30px] lg:text-[34px] font-bold leading-[1.3] tracking-tight mb-3">
               Первый шаг к стойким изменениям — найти корневой механизм происходящего
             </h2>
-            <p className="text-[14px] md:text-[16px] text-white/80 leading-relaxed mb-8 max-w-xl">
-              А не работать с его следствием. Начните глубокую терапию по методу IRT уже сегодня.
+            <p className="text-[14px] md:text-[15px] text-white/80 leading-relaxed mb-8 max-w-xl">
+              А не работать с его следствием.
             </p>
             <div>
-              <button className="bg-white hover:bg-white/95 text-[#4E5BA6] hover:text-[#3D4B93] font-bold px-10 py-4 rounded-full text-[15px] md:text-[16px] transition-all duration-300 shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]">
+              <button className="bg-white hover:bg-white/95 text-[#4E5BA6] hover:text-[#3D4B93] font-bold px-12 py-3.5 rounded-full text-[14px] md:text-[15px] transition-all duration-300 shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]">
                 Записаться
               </button>
             </div>
           </div>
 
           {/* Правая колонка: Иллюстрация */}
-          <div className="lg:col-span-5 h-full relative self-stretch flex items-end justify-end overflow-hidden min-h-[300px] lg:min-h-0">
+          <div className="lg:col-span-5 h-full relative self-stretch flex items-end justify-end overflow-hidden min-h-[280px] lg:min-h-0">
             {/* Фоновый свет для иллюстрации */}
-            <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-l from-[#4E5BA6]/0 to-[#4E5BA6]/50 lg:to-transparent z-0 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-l from-[#4E5BA6]/0 to-[#4E5BA6]/40 lg:to-transparent z-0 pointer-events-none" />
             <img
               src="/manus-storage/Rectangle240649630_b33e3de7.png"
               alt="3D David Illustration"
-              className="w-full h-full object-cover lg:absolute lg:right-0 lg:bottom-0 lg:w-[110%] lg:h-[110%] max-h-[450px] lg:max-h-none z-10"
+              className="w-full h-full object-cover lg:absolute lg:right-0 lg:bottom-0 lg:w-[105%] lg:h-[105%] max-h-[380px] lg:max-h-none z-10"
             />
           </div>
 
