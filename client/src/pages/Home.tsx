@@ -36,14 +36,20 @@ export default function Home() {
         variants={containerVariants}
         className="relative w-full max-w-[1440px] min-h-[752px] rounded-[40px] shadow-[0_20px_50px_rgba(78,91,166,0.05)] border border-white/60 overflow-hidden flex flex-col justify-between p-8 sm:p-12 lg:p-16 bg-[#F4F7FC]"
         style={{
-          backgroundImage: "url('/manus-storage/Group2085665064_a3c9c4bc.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center right",
-          backgroundRepeat: "no-repeat"
+          backgroundColor: "#F4F7FC"
         }}
       >
-        {/* Затемнение для улучшения читаемости текста на мобильных */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/40 to-transparent lg:from-white/60 lg:via-transparent lg:to-transparent pointer-events-none z-0" />
+        {/* Абсолютно позиционированное фоновое изображение для точного контроля его расположения справа */}
+        <div 
+          className="absolute inset-y-0 right-0 w-full lg:w-[60%] bg-no-repeat pointer-events-none z-0 opacity-40 lg:opacity-100 transition-opacity duration-500"
+          style={{
+            backgroundImage: "url('/manus-storage/Group2085665064_a3c9c4bc.png')",
+            backgroundSize: "contain",
+            backgroundPosition: "right center",
+          }}
+        />
+        {/* Плавный полупрозрачный слой для мягкого перехода и отличной читаемости текста */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#F8FAFF] via-[#F3F6FC]/90 to-transparent pointer-events-none z-0" />
 
         {/* Верхняя контентная часть */}
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mt-4 lg:mt-8">
