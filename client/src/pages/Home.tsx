@@ -938,35 +938,40 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               {/* Бонус 1 */}
-              <div className="bg-white border border-[#E2E8F0]/50 rounded-2xl p-4 flex flex-row items-center gap-3 sm:w-[210px] h-[72px] shadow-sm">
-                <div className="w-10 h-10 rounded-xl bg-[#4f5b93]/10 flex items-center justify-center text-[#4f5b93] font-extrabold text-[15px] flex-shrink-0">
-                  %
+              <div className="bg-white border border-[#E2E8F0]/40 rounded-[18px] px-4 py-3 flex flex-row items-center gap-3.5 sm:w-[230px] h-[76px] shadow-[0_4px_12px_rgba(78,91,166,0.02)]">
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <img src="/manus-storage/bonus_icon_1_6464b9fb.png" alt="Скидка" className="w-8 h-8 object-contain" />
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[13px] font-extrabold text-[#1E2238] leading-tight">Скидку 50%</span>
-                  <span className="text-[11px] text-[#5A6082] font-semibold leading-tight">на первую сессию</span>
+                <div className="flex flex-col space-y-0.5">
+                  <span className="text-[13px] font-bold text-[#1E2238] leading-snug">
+                    <span className="font-extrabold text-[#4f5b93]">Скидку 50%</span>
+                  </span>
+                  <span className="text-[11.5px] text-[#5A6082] font-medium leading-tight">на первую сессию</span>
                 </div>
               </div>
 
               {/* Бонус 2 */}
-              <div className="bg-white border border-[#E2E8F0]/50 rounded-2xl p-4 flex flex-row items-center gap-3 sm:w-[210px] h-[72px] shadow-sm">
-                <div className="w-10 h-10 rounded-xl bg-[#4f5b93]/10 flex items-center justify-center text-[#4f5b93] flex-shrink-0">
-                  <Heart className="w-5 h-5" />
+              <div className="bg-white border border-[#E2E8F0]/40 rounded-[18px] px-4 py-3 flex flex-row items-center gap-3.5 sm:w-[230px] h-[76px] shadow-[0_4px_12px_rgba(78,91,166,0.02)]">
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <img src="/manus-storage/bonus_icon_2_2cab107c.png" alt="Программа" className="w-8 h-8 object-contain" />
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[13px] font-extrabold text-[#1E2238] leading-tight">Персональную</span>
-                  <span className="text-[11px] text-[#5A6082] font-semibold leading-tight">программу работы</span>
+                <div className="flex flex-col space-y-0.5">
+                  <span className="text-[13px] font-bold text-[#1E2238] leading-snug">
+                    <span className="font-extrabold text-[#4f5b93]">Персональную</span>
+                  </span>
+                  <span className="text-[11.5px] text-[#5A6082] font-medium leading-tight">программу терапевтической работы</span>
                 </div>
               </div>
 
               {/* Бонус 3 */}
-              <div className="bg-white border border-[#E2E8F0]/50 rounded-2xl p-4 flex flex-row items-center gap-3 sm:w-[210px] h-[72px] shadow-sm">
-                <div className="w-10 h-10 rounded-xl bg-[#4f5b93]/10 flex items-center justify-center text-[#4f5b93] flex-shrink-0">
-                  <User className="w-5 h-5" />
+              <div className="bg-white border border-[#E2E8F0]/40 rounded-[18px] px-4 py-3 flex flex-row items-center gap-3.5 sm:w-[260px] h-[76px] shadow-[0_4px_12px_rgba(78,91,166,0.02)]">
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <img src="/manus-storage/bonus_icon_3_e1044371.png" alt="Терапевт" className="w-8 h-8 object-contain" />
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[13px] font-extrabold text-[#1E2238] leading-tight">Терапевта</span>
-                  <span className="text-[11px] text-[#5A6082] font-semibold leading-tight">подходящего под запрос</span>
+                <div className="flex flex-col space-y-0.5">
+                  <span className="text-[11.5px] text-[#5A6082] font-medium leading-tight">
+                    Терапевта, подходящего под ваш запрос, с <span className="font-bold text-[#1E2238]">релевантными кейсами</span>
+                  </span>
                 </div>
               </div>
             </div>
