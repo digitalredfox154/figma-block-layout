@@ -1016,12 +1016,12 @@ export default function Home() {
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                       {[
-                        { id: "q1_1", text: "Повторяющиеся жизненные ситуации, которые не устраивают", icon: "/manus-storage/q1_new_icon_1_0b960ecc.png" },
-                        { id: "q1_2", text: "Сильный стресс или кризисная ситуация", icon: "/manus-storage/q1_new_icon_2_9d32490b.png" },
-                        { id: "q1_3", text: "Постоянная тревога, напряжение или нежелательная эмоциональная реакция", icon: "/manus-storage/q1_new_icon_3_6fb4970a.png" },
-                        { id: "q1_4", text: "Я хочу разобраться в себе и своих реакциях", icon: "/manus-storage/q1_new_icon_4_70074779.png" },
-                        { id: "q1_5", text: "У меня есть зависимость от ПАВ", icon: "/manus-storage/q1_new_icon_5_f4310dea.png" },
-                        { id: "q1_6", text: "У меня диагностированное психическое отклонение / расстройство", icon: "/manus-storage/q1_new_icon_6_edd861ca.png" }
+                        { id: "q1_1", text: "Повторяющиеся жизненные ситуации, которые не устраивают", icon: "/manus-storage/q1_cropped_icon_1_e92a1b6a.png" },
+                        { id: "q1_2", text: "Сильный стресс или кризисная ситуация", icon: "/manus-storage/q1_cropped_icon_2_3fdaef7f.png" },
+                        { id: "q1_3", text: "Постоянная тревога, напряжение или нежелательная эмоциональная реакция", icon: "/manus-storage/q1_cropped_icon_3_82535eb6.png" },
+                        { id: "q1_4", text: "Я хочу разобраться в себе и своих реакциях", icon: "/manus-storage/q1_cropped_icon_4_707e5628.png" },
+                        { id: "q1_5", text: "У меня есть зависимость от ПАВ", icon: "/manus-storage/q1_cropped_icon_5_0980a3a2.png" },
+                        { id: "q1_6", text: "У меня диагностированное психическое отклонение / расстройство", icon: "/manus-storage/q1_cropped_icon_6_e5cb220f.png" }
                       ].map((opt) => {
                         const isSelected = answers.q1 === opt.id;
                         return (
