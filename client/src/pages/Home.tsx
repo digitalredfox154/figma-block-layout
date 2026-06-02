@@ -917,7 +917,7 @@ export default function Home() {
         transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
         className="relative w-full max-w-[1920px] rounded-[40px] overflow-hidden flex flex-col p-6 sm:p-12 lg:p-16 xl:py-16 xl:px-20 space-y-12"
         style={{
-          backgroundImage: `url('/manus-storage/Rectangle240649637_a39b360b.png')`,
+          backgroundImage: `url('/manus-storage/quiz_bg_new_c1536441.png')`,
           backgroundSize: "cover",
           backgroundPosition: "center center",
         }}
