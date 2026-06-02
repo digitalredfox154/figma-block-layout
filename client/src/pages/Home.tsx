@@ -1028,27 +1028,27 @@ export default function Home() {
                           <button
                             key={opt.id}
                             onClick={() => handleSelect("q1", opt.id)}
-                            className={`pl-5 pr-0 py-0 rounded-[24px] border text-left flex flex-row items-center justify-between min-h-[100px] sm:min-h-[108px] transition-all duration-300 group cursor-pointer overflow-hidden ${
+                            className={`pl-5 pr-0 py-0 rounded-[24px] border text-left flex flex-row items-center justify-between min-h-[96px] sm:min-h-[104px] transition-all duration-300 group cursor-pointer overflow-hidden ${
                               isSelected 
                                 ? "border-[#4f5b93] bg-[#4f5b93]/5 shadow-[0_8px_25px_rgba(78,91,166,0.06)]" 
                                 : "border-[#E2E8F0] bg-white hover:border-[#4f5b93]/50 hover:shadow-[0_8px_20px_rgba(78,91,166,0.03)]"
                             }`}
                           >
-                            <div className="flex flex-row items-center gap-4 pr-3 py-4 flex-grow">
-                              <div className={`w-6 h-6 rounded-full border flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                            <div className="flex flex-row items-center gap-3.5 pr-3 py-3.5 flex-grow">
+                              <div className={`w-5.5 h-5.5 rounded-full border flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
                                 isSelected ? "border-[#4f5b93] bg-[#4f5b93]" : "border-[#CBD5E1] bg-white"
                               }`}>
                                 {isSelected && (
-                                  <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3.5" d="M5 13l4 4L19 7" />
                                   </svg>
                                 )}
                               </div>
-                              <span className="text-[13.5px] sm:text-[15px] font-bold text-[#1E2238] leading-snug">
+                              <span className="text-[12.5px] sm:text-[13.5px] font-bold text-[#1E2238] leading-tight tracking-tight">
                                 {opt.text}
                               </span>
                             </div>
-                            <div className="w-[100px] sm:w-[108px] self-stretch flex-shrink-0 flex items-center justify-center group-hover:scale-[1.03] transition-transform duration-300">
+                            <div className="w-[96px] sm:w-[104px] self-stretch flex-shrink-0 flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-300">
                               <img src={opt.icon} alt="icon" className="w-full h-full object-cover" />
                             </div>
                           </button>
