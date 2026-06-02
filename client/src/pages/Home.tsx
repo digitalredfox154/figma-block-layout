@@ -1979,75 +1979,76 @@ export default function Home() {
             
             {/* Соединительные линии (только для десктопа) */}
             <div className="hidden md:block absolute inset-0 pointer-events-none">
-              {/* Линия между 1 и 2 */}
-              <div className="absolute top-[60px] left-[20%] w-[13%] border-t-2 border-dashed border-[#4E5BA6]/20" />
+              {/* Линия между 1 и 2 (высота 50px — это центр карточки высотой 100px) */}
+              <div className="absolute top-[50px] left-[22%] w-[11%] border-t-2 border-dashed border-[#4E5BA6]/20" />
               {/* Линия между 2 и 3 */}
-              <div className="absolute top-[60px] left-[53%] w-[13%] border-t-2 border-dashed border-[#4E5BA6]/20" />
+              <div className="absolute top-[50px] left-[55%] w-[11%] border-t-2 border-dashed border-[#4E5BA6]/20" />
               
               {/* Длинный горизонтальный разделитель посередине */}
-              <div className="absolute top-[50%] -translate-y-1/2 left-[5%] right-[5%] border-t-2 border-dashed border-[#4E5BA6]/20" />
+              <div className="absolute top-[50%] -translate-y-1/2 left-[5%] right-[5%] border-t-2 border-dashed border-[#4E5BA6]/15" />
               
-              {/* Линия между 4 и 5 */}
-              <div className="absolute bottom-[200px] left-[20%] w-[13%] border-t-2 border-dashed border-[#4E5BA6]/20" />
+              {/* Линия между 4 и 5 (высота снизу 174px — это центр нижних карточек) */}
+              <div className="absolute bottom-[174px] left-[22%] w-[11%] border-t-2 border-dashed border-[#4E5BA6]/20" />
               {/* Линия между 5 и 6 */}
-              <div className="absolute bottom-[200px] left-[53%] w-[13%] border-t-2 border-dashed border-[#4E5BA6]/20" />
+              <div className="absolute bottom-[174px] left-[55%] w-[11%] border-t-2 border-dashed border-[#4E5BA6]/20" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-16 md:gap-y-32 gap-x-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-16 md:gap-y-24 gap-x-8">
               {block10Steps.map((step) => (
-                <div key={step.id} className="flex flex-col items-center text-center relative group">
+                <div key={step.id} className="flex flex-col items-center relative group">
                   
-                  {/* Иконка шага в карточке (белая горизонтальная плашка) */}
-                  <div className="w-[180px] h-[110px] bg-white rounded-[24px] shadow-[0_8px_24px_rgba(78,91,166,0.02)] border border-white/80 p-3 flex items-center justify-center mb-6 relative hover:scale-105 transition-all duration-300 hover:shadow-[0_16px_32px_rgba(78,91,166,0.05)]">
-                    {/* Внутренний синий контейнер */}
-                    <div className="w-[110px] h-[78px] bg-[#E1EAF3] rounded-[16px] flex items-center justify-center overflow-hidden">
+                  {/* Иконка и текст шага в одной горизонтальной карточке */}
+                  <div className="w-full max-w-[360px] h-[100px] bg-white rounded-[24px] shadow-[0_8px_24px_rgba(78,91,166,0.02)] border border-white/80 p-3 flex flex-row items-center gap-4 relative hover:scale-105 transition-all duration-300 hover:shadow-[0_16px_32px_rgba(78,91,166,0.05)]">
+                    
+                    {/* Внутренний синий контейнер для иконки */}
+                    <div className="w-[76px] h-[76px] shrink-0 bg-[#E1EAF3] rounded-[16px] flex items-center justify-center overflow-hidden">
                       <img 
                         src={step.img} 
                         alt="" 
-                        className="w-[56px] h-[56px] object-contain transition-transform duration-500 group-hover:scale-110"
+                        className="w-[52px] h-[52px] object-contain transition-transform duration-500 group-hover:scale-110"
                       />
                     </div>
                     
-                    {/* Номер шага (бейджик на иконке) */}
-                    <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white border border-[#E2E8F0] shadow-sm flex items-center justify-center text-[14px] font-extrabold text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white group-hover:border-[#4E5BA6] transition-all duration-300">
+                    {/* Текст шага, расположенный справа и центрированный по вертикали */}
+                    <div className="flex-1 text-left pr-2">
+                      <p className="text-[13px] md:text-[14px] text-[#5A6082] leading-snug">
+                        {step.id === 1 && (
+                          <>
+                            <span className="font-bold text-[#1E2238]">Вы отвечаете</span> на 7 простых вопросов
+                          </>
+                        )}
+                        {step.id === 2 && (
+                          <>
+                            <span className="font-bold text-[#1E2238]">Мы подбираем</span> лучшего терапевта для решения вашей ситуации
+                          </>
+                        )}
+                        {step.id === 3 && (
+                          <>
+                            <span className="font-bold text-[#1E2238]">Вы получаете</span> персональный план после диагностики
+                          </>
+                        )}
+                        {step.id === 4 && (
+                          <>
+                            <span className="font-bold text-[#1E2238]">Оплачиваете</span> подходящее вам количество сессий
+                          </>
+                        )}
+                        {step.id === 5 && (
+                          <>
+                            <span className="font-bold text-[#1E2238]">С радостью занимаетесь</span> с психологом IRT
+                          </>
+                        )}
+                        {step.id === 6 && (
+                          <>
+                            <span className="font-bold text-[#1E2238]">Наслаждаетесь</span> новой версией себя и желаемыми результатами в жизни
+                          </>
+                        )}
+                      </p>
+                    </div>
+                    
+                    {/* Номер шага (бейджик на нижней рамке карточки) */}
+                    <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white border border-[#E2E8F0] shadow-sm flex items-center justify-center text-[14px] font-extrabold text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white group-hover:border-[#4E5BA6] transition-all duration-300 z-10">
                       {step.id}
                     </div>
-                  </div>
-
-                  {/* Текст шага */}
-                  <div className="px-4 max-w-[280px]">
-                    <p className="text-[14px] md:text-[15px] text-[#5A6082] leading-relaxed">
-                      {step.id === 1 && (
-                        <>
-                          Вы отвечаете на <span className="font-bold text-[#1E2238]">7 простых вопросов</span>
-                        </>
-                      )}
-                      {step.id === 2 && (
-                        <>
-                          Мы подбираем лучшего терапевта для решения вашей ситуации
-                        </>
-                      )}
-                      {step.id === 3 && (
-                        <>
-                          Вы получаете <span className="font-bold text-[#1E2238]">персональный</span> план после диагностики
-                        </>
-                      )}
-                      {step.id === 4 && (
-                        <>
-                          Оплачиваете подходящее <span className="font-bold text-[#1E2238]">вам</span> количество сессий
-                        </>
-                      )}
-                      {step.id === 5 && (
-                        <>
-                          С радостью занимаетесь с психологом IRT
-                        </>
-                      )}
-                      {step.id === 6 && (
-                        <>
-                          Наслаждаетесь <span className="font-bold text-[#1E2238]">новой версией себя и желаемыми</span> результатами в жизни
-                        </>
-                      )}
-                    </p>
                   </div>
                 </div>
               ))}
