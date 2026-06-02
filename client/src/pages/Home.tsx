@@ -1016,12 +1016,12 @@ export default function Home() {
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                       {[
-                        { id: "q1_1", text: "Повторяющиеся жизненные ситуации, которые не устраивают", icon: "/manus-storage/q1_icon_1_f423d513.png" },
-                        { id: "q1_2", text: "Сильный стресс или кризисная ситуация", icon: "/manus-storage/q1_icon_2_fd61a1e6.png" },
-                        { id: "q1_3", text: "Постоянная тревога, напряжение или нежелательная эмоциональная реакция", icon: "/manus-storage/q1_icon_3_d505fa03.png" },
-                        { id: "q1_4", text: "Я хочу разобраться в себе и своих реакциях", icon: "/manus-storage/q1_icon_4_3008f267.png" },
-                        { id: "q1_5", text: "У меня есть зависимость от ПАВ", icon: "/manus-storage/q1_icon_5_52e527ce.png" },
-                        { id: "q1_6", text: "У меня диагностированное психическое отклонение / расстройство", icon: "/manus-storage/q1_icon_6_c9cabe2b.png" }
+                        { id: "q1_1", text: "Повторяющиеся жизненные ситуации, которые не устраивают", icon: "/quiz-icons/q1_icon_1.png" },
+                        { id: "q1_2", text: "Сильный стресс или кризисная ситуация", icon: "/quiz-icons/q1_icon_2.png" },
+                        { id: "q1_3", text: "Постоянная тревога, напряжение или нежелательная эмоциональная реакция", icon: "/quiz-icons/q1_icon_3.png" },
+                        { id: "q1_4", text: "Я хочу разобраться в себе и своих реакциях", icon: "/quiz-icons/q1_icon_4.png" },
+                        { id: "q1_5", text: "У меня есть зависимость от ПАВ", icon: "/quiz-icons/q1_icon_5.png" },
+                        { id: "q1_6", text: "У меня диагностированное психическое отклонение / расстройство", icon: "/quiz-icons/q1_icon_6.png" }
                       ].map((opt) => {
                         const isSelected = answers.q1 === opt.id;
                         return (
@@ -1035,12 +1035,12 @@ export default function Home() {
                             }`}
                           >
                             <div className="flex flex-row items-center gap-3.5 pr-2">
-                              <div className={`w-5 h-5 rounded-full border flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                              <div className={`w-6 h-6 rounded-full border flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
                                 isSelected ? "border-[#4f5b93] bg-[#4f5b93]" : "border-[#CBD5E1] bg-white"
                               }`}>
                                 {isSelected && (
-                                  <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                                  <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3.5" d="M5 13l4 4L19 7" />
                                   </svg>
                                 )}
                               </div>
@@ -1048,7 +1048,7 @@ export default function Home() {
                                 {opt.text}
                               </span>
                             </div>
-                            <div className="w-14 h-14 rounded-xl bg-[#fbeee3] border border-[#FFEDD5]/40 flex items-center justify-center p-1 group-hover:scale-105 transition-transform duration-300 flex-shrink-0 shadow-sm">
+                            <div className="w-16 h-14 rounded-2xl bg-[#fbeee3] flex items-center justify-center p-2.5 group-hover:scale-105 transition-transform duration-300 flex-shrink-0 shadow-sm">
                               <img src={opt.icon} alt="icon" className="w-full h-full object-contain" />
                             </div>
                           </button>
@@ -1066,9 +1066,9 @@ export default function Home() {
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                       {[
-                        { id: "q2_1", text: "Отношения", icon: "/manus-storage/q2_icon_1_5db4be9e.png" },
-                        { id: "q2_2", text: "Самооценка и внутренние состояния", icon: "/manus-storage/q2_icon_2_411ccb0d.png" },
-                        { id: "q2_3", text: "Деньги / реализация / карьера", icon: "/manus-storage/q2_icon_3_01493ee3.png" },
+                        { id: "q2_1", text: "Отношения", icon: "/quiz-icons/q2_icon_1.png" },
+                        { id: "q2_2", text: "Самооценка и внутренние состояния", icon: "/quiz-icons/q2_icon_2.png" },
+                        { id: "q2_3", text: "Деньги / реализация / карьера", icon: "/quiz-icons/q2_icon_3.png" },
                         { id: "q2_4", text: "Сложные жизненные решения", icon: null },
                         { id: "q2_other", text: "Другая ситуация", icon: null }
                       ].map((opt) => {
@@ -1083,7 +1083,7 @@ export default function Home() {
                                   : "border-[#E2E8F0] bg-white hover:border-[#4f5b93]/50 hover:shadow-[0_8px_20px_rgba(78,91,166,0.03)]"
                               }`}
                             >
-                              <div className="w-12 h-12 rounded-xl bg-[#F4F7FC] border border-[#E2E8F0]/50 flex items-center justify-center p-1 group-hover:scale-105 transition-transform duration-300">
+                              <div className="w-14 h-14 rounded-2xl bg-[#fbeee3] flex items-center justify-center p-2 group-hover:scale-105 transition-transform duration-300 shadow-sm">
                                 {opt.icon ? (
                                   <img src={opt.icon} alt="icon" className="w-full h-full object-contain" />
                                 ) : (
@@ -1126,11 +1126,11 @@ export default function Home() {
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                       {[
-                        { id: "q3_1", text: "До 3 месяцев", icon: "/manus-storage/q3_icon_1_33f23e6b.png" },
-                        { id: "q3_2", text: "3-12 месяцев", icon: "/manus-storage/q3_icon_2_2a812480.png" },
-                        { id: "q3_3", text: "1-3 года", icon: "/manus-storage/q3_icon_3_3baae4e9.png" },
-                        { id: "q3_4", text: "4-10 лет", icon: "/manus-storage/q3_icon_4_0363c6d2.png" },
-                        { id: "q3_5", text: "Более 10 лет / почти всю жизнь", icon: "/manus-storage/q3_icon_5_20518fb3.png" }
+                        { id: "q3_1", text: "До 3 месяцев", icon: "/quiz-icons/q3_icon_1.png" },
+                        { id: "q3_2", text: "3-12 месяцев", icon: "/quiz-icons/q3_icon_2.png" },
+                        { id: "q3_3", text: "1-3 года", icon: "/quiz-icons/q3_icon_3.png" },
+                        { id: "q3_4", text: "4-10 лет", icon: "/quiz-icons/q3_icon_4.png" },
+                        { id: "q3_5", text: "Более 10 лет / почти всю жизнь", icon: "/quiz-icons/q3_icon_5.png" }
                       ].map((opt) => {
                         const isSelected = answers.q3 === opt.id;
                         return (
@@ -1143,7 +1143,7 @@ export default function Home() {
                                 : "border-[#E2E8F0] bg-white hover:border-[#4f5b93]/50 hover:shadow-[0_8px_20px_rgba(78,91,166,0.03)]"
                             }`}
                           >
-                            <div className="w-12 h-12 rounded-xl bg-[#F4F7FC] border border-[#E2E8F0]/50 flex items-center justify-center p-1 group-hover:scale-105 transition-transform duration-300">
+                            <div className="w-14 h-14 rounded-2xl bg-[#fbeee3] flex items-center justify-center p-2 group-hover:scale-105 transition-transform duration-300 shadow-sm">
                               <img src={opt.icon} alt="icon" className="w-full h-full object-contain" />
                             </div>
                             <span className="text-[13px] sm:text-[14px] font-bold text-[#1E2238] leading-snug mt-4">
@@ -1164,10 +1164,10 @@ export default function Home() {
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[900px] mx-auto">
                       {[
-                        { id: "q4_1", text: "Никогда", icon: "/manus-storage/q4_icon_1_e8564905.png" },
-                        { id: "q4_2", text: "Опыт краткосрочной терапии (до 10 сессий)", icon: "/manus-storage/q4_icon_2_73b64749.png" },
-                        { id: "q4_3", text: "Опыт длительной классической психотерапии (еженедельные встречи)", icon: "/manus-storage/q4_icon_3_9252ccb8.png" },
-                        { id: "q4_4", text: "Обширный опыт в различных подходах and методиках", icon: "/manus-storage/q4_icon_4_fb2fe7cd.png" }
+                        { id: "q4_1", text: "Никогда", icon: "/quiz-icons/q4_icon_1.png" },
+                        { id: "q4_2", text: "Опыт краткосрочной терапии (до 10 сессий)", icon: "/quiz-icons/q4_icon_2.png" },
+                        { id: "q4_3", text: "Опыт длительной классической психотерапии (еженедельные встречи)", icon: "/quiz-icons/q4_icon_3.png" },
+                        { id: "q4_4", text: "Обширный опыт в различных подходах and методиках", icon: "/quiz-icons/q4_icon_4.png" }
                       ].map((opt) => {
                         const isSelected = answers.q4 === opt.id;
                         return (
@@ -1180,7 +1180,7 @@ export default function Home() {
                                 : "border-[#E2E8F0] bg-white hover:border-[#4f5b93]/50 hover:shadow-[0_8px_20px_rgba(78,91,166,0.03)]"
                             }`}
                           >
-                            <div className="w-12 h-12 rounded-xl bg-[#F4F7FC] border border-[#E2E8F0]/50 flex items-center justify-center p-1 group-hover:scale-105 transition-transform duration-300 flex-shrink-0">
+                            <div className="w-14 h-14 rounded-2xl bg-[#fbeee3] flex items-center justify-center p-2 group-hover:scale-105 transition-transform duration-300 flex-shrink-0 shadow-sm">
                               <img src={opt.icon} alt="icon" className="w-full h-full object-contain" />
                             </div>
                             <span className="text-[13px] sm:text-[14px] font-bold text-[#1E2238] leading-snug">
@@ -1201,9 +1201,9 @@ export default function Home() {
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       {[
-                        { id: "q5_1", text: "Понимаю причину, но не могу ничего поменять", icon: "/manus-storage/q5_icon_1_da33f7f1.png" },
-                        { id: "q5_2", text: "Могу себя контролировать, но сталкиваюсь с откатами", icon: "/manus-storage/q5_icon_2_134a38df.png" },
-                        { id: "q5_3", text: "Ощущение, что что-то не так", icon: "/manus-storage/q5_icon_3_3bfc7675.png" }
+                        { id: "q5_1", text: "Понимаю причину, но не могу ничего поменять", icon: "/quiz-icons/q5_icon_1.png" },
+                        { id: "q5_2", text: "Могу себя контролировать, но сталкиваюсь с откатами", icon: "/quiz-icons/q5_icon_2.png" },
+                        { id: "q5_3", text: "Ощущение, что что-то не так", icon: "/quiz-icons/q5_icon_3.png" }
                       ].map((opt) => {
                         const isSelected = answers.q5 === opt.id;
                         return (
@@ -1216,7 +1216,7 @@ export default function Home() {
                                 : "border-[#E2E8F0] bg-white hover:border-[#4f5b93]/50 hover:shadow-[0_8px_20px_rgba(78,91,166,0.03)]"
                             }`}
                           >
-                            <div className="w-12 h-12 rounded-xl bg-[#F4F7FC] border border-[#E2E8F0]/50 flex items-center justify-center p-1 group-hover:scale-105 transition-transform duration-300">
+                            <div className="w-14 h-14 rounded-2xl bg-[#fbeee3] flex items-center justify-center p-2 group-hover:scale-105 transition-transform duration-300 shadow-sm">
                               <img src={opt.icon} alt="icon" className="w-full h-full object-contain" />
                             </div>
                             <span className="text-[13px] sm:text-[14px] font-bold text-[#1E2238] leading-snug mt-4">
