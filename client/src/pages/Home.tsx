@@ -915,74 +915,84 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
-        className="w-full max-w-[1920px] rounded-[40px] bg-white border border-[#E2E8F0]/60 shadow-[0_15px_50px_rgba(78,91,166,0.02)] flex flex-col p-6 sm:p-12 lg:p-16 xl:py-16 xl:px-20 space-y-12"
+        className="relative w-full max-w-[1920px] rounded-[40px] overflow-hidden flex flex-col p-6 sm:p-12 lg:p-16 xl:py-16 xl:px-20 space-y-12"
+        style={{
+          backgroundImage: `url('/manus-storage/Rectangle240649637_a39b360b.png')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+        }}
       >
         {/* Шапка квиза: Заголовок слева, бонусы справа */}
-        <div className="w-full flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 pb-8 border-b border-[#F0F4FA]">
+        <div className="w-full flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 pb-8 border-b border-[#E2E8F0]/30">
           {/* Левая часть: Заголовок */}
           <div className="max-w-[620px] space-y-3">
             <h2 className="text-[28px] sm:text-[36px] lg:text-[40px] font-extrabold text-[#1E2238] leading-[1.15] tracking-[-0.02em]">
-              Узнайте, как <span className="text-[#4E5BA6]">IRT</span> может помочь именно с вашим запросом
+              Узнайте, как <span className="text-[#4f5b93]">IRT</span> может помочь именно с вашим <span className="text-[#4f5b93]">запросом</span>
             </h2>
-            <p className="text-[14px] sm:text-[15px] text-[#5A6082] font-semibold">
-              Ответьте на 5 простых вопросов и получите:
-            </p>
           </div>
 
           {/* Правая часть: Бонусы */}
-          <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
-            {/* Бонус 1 */}
-            <div className="bg-[#F4F7FC] border border-[#E2E8F0]/60 rounded-2xl p-4 flex flex-row items-center gap-3.5 sm:w-[190px] h-[72px]">
-              <div className="w-10 h-10 rounded-xl bg-white border border-[#E2E8F0]/30 flex items-center justify-center text-[#4E5BA6] font-extrabold text-[15px] shadow-sm flex-shrink-0">
-                50%
+          <div className="flex flex-col space-y-3 w-full lg:w-auto">
+            <p className="text-[14px] sm:text-[15px] text-[#5A6082] font-bold">
+              Ответьте на 5 простых вопросов и получите:
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              {/* Бонус 1 */}
+              <div className="bg-white border border-[#E2E8F0]/50 rounded-2xl p-4 flex flex-row items-center gap-3 sm:w-[210px] h-[72px] shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-[#4f5b93]/10 flex items-center justify-center text-[#4f5b93] font-extrabold text-[15px] flex-shrink-0">
+                  %
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[13px] font-extrabold text-[#1E2238] leading-tight">Скидку 50%</span>
+                  <span className="text-[11px] text-[#5A6082] font-semibold leading-tight">на первую сессию</span>
+                </div>
               </div>
-              <div className="flex flex-col">
-                <span className="text-[13px] font-extrabold text-[#1E2238] leading-tight">Скидка 50%</span>
-                <span className="text-[11px] text-[#5A6082] font-semibold leading-tight">на первую сессию</span>
-              </div>
-            </div>
 
-            {/* Бонус 2 */}
-            <div className="bg-[#F4F7FC] border border-[#E2E8F0]/60 rounded-2xl p-4 flex flex-row items-center gap-3.5 sm:w-[190px] h-[72px]">
-              <div className="w-10 h-10 rounded-xl bg-white border border-[#E2E8F0]/30 flex items-center justify-center text-[#4E5BA6] shadow-sm flex-shrink-0">
-                <Heart className="w-5 h-5" />
+              {/* Бонус 2 */}
+              <div className="bg-white border border-[#E2E8F0]/50 rounded-2xl p-4 flex flex-row items-center gap-3 sm:w-[210px] h-[72px] shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-[#4f5b93]/10 flex items-center justify-center text-[#4f5b93] flex-shrink-0">
+                  <Heart className="w-5 h-5" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[13px] font-extrabold text-[#1E2238] leading-tight">Персональную</span>
+                  <span className="text-[11px] text-[#5A6082] font-semibold leading-tight">программу работы</span>
+                </div>
               </div>
-              <div className="flex flex-col">
-                <span className="text-[13px] font-extrabold text-[#1E2238] leading-tight">Персональную</span>
-                <span className="text-[11px] text-[#5A6082] font-semibold leading-tight">программу работы</span>
-              </div>
-            </div>
 
-            {/* Бонус 3 */}
-            <div className="bg-[#F4F7FC] border border-[#E2E8F0]/60 rounded-2xl p-4 flex flex-row items-center gap-3.5 sm:w-[190px] h-[72px]">
-              <div className="w-10 h-10 rounded-xl bg-white border border-[#E2E8F0]/30 flex items-center justify-center text-[#4E5BA6] shadow-sm flex-shrink-0">
-                <User className="w-5 h-5" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[13px] font-extrabold text-[#1E2238] leading-tight">Подходящего</span>
-                <span className="text-[11px] text-[#5A6082] font-semibold leading-tight">вам терапевта</span>
+              {/* Бонус 3 */}
+              <div className="bg-white border border-[#E2E8F0]/50 rounded-2xl p-4 flex flex-row items-center gap-3 sm:w-[210px] h-[72px] shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-[#4f5b93]/10 flex items-center justify-center text-[#4f5b93] flex-shrink-0">
+                  <User className="w-5 h-5" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[13px] font-extrabold text-[#1E2238] leading-tight">Терапевта</span>
+                  <span className="text-[11px] text-[#5A6082] font-semibold leading-tight">подходящего под запрос</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Тело квиза со стейт-машиной */}
-        <div className="w-full max-w-[1100px] mx-auto min-h-[480px] flex flex-col justify-between relative">
+        <div className="w-full max-w-[1100px] mx-auto min-h-[480px] flex flex-col justify-between relative bg-white rounded-[32px] p-6 sm:p-10 lg:p-12 shadow-[0_20px_50px_rgba(78,91,166,0.05)] border border-[#E2E8F0]/50">
           
           {/* Прогресс бар */}
           {currentStep < 6 && (
-            <div className="w-full space-y-3 mb-8">
-              <div className="flex flex-row justify-between items-center text-[13px] sm:text-[14px] font-extrabold text-[#1E2238]">
-                <span>Вопрос {currentStep + 1} из 6</span>
-                <span className="text-[#4E5BA6]">{Math.round(((currentStep) / 6) * 100)}% готово</span>
-              </div>
-              <div className="w-full h-2 bg-[#F0F4FA] rounded-full overflow-hidden">
-                <motion.div 
-                  initial={{ width: 0 }}
-                  animate={{ width: `${((currentStep + 1) / 6) * 100}%` }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
-                  className="h-full bg-[#4E5BA6] rounded-full"
-                />
+            <div className="w-full space-y-4 mb-8">
+              <div className="flex flex-row items-center gap-3">
+                <span className="px-3 py-1 bg-[#4f5b93] text-white text-[12px] font-extrabold rounded-full">
+                  Вопрос {currentStep + 1}
+                </span>
+                <div className="flex gap-1.5 flex-grow">
+                  {[0, 1, 2, 3, 4, 5].map((idx) => (
+                    <div 
+                      key={idx} 
+                      className={`h-1.5 rounded-full flex-grow transition-all duration-300 ${
+                        idx <= currentStep ? "bg-[#4f5b93]" : "bg-[#F0F4FA]"
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           )}
@@ -1001,7 +1011,7 @@ export default function Home() {
                 {/* Шаг 1: С чем вы сейчас сталкиваетесь */}
                 {currentStep === 0 && (
                   <div className="space-y-6">
-                    <h3 className="text-[20px] sm:text-[24px] font-extrabold text-[#1E2238] tracking-tight">
+                    <h3 className="text-[22px] sm:text-[26px] font-extrabold text-[#1E2238] tracking-tight leading-tight">
                       С чем вы сейчас сталкиваетесь?
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -1018,18 +1028,29 @@ export default function Home() {
                           <button
                             key={opt.id}
                             onClick={() => handleSelect("q1", opt.id)}
-                            className={`p-5 rounded-[24px] border text-left flex flex-col justify-between min-h-[180px] transition-all duration-300 group cursor-pointer ${
+                            className={`p-4 rounded-2xl border text-left flex flex-row items-center justify-between min-h-[92px] transition-all duration-300 group cursor-pointer ${
                               isSelected 
-                                ? "border-[#4E5BA6] bg-[#4E5BA6]/5 shadow-[0_8px_25px_rgba(78,91,166,0.06)]" 
-                                : "border-[#E2E8F0] bg-white hover:border-[#4E5BA6]/50 hover:shadow-[0_8px_20px_rgba(78,91,166,0.03)]"
+                                ? "border-[#4f5b93] bg-[#4f5b93]/5 shadow-[0_8px_25px_rgba(78,91,166,0.06)]" 
+                                : "border-[#E2E8F0] bg-white hover:border-[#4f5b93]/50 hover:shadow-[0_8px_20px_rgba(78,91,166,0.03)]"
                             }`}
                           >
-                            <div className="w-12 h-12 rounded-xl bg-[#F4F7FC] border border-[#E2E8F0]/50 flex items-center justify-center p-1 group-hover:scale-105 transition-transform duration-300">
+                            <div className="flex flex-row items-center gap-3.5 pr-2">
+                              <div className={`w-5 h-5 rounded-full border flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                                isSelected ? "border-[#4f5b93] bg-[#4f5b93]" : "border-[#CBD5E1] bg-white"
+                              }`}>
+                                {isSelected && (
+                                  <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                                  </svg>
+                                )}
+                              </div>
+                              <span className="text-[13px] sm:text-[14px] font-bold text-[#1E2238] leading-snug">
+                                {opt.text}
+                              </span>
+                            </div>
+                            <div className="w-14 h-14 rounded-xl bg-[#fbeee3] border border-[#FFEDD5]/40 flex items-center justify-center p-1 group-hover:scale-105 transition-transform duration-300 flex-shrink-0 shadow-sm">
                               <img src={opt.icon} alt="icon" className="w-full h-full object-contain" />
                             </div>
-                            <span className="text-[13px] sm:text-[14px] font-bold text-[#1E2238] leading-snug mt-4">
-                              {opt.text}
-                            </span>
                           </button>
                         );
                       })}
@@ -1058,15 +1079,15 @@ export default function Home() {
                               onClick={() => handleSelect("q2", opt.id)}
                               className={`p-5 rounded-[24px] border text-left flex flex-col justify-between min-h-[180px] transition-all duration-300 group cursor-pointer w-full ${
                                 isSelected 
-                                  ? "border-[#4E5BA6] bg-[#4E5BA6]/5 shadow-[0_8px_25px_rgba(78,91,166,0.06)]" 
-                                  : "border-[#E2E8F0] bg-white hover:border-[#4E5BA6]/50 hover:shadow-[0_8px_20px_rgba(78,91,166,0.03)]"
+                                  ? "border-[#4f5b93] bg-[#4f5b93]/5 shadow-[0_8px_25px_rgba(78,91,166,0.06)]" 
+                                  : "border-[#E2E8F0] bg-white hover:border-[#4f5b93]/50 hover:shadow-[0_8px_20px_rgba(78,91,166,0.03)]"
                               }`}
                             >
                               <div className="w-12 h-12 rounded-xl bg-[#F4F7FC] border border-[#E2E8F0]/50 flex items-center justify-center p-1 group-hover:scale-105 transition-transform duration-300">
                                 {opt.icon ? (
                                   <img src={opt.icon} alt="icon" className="w-full h-full object-contain" />
                                 ) : (
-                                  <HelpCircle className="w-6 h-6 text-[#4E5BA6]" />
+                                  <HelpCircle className="w-6 h-6 text-[#4f5b93]" />
                                 )}
                               </div>
                               <span className="text-[13px] sm:text-[14px] font-bold text-[#1E2238] leading-snug mt-4">
@@ -1086,7 +1107,7 @@ export default function Home() {
                                   placeholder="Напишите, что вас беспокоит..."
                                   value={answers.q2_other_text || ""}
                                   onChange={(e) => setAnswers(prev => ({ ...prev, q2_other_text: e.target.value }))}
-                                  className="w-full h-[50px] px-4 rounded-xl border border-[#4E5BA6] bg-white text-[13px] sm:text-[14px] font-semibold text-[#1E2238] focus:outline-none shadow-sm"
+                                  className="w-full h-[50px] px-4 rounded-xl border border-[#4f5b93] bg-white text-[13px] sm:text-[14px] font-semibold text-[#1E2238] focus:outline-none shadow-sm"
                                 />
                               </motion.div>
                             )}
@@ -1118,8 +1139,8 @@ export default function Home() {
                             onClick={() => handleSelect("q3", opt.id)}
                             className={`p-5 rounded-[24px] border text-left flex flex-col justify-between min-h-[180px] transition-all duration-300 group cursor-pointer ${
                               isSelected 
-                                ? "border-[#4E5BA6] bg-[#4E5BA6]/5 shadow-[0_8px_25px_rgba(78,91,166,0.06)]" 
-                                : "border-[#E2E8F0] bg-white hover:border-[#4E5BA6]/50 hover:shadow-[0_8px_20px_rgba(78,91,166,0.03)]"
+                                ? "border-[#4f5b93] bg-[#4f5b93]/5 shadow-[0_8px_25px_rgba(78,91,166,0.06)]" 
+                                : "border-[#E2E8F0] bg-white hover:border-[#4f5b93]/50 hover:shadow-[0_8px_20px_rgba(78,91,166,0.03)]"
                             }`}
                           >
                             <div className="w-12 h-12 rounded-xl bg-[#F4F7FC] border border-[#E2E8F0]/50 flex items-center justify-center p-1 group-hover:scale-105 transition-transform duration-300">
@@ -1146,7 +1167,7 @@ export default function Home() {
                         { id: "q4_1", text: "Никогда", icon: "/manus-storage/q4_icon_1_e8564905.png" },
                         { id: "q4_2", text: "Опыт краткосрочной терапии (до 10 сессий)", icon: "/manus-storage/q4_icon_2_73b64749.png" },
                         { id: "q4_3", text: "Опыт длительной классической психотерапии (еженедельные встречи)", icon: "/manus-storage/q4_icon_3_9252ccb8.png" },
-                        { id: "q4_4", text: "Обширный опыт в различных подходах и методиках", icon: "/manus-storage/q4_icon_4_fb2fe7cd.png" }
+                        { id: "q4_4", text: "Обширный опыт в различных подходах and методиках", icon: "/manus-storage/q4_icon_4_fb2fe7cd.png" }
                       ].map((opt) => {
                         const isSelected = answers.q4 === opt.id;
                         return (
@@ -1155,8 +1176,8 @@ export default function Home() {
                             onClick={() => handleSelect("q4", opt.id)}
                             className={`p-5 sm:p-6 rounded-[24px] border text-left flex flex-row items-center gap-4 sm:gap-5 min-h-[100px] transition-all duration-300 group cursor-pointer ${
                               isSelected 
-                                ? "border-[#4E5BA6] bg-[#4E5BA6]/5 shadow-[0_8px_25px_rgba(78,91,166,0.06)]" 
-                                : "border-[#E2E8F0] bg-white hover:border-[#4E5BA6]/50 hover:shadow-[0_8px_20px_rgba(78,91,166,0.03)]"
+                                ? "border-[#4f5b93] bg-[#4f5b93]/5 shadow-[0_8px_25px_rgba(78,91,166,0.06)]" 
+                                : "border-[#E2E8F0] bg-white hover:border-[#4f5b93]/50 hover:shadow-[0_8px_20px_rgba(78,91,166,0.03)]"
                             }`}
                           >
                             <div className="w-12 h-12 rounded-xl bg-[#F4F7FC] border border-[#E2E8F0]/50 flex items-center justify-center p-1 group-hover:scale-105 transition-transform duration-300 flex-shrink-0">
@@ -1191,8 +1212,8 @@ export default function Home() {
                             onClick={() => handleSelect("q5", opt.id)}
                             className={`p-5 rounded-[24px] border text-left flex flex-col justify-between min-h-[180px] transition-all duration-300 group cursor-pointer ${
                               isSelected 
-                                ? "border-[#4E5BA6] bg-[#4E5BA6]/5 shadow-[0_8px_25px_rgba(78,91,166,0.06)]" 
-                                : "border-[#E2E8F0] bg-white hover:border-[#4E5BA6]/50 hover:shadow-[0_8px_20px_rgba(78,91,166,0.03)]"
+                                ? "border-[#4f5b93] bg-[#4f5b93]/5 shadow-[0_8px_25px_rgba(78,91,166,0.06)]" 
+                                : "border-[#E2E8F0] bg-white hover:border-[#4f5b93]/50 hover:shadow-[0_8px_20px_rgba(78,91,166,0.03)]"
                             }`}
                           >
                             <div className="w-12 h-12 rounded-xl bg-[#F4F7FC] border border-[#E2E8F0]/50 flex items-center justify-center p-1 group-hover:scale-105 transition-transform duration-300">
@@ -1225,7 +1246,7 @@ export default function Home() {
                         placeholder="Ответ в свободной форме..."
                         value={answers.q6_text || ""}
                         onChange={(e) => setAnswers(prev => ({ ...prev, q6_text: e.target.value }))}
-                        className="w-full p-5 rounded-[24px] border border-[#E2E8F0] bg-white text-[13px] sm:text-[14px] font-semibold text-[#1E2238] focus:border-[#4E5BA6] focus:outline-none shadow-sm placeholder:text-[#A0AEC0] leading-relaxed resize-none"
+                        className="w-full p-5 rounded-[24px] border border-[#E2E8F0] bg-white text-[13px] sm:text-[14px] font-semibold text-[#1E2238] focus:border-[#4f5b93] focus:outline-none shadow-sm placeholder:text-[#A0AEC0] leading-relaxed resize-none"
                       />
                     </div>
                   </div>
@@ -1252,7 +1273,7 @@ export default function Home() {
                           placeholder="Иван"
                           value={answers.name || ""}
                           onChange={(e) => setAnswers(prev => ({ ...prev, name: e.target.value }))}
-                          className="w-full h-[54px] px-5 rounded-2xl border border-[#E2E8F0] bg-white text-[14px] font-bold text-[#1E2238] focus:border-[#4E5BA6] focus:outline-none shadow-sm"
+                          className="w-full h-[54px] px-5 rounded-2xl border border-[#E2E8F0] bg-white text-[14px] font-bold text-[#1E2238] focus:border-[#4f5b93] focus:outline-none shadow-sm"
                         />
                       </div>
 
@@ -1264,7 +1285,7 @@ export default function Home() {
                           placeholder="+7 (999) 000-00-00"
                           value={answers.phone || ""}
                           onChange={(e) => setAnswers(prev => ({ ...prev, phone: e.target.value }))}
-                          className="w-full h-[54px] px-5 rounded-2xl border border-[#E2E8F0] bg-white text-[14px] font-bold text-[#1E2238] focus:border-[#4E5BA6] focus:outline-none shadow-sm"
+                          className="w-full h-[54px] px-5 rounded-2xl border border-[#E2E8F0] bg-white text-[14px] font-bold text-[#1E2238] focus:border-[#4f5b93] focus:outline-none shadow-sm"
                         />
                       </div>
 
@@ -1285,7 +1306,7 @@ export default function Home() {
                                 onClick={() => setAnswers(prev => ({ ...prev, messenger: m.id }))}
                                 className={`h-[50px] rounded-xl border text-[13px] font-bold transition-all duration-300 flex items-center justify-center cursor-pointer ${
                                   isSelected 
-                                    ? "border-[#4E5BA6] bg-[#4E5BA6]/5 text-[#4E5BA6]" 
+                                    ? "border-[#4f5b93] bg-[#4f5b93]/5 text-[#4f5b93]" 
                                     : `border-[#E2E8F0] bg-white text-[#5A6082] ${m.color}`
                                 }`}
                               >
@@ -1303,7 +1324,7 @@ export default function Home() {
                             type="checkbox"
                             checked={answers.agree_personal === true}
                             onChange={(e) => setAnswers(prev => ({ ...prev, agree_personal: e.target.checked }))}
-                            className="mt-1 w-4 h-4 rounded border-[#E2E8F0] text-[#4E5BA6] focus:ring-[#4E5BA6]"
+                            className="mt-1 w-4 h-4 rounded border-[#E2E8F0] text-[#4f5b93] focus:ring-[#4f5b93]"
                           />
                           <span className="text-[11px] sm:text-[12px] text-[#5A6082] font-medium leading-normal group-hover:text-[#1E2238] transition-colors">
                             Даю согласие на обработку персональных данных в соответствии с <span className="underline decoration-[#5A6082]/30">политикой обработки персональных данных</span>
@@ -1315,7 +1336,7 @@ export default function Home() {
                             type="checkbox"
                             checked={answers.agree_marketing === true}
                             onChange={(e) => setAnswers(prev => ({ ...prev, agree_marketing: e.target.checked }))}
-                            className="mt-1 w-4 h-4 rounded border-[#E2E8F0] text-[#4E5BA6] focus:ring-[#4E5BA6]"
+                            className="mt-1 w-4 h-4 rounded border-[#E2E8F0] text-[#4f5b93] focus:ring-[#4f5b93]"
                           />
                           <span className="text-[11px] sm:text-[12px] text-[#5A6082] font-medium leading-normal group-hover:text-[#1E2238] transition-colors">
                             Даю согласие на получение рекламных и информационных рассылок
@@ -1329,7 +1350,7 @@ export default function Home() {
                       <Button
                         onClick={handleSubmitQuiz}
                         disabled={!answers.phone || !answers.name || !answers.messenger || !answers.agree_personal}
-                        className="w-full h-[54px] bg-[#4E5BA6] hover:bg-[#3F4B8C] text-white text-[15px] font-extrabold rounded-2xl shadow-[0_10px_25px_rgba(78,91,166,0.25)] hover:shadow-[0_15px_30px_rgba(78,91,166,0.35)] active:scale-[0.98] transition-all duration-300 disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
+                        className="w-full h-[54px] bg-[#4f5b93] hover:bg-[#3d4875] text-white text-[15px] font-extrabold rounded-2xl shadow-[0_10px_25px_rgba(79,91,147,0.25)] hover:shadow-[0_15px_30px_rgba(79,91,147,0.35)] active:scale-[0.98] transition-all duration-300 disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
                       >
                         Получить консультацию
                       </Button>
@@ -1355,7 +1376,7 @@ export default function Home() {
               <Button
                 disabled={!isCurrentStepValid()}
                 onClick={handleNext}
-                className="h-[50px] px-10 bg-[#4E5BA6] hover:bg-[#3F4B8C] text-white text-[14px] font-bold rounded-xl shadow-[0_4px_15px_rgba(78,91,166,0.15)] hover:shadow-[0_6px_20px_rgba(78,91,166,0.25)] transition-all duration-300 disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
+                className="h-[50px] px-10 bg-[#4f5b93] hover:bg-[#3d4875] text-white text-[14px] font-bold rounded-xl shadow-[0_4px_15px_rgba(79,91,147,0.15)] hover:shadow-[0_6px_20px_rgba(79,91,147,0.25)] transition-all duration-300 disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
               >
                 {currentStep === 5 ? "К контактам" : "Далее"}
               </Button>
