@@ -1028,13 +1028,13 @@ export default function Home() {
                           <button
                             key={opt.id}
                             onClick={() => handleSelect("q1", opt.id)}
-                            className={`p-4 rounded-2xl border text-left flex flex-row items-center justify-between min-h-[92px] transition-all duration-300 group cursor-pointer ${
+                            className={`pl-5 pr-0 py-0 rounded-[24px] border text-left flex flex-row items-center justify-between min-h-[100px] sm:min-h-[108px] transition-all duration-300 group cursor-pointer overflow-hidden ${
                               isSelected 
                                 ? "border-[#4f5b93] bg-[#4f5b93]/5 shadow-[0_8px_25px_rgba(78,91,166,0.06)]" 
                                 : "border-[#E2E8F0] bg-white hover:border-[#4f5b93]/50 hover:shadow-[0_8px_20px_rgba(78,91,166,0.03)]"
                             }`}
                           >
-                            <div className="flex flex-row items-center gap-3.5 pr-2">
+                            <div className="flex flex-row items-center gap-4 pr-3 py-4 flex-grow">
                               <div className={`w-6 h-6 rounded-full border flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
                                 isSelected ? "border-[#4f5b93] bg-[#4f5b93]" : "border-[#CBD5E1] bg-white"
                               }`}>
@@ -1044,12 +1044,12 @@ export default function Home() {
                                   </svg>
                                 )}
                               </div>
-                              <span className="text-[13px] sm:text-[14px] font-bold text-[#1E2238] leading-snug">
+                              <span className="text-[13.5px] sm:text-[15px] font-bold text-[#1E2238] leading-snug">
                                 {opt.text}
                               </span>
                             </div>
-                            <div className="w-16 h-14 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 flex-shrink-0">
-                              <img src={opt.icon} alt="icon" className="w-full h-full object-contain" />
+                            <div className="w-[100px] sm:w-[108px] self-stretch flex-shrink-0 flex items-center justify-center group-hover:scale-[1.03] transition-transform duration-300">
+                              <img src={opt.icon} alt="icon" className="w-full h-full object-cover" />
                             </div>
                           </button>
                         );
