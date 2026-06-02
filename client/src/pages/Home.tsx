@@ -41,11 +41,11 @@ export default function Home() {
       >
         {/* Абсолютно позиционированное фоновое изображение для точного контроля его расположения справа */}
         <div 
-          className="absolute inset-y-0 right-0 w-full lg:w-[60%] bg-no-repeat pointer-events-none z-0 opacity-40 lg:opacity-100 transition-opacity duration-500"
+          className="absolute inset-y-0 right-0 w-full lg:w-[55%] bg-no-repeat pointer-events-none z-0 opacity-40 lg:opacity-100 transition-opacity duration-500"
           style={{
             backgroundImage: "url('/manus-storage/Group2085665064_a3c9c4bc.png')",
-            backgroundSize: "contain",
-            backgroundPosition: "right center",
+            backgroundSize: "cover",
+            backgroundPosition: "65% center",
           }}
         />
         {/* Плавный полупрозрачный слой для мягкого перехода и отличной читаемости текста */}
