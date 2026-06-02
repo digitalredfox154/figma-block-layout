@@ -1977,28 +1977,36 @@ export default function Home() {
           {/* Сетка шагов маршрута */}
           <div className="relative max-w-6xl mx-auto mb-16 md:mb-24">
             
-            {/* Соединительная линия (только для десктопа) */}
-            <div className="hidden md:block absolute top-[90px] left-[10%] right-[10%] h-[2px] pointer-events-none">
-              {/* Пунктирная линия в два ряда с переходом */}
-              <svg className="w-full h-[220px]" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Линия первого ряда (шаги 1-3) */}
-                <path d="M 0,2 L 800,2" stroke="#4E5BA6" strokeWidth="2" strokeDasharray="6 6" className="opacity-30" />
-                {/* Соединитель между рядами (зигзаг от шага 3 вниз к шагу 4) */}
-                <path d="M 800,2 L 800,210 L 0,210" stroke="#4E5BA6" strokeWidth="2" strokeDasharray="6 6" className="opacity-30" />
-              </svg>
+            {/* Соединительные линии (только для десктопа) */}
+            <div className="hidden md:block absolute inset-0 pointer-events-none">
+              {/* Линия между 1 и 2 */}
+              <div className="absolute top-[60px] left-[20%] w-[13%] border-t-2 border-dashed border-[#4E5BA6]/20" />
+              {/* Линия между 2 и 3 */}
+              <div className="absolute top-[60px] left-[53%] w-[13%] border-t-2 border-dashed border-[#4E5BA6]/20" />
+              
+              {/* Длинный горизонтальный разделитель посередине */}
+              <div className="absolute top-[50%] -translate-y-1/2 left-[5%] right-[5%] border-t-2 border-dashed border-[#4E5BA6]/20" />
+              
+              {/* Линия между 4 и 5 */}
+              <div className="absolute bottom-[200px] left-[20%] w-[13%] border-t-2 border-dashed border-[#4E5BA6]/20" />
+              {/* Линия между 5 и 6 */}
+              <div className="absolute bottom-[200px] left-[53%] w-[13%] border-t-2 border-dashed border-[#4E5BA6]/20" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-12 md:gap-y-36 gap-x-8">
-              {block10Steps.map((step, idx) => (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-16 md:gap-y-32 gap-x-8">
+              {block10Steps.map((step) => (
                 <div key={step.id} className="flex flex-col items-center text-center relative group">
                   
-                  {/* Иконка шага в карточке */}
-                  <div className="w-[180px] h-[120px] bg-white rounded-[24px] shadow-[0_12px_32px_rgba(78,91,166,0.04)] border border-white/80 p-3 flex items-center justify-center mb-6 relative hover:scale-105 transition-all duration-300 hover:shadow-[0_20px_40px_rgba(78,91,166,0.08)]">
-                    <img 
-                      src={step.img} 
-                      alt={step.boldText} 
-                      className="max-w-[85px] max-h-[85px] object-contain"
-                    />
+                  {/* Иконка шага в карточке (белая горизонтальная плашка) */}
+                  <div className="w-[180px] h-[110px] bg-white rounded-[24px] shadow-[0_8px_24px_rgba(78,91,166,0.02)] border border-white/80 p-3 flex items-center justify-center mb-6 relative hover:scale-105 transition-all duration-300 hover:shadow-[0_16px_32px_rgba(78,91,166,0.05)]">
+                    {/* Внутренний синий контейнер */}
+                    <div className="w-[110px] h-[78px] bg-[#E1EAF3] rounded-[16px] flex items-center justify-center overflow-hidden">
+                      <img 
+                        src={step.img} 
+                        alt="" 
+                        className="w-[56px] h-[56px] object-contain transition-transform duration-500 group-hover:scale-110"
+                      />
+                    </div>
                     
                     {/* Номер шага (бейджик на иконке) */}
                     <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white border border-[#E2E8F0] shadow-sm flex items-center justify-center text-[14px] font-extrabold text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white group-hover:border-[#4E5BA6] transition-all duration-300">
@@ -2009,7 +2017,36 @@ export default function Home() {
                   {/* Текст шага */}
                   <div className="px-4 max-w-[280px]">
                     <p className="text-[14px] md:text-[15px] text-[#5A6082] leading-relaxed">
-                      {step.title} <span className="font-extrabold text-[#1E2238]">{step.boldText}</span>
+                      {step.id === 1 && (
+                        <>
+                          Вы отвечаете на <span className="font-bold text-[#1E2238]">7 простых вопросов</span>
+                        </>
+                      )}
+                      {step.id === 2 && (
+                        <>
+                          Мы подбираем лучшего терапевта для решения вашей ситуации
+                        </>
+                      )}
+                      {step.id === 3 && (
+                        <>
+                          Вы получаете <span className="font-bold text-[#1E2238]">персональный</span> план после диагностики
+                        </>
+                      )}
+                      {step.id === 4 && (
+                        <>
+                          Оплачиваете подходящее <span className="font-bold text-[#1E2238]">вам</span> количество сессий
+                        </>
+                      )}
+                      {step.id === 5 && (
+                        <>
+                          С радостью занимаетесь с психологом IRT
+                        </>
+                      )}
+                      {step.id === 6 && (
+                        <>
+                          Наслаждаетесь <span className="font-bold text-[#1E2238]">новой версией себя и желаемыми</span> результатами в жизни
+                        </>
+                      )}
                     </p>
                   </div>
                 </div>
