@@ -54,7 +54,7 @@ export default function Home() {
             {/* Крупный заголовок с точным размером, межстрочным интервалом и насыщенностью */}
             <motion.h1
               variants={itemVariants}
-              className="text-[32px] sm:text-[42px] lg:text-[46px] xl:text-[52px] font-extrabold text-[#1E2238] leading-[1.1] tracking-[-0.03em] font-sans"
+              className="text-[30px] sm:text-[38px] lg:text-[42px] xl:text-[46px] font-extrabold text-[#1E2238] leading-[1.1] tracking-[-0.03em] font-sans"
             >
               Найдите <br />
               и устраните <br />
@@ -67,7 +67,7 @@ export default function Home() {
             {/* Описание с подчеркиванием */}
             <motion.p
               variants={itemVariants}
-              className="text-[13px] sm:text-[14px] lg:text-[15px] text-[#5A6082] font-semibold max-w-[440px] leading-relaxed"
+              className="text-[12px] sm:text-[13px] lg:text-[14px] text-[#5A6082] font-semibold max-w-[420px] leading-relaxed"
             >
               уже за 1-3-5 сессий вы увидите изменения и начнете{" "}
               <span className="text-[#1E2238] font-bold underline decoration-[#4E5BA6]/30 underline-offset-4">
@@ -112,18 +112,18 @@ export default function Home() {
           <motion.div
             whileHover={{ y: -4 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            className="bg-white/85 backdrop-blur-md p-5 sm:p-6 rounded-[24px] border border-white/60 shadow-[0_10px_30px_rgba(78,91,166,0.02)] hover:shadow-[0_15px_35px_rgba(78,91,166,0.05)] flex flex-col justify-between space-y-3 transition-all duration-300 group"
+            className="bg-white/85 backdrop-blur-md p-4 sm:p-5 rounded-[20px] border border-white/60 shadow-[0_10px_30px_rgba(78,91,166,0.02)] hover:shadow-[0_15px_35px_rgba(78,91,166,0.05)] flex flex-col justify-between space-y-2.5 transition-all duration-300 group"
           >
-            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center border border-[#E2E8F0] shadow-sm group-hover:border-[#4E5BA6]/30 transition-all duration-300">
-              <div className="w-9.5 h-10 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
-                <Heart className="w-4.5 h-4.5" />
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-[#E2E8F0] shadow-sm group-hover:border-[#4E5BA6]/30 transition-all duration-300">
+              <div className="w-8 h-8 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
+                <Heart className="w-4 h-4" />
               </div>
             </div>
-            <div className="space-y-2">
-              <h3 className="text-[16px] sm:text-[17px] font-extrabold text-[#1E2238] tracking-tight">
+            <div className="space-y-1">
+              <h3 className="text-[15px] sm:text-[16px] font-extrabold text-[#1E2238] tracking-tight">
                 Четкий запрос не обязателен
               </h3>
-              <p className="text-[13px] sm:text-[14px] text-[#5A6082] font-medium leading-relaxed">
+              <p className="text-[12px] sm:text-[13px] text-[#5A6082] font-medium leading-relaxed">
                 ИРТ решает проблему даже если вы не до конца понимаете, что именно не так или не готовы делиться деталями.
               </p>
             </div>
@@ -133,18 +133,18 @@ export default function Home() {
           <motion.div
             whileHover={{ y: -4 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            className="bg-white/85 backdrop-blur-md p-5 sm:p-6 rounded-[24px] border border-white/60 shadow-[0_10px_30px_rgba(78,91,166,0.02)] hover:shadow-[0_15px_35px_rgba(78,91,166,0.05)] flex flex-col justify-between space-y-3 transition-all duration-300 group"
+            className="bg-white/85 backdrop-blur-md p-4 sm:p-5 rounded-[20px] border border-white/60 shadow-[0_10px_30px_rgba(78,91,166,0.02)] hover:shadow-[0_15px_35px_rgba(78,91,166,0.05)] flex flex-col justify-between space-y-2.5 transition-all duration-300 group"
           >
-            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center border border-[#E2E8F0] shadow-sm group-hover:border-[#4E5BA6]/30 transition-all duration-300">
-              <div className="w-10 h-10 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
-                <Target className="w-4.5 h-4.5" />
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-[#E2E8F0] shadow-sm group-hover:border-[#4E5BA6]/30 transition-all duration-300">
+              <div className="w-8 h-8 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
+                <Target className="w-4 h-4" />
               </div>
             </div>
-            <div className="space-y-2">
-              <h3 className="text-[16px] sm:text-[17px] font-extrabold text-[#1E2238] tracking-tight">
+            <div className="space-y-1">
+              <h3 className="text-[15px] sm:text-[16px] font-extrabold text-[#1E2238] tracking-tight">
                 ИРТ подходит как для первого опыта терапии
               </h3>
-              <p className="text-[13px] sm:text-[14px] text-[#5A6082] font-medium leading-relaxed">
+              <p className="text-[12px] sm:text-[13px] text-[#5A6082] font-medium leading-relaxed">
                 Так и для тех, кто имеет обширный опыт, все понимает о своей проблеме, но решить до конца не получается.
               </p>
             </div>
@@ -154,18 +154,18 @@ export default function Home() {
           <motion.div
             whileHover={{ y: -4 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            className="bg-white/85 backdrop-blur-md p-5 sm:p-6 rounded-[24px] border border-white/60 shadow-[0_10px_30px_rgba(78,91,166,0.02)] hover:shadow-[0_15px_35px_rgba(78,91,166,0.05)] flex flex-col justify-between space-y-3 transition-all duration-300 group"
+            className="bg-white/85 backdrop-blur-md p-4 sm:p-5 rounded-[20px] border border-white/60 shadow-[0_10px_30px_rgba(78,91,166,0.02)] hover:shadow-[0_15px_35px_rgba(78,91,166,0.05)] flex flex-col justify-between space-y-2.5 transition-all duration-300 group"
           >
-            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center border border-[#E2E8F0] shadow-sm group-hover:border-[#4E5BA6]/30 transition-all duration-300">
-              <div className="w-10 h-10 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
-                <Search className="w-4.5 h-4.5" />
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-[#E2E8F0] shadow-sm group-hover:border-[#4E5BA6]/30 transition-all duration-300">
+              <div className="w-8 h-8 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
+                <Search className="w-4 h-4" />
               </div>
             </div>
-            <div className="space-y-2">
-              <h3 className="text-[16px] sm:text-[17px] font-extrabold text-[#1E2238] tracking-tight">
+            <div className="space-y-1">
+              <h3 className="text-[15px] sm:text-[16px] font-extrabold text-[#1E2238] tracking-tight">
                 Найдите и устраните первопричину проблем
               </h3>
-              <p className="text-[13px] sm:text-[14px] text-[#5A6082] font-medium leading-relaxed">
+              <p className="text-[12px] sm:text-[13px] text-[#5A6082] font-medium leading-relaxed">
                 ИРТ комбинирует научные методы психотерапии: КПТ, ДПДГ (EMDR), гипноз и другие.
               </p>
             </div>
