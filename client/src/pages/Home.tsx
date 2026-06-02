@@ -45,8 +45,8 @@ export default function Home() {
           }}
         />
 
-        {/* Мягкий градиентный оверлей слева для идеальной читаемости текста */}
-        <div className="absolute inset-y-0 left-0 w-full lg:w-[60%] bg-gradient-to-r from-[#F4F7FC] via-[#F4F7FC]/80 to-transparent pointer-events-none z-0" />
+        {/* Мягкий градиентный оверлей слева для идеальной читаемости текста (минимальный, чтобы не скрывать кресло) */}
+        <div className="absolute inset-y-0 left-0 w-full lg:w-[45%] bg-gradient-to-r from-[#F4F7FC]/70 via-[#F4F7FC]/30 to-transparent pointer-events-none z-0" />
 
         {/* Верхняя контентная часть */}
         <div className="relative z-10 flex flex-col items-start mt-2 lg:mt-4">
@@ -54,7 +54,7 @@ export default function Home() {
             {/* Крупный заголовок с точным размером, межстрочным интервалом и насыщенностью */}
             <motion.h1
               variants={itemVariants}
-              className="text-[42px] sm:text-[54px] lg:text-[60px] xl:text-[68px] font-extrabold text-[#1E2238] leading-[1.05] tracking-[-0.03em] font-sans"
+              className="text-[36px] sm:text-[46px] lg:text-[52px] xl:text-[58px] font-extrabold text-[#1E2238] leading-[1.08] tracking-[-0.03em] font-sans"
             >
               Найдите <br />
               и устраните <br />
@@ -106,13 +106,13 @@ export default function Home() {
         {/* Нижняя часть: Три карточки преимуществ */}
         <motion.div
           variants={itemVariants}
-          className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 mt-12 lg:mt-0 w-full"
+          className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 mt-8 lg:mt-4 w-full"
         >
           {/* Карточка 1 */}
           <motion.div
             whileHover={{ y: -4 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            className="bg-white/85 backdrop-blur-md p-6 sm:p-8 rounded-[28px] border border-white/60 shadow-[0_10px_30px_rgba(78,91,166,0.02)] hover:shadow-[0_15px_35px_rgba(78,91,166,0.05)] flex flex-col justify-between space-y-4 transition-all duration-300 group"
+            className="bg-white/85 backdrop-blur-md p-5 sm:p-6 rounded-[24px] border border-white/60 shadow-[0_10px_30px_rgba(78,91,166,0.02)] hover:shadow-[0_15px_35px_rgba(78,91,166,0.05)] flex flex-col justify-between space-y-3 transition-all duration-300 group"
           >
             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center border border-[#E2E8F0] shadow-sm group-hover:border-[#4E5BA6]/30 transition-all duration-300">
               <div className="w-9.5 h-10 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
@@ -133,7 +133,7 @@ export default function Home() {
           <motion.div
             whileHover={{ y: -4 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            className="bg-white/85 backdrop-blur-md p-6 sm:p-8 rounded-[28px] border border-white/60 shadow-[0_10px_30px_rgba(78,91,166,0.02)] hover:shadow-[0_15px_35px_rgba(78,91,166,0.05)] flex flex-col justify-between space-y-4 transition-all duration-300 group"
+            className="bg-white/85 backdrop-blur-md p-5 sm:p-6 rounded-[24px] border border-white/60 shadow-[0_10px_30px_rgba(78,91,166,0.02)] hover:shadow-[0_15px_35px_rgba(78,91,166,0.05)] flex flex-col justify-between space-y-3 transition-all duration-300 group"
           >
             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center border border-[#E2E8F0] shadow-sm group-hover:border-[#4E5BA6]/30 transition-all duration-300">
               <div className="w-10 h-10 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
@@ -154,7 +154,7 @@ export default function Home() {
           <motion.div
             whileHover={{ y: -4 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            className="bg-white/85 backdrop-blur-md p-6 sm:p-8 rounded-[28px] border border-white/60 shadow-[0_10px_30px_rgba(78,91,166,0.02)] hover:shadow-[0_15px_35px_rgba(78,91,166,0.05)] flex flex-col justify-between space-y-4 transition-all duration-300 group"
+            className="bg-white/85 backdrop-blur-md p-5 sm:p-6 rounded-[24px] border border-white/60 shadow-[0_10px_30px_rgba(78,91,166,0.02)] hover:shadow-[0_15px_35px_rgba(78,91,166,0.05)] flex flex-col justify-between space-y-3 transition-all duration-300 group"
           >
             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center border border-[#E2E8F0] shadow-sm group-hover:border-[#4E5BA6]/30 transition-all duration-300">
               <div className="w-10 h-10 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
