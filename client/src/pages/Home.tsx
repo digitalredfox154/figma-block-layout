@@ -923,53 +923,53 @@ export default function Home() {
         }}
       >
         {/* Шапка квиза: Заголовок слева, бонусы справа */}
-        <div className="w-full flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 pb-8 border-b border-[#E2E8F0]/30">
+        <div className="w-full flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 pb-8 border-b border-[#E2E8F0]/20">
           {/* Левая часть: Заголовок */}
-          <div className="max-w-[620px] space-y-3">
-            <h2 className="text-[28px] sm:text-[36px] lg:text-[40px] font-extrabold text-[#1E2238] leading-[1.15] tracking-[-0.02em]">
-              Узнайте, как <span className="text-[#4f5b93]">IRT</span> может помочь именно с вашим <span className="text-[#4f5b93]">запросом</span>
+          <div className="max-w-[580px] space-y-3">
+            <h2 className="text-[24px] sm:text-[28px] lg:text-[32px] font-normal text-[#1E2238] leading-[1.3] tracking-[-0.01em] font-unbounded">
+              Узнайте, как IRT может помочь именно с <span className="text-[#4E5BA6] font-medium">вашим запросом</span>
             </h2>
           </div>
 
           {/* Правая часть: Бонусы */}
           <div className="flex flex-col space-y-3 w-full lg:w-auto">
-            <p className="text-[14px] sm:text-[15px] text-[#5A6082] font-bold">
-              Ответьте на 5 простых вопросов и получите:
+            <p className="text-[14px] sm:text-[15px] text-[#1E2238] font-normal leading-normal">
+              Ответьте на <span className="font-bold">5 простых вопросов</span> и получите:
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               {/* Бонус 1 */}
-              <div className="bg-white border border-[#E2E8F0]/40 rounded-[18px] px-4 py-3 flex flex-row items-center gap-3.5 sm:w-[230px] h-[76px] shadow-[0_4px_12px_rgba(78,91,166,0.02)]">
-                <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <img src="/manus-storage/bonus_icon_1_6464b9fb.png" alt="Скидка" className="w-8 h-8 object-contain" />
+              <div className="bg-white border border-[#E2E8F0]/20 rounded-[16px] px-5 py-3.5 flex flex-row items-center gap-3.5 sm:w-[230px] h-[78px] shadow-[0_4px_20px_rgba(78,91,166,0.03)]">
+                <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
+                  <img src="/manus-storage/bonus_icon_1_6464b9fb.png" alt="Скидка" className="w-10 h-10 object-contain" />
                 </div>
                 <div className="flex flex-col space-y-0.5">
-                  <span className="text-[13px] font-bold text-[#1E2238] leading-snug">
-                    <span className="font-extrabold text-[#4f5b93]">Скидку 50%</span>
+                  <span className="text-[13px] font-bold text-[#1E2238] leading-tight">
+                    Скидку 50%
                   </span>
-                  <span className="text-[11.5px] text-[#5A6082] font-medium leading-tight">на первую сессию</span>
+                  <span className="text-[11.5px] text-[#5A6082] font-normal leading-tight">на первую сессию</span>
                 </div>
               </div>
 
               {/* Бонус 2 */}
-              <div className="bg-white border border-[#E2E8F0]/40 rounded-[18px] px-4 py-3 flex flex-row items-center gap-3.5 sm:w-[230px] h-[76px] shadow-[0_4px_12px_rgba(78,91,166,0.02)]">
-                <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <img src="/manus-storage/bonus_icon_2_2cab107c.png" alt="Программа" className="w-8 h-8 object-contain" />
+              <div className="bg-white border border-[#E2E8F0]/20 rounded-[16px] px-5 py-3.5 flex flex-row items-center gap-3.5 sm:w-[230px] h-[78px] shadow-[0_4px_20px_rgba(78,91,166,0.03)]">
+                <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
+                  <img src="/manus-storage/bonus_icon_2_2cab107c.png" alt="Программа" className="w-10 h-10 object-contain" />
                 </div>
                 <div className="flex flex-col space-y-0.5">
-                  <span className="text-[13px] font-bold text-[#1E2238] leading-snug">
-                    <span className="font-extrabold text-[#4f5b93]">Персональную</span>
+                  <span className="text-[13px] font-bold text-[#1E2238] leading-tight">
+                    Персональную
                   </span>
-                  <span className="text-[11.5px] text-[#5A6082] font-medium leading-tight">программу терапевтической работы</span>
+                  <span className="text-[11.5px] text-[#5A6082] font-normal leading-tight">программу терапевтической работы</span>
                 </div>
               </div>
 
               {/* Бонус 3 */}
-              <div className="bg-white border border-[#E2E8F0]/40 rounded-[18px] px-4 py-3 flex flex-row items-center gap-3.5 sm:w-[260px] h-[76px] shadow-[0_4px_12px_rgba(78,91,166,0.02)]">
-                <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <img src="/manus-storage/bonus_icon_3_e1044371.png" alt="Терапевт" className="w-8 h-8 object-contain" />
+              <div className="bg-white border border-[#E2E8F0]/20 rounded-[16px] px-5 py-3.5 flex flex-row items-center gap-3.5 sm:w-[260px] h-[78px] shadow-[0_4px_20px_rgba(78,91,166,0.03)]">
+                <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
+                  <img src="/manus-storage/bonus_icon_3_e1044371.png" alt="Терапевт" className="w-10 h-10 object-contain" />
                 </div>
                 <div className="flex flex-col space-y-0.5">
-                  <span className="text-[11.5px] text-[#5A6082] font-medium leading-tight">
+                  <span className="text-[11.5px] text-[#5A6082] font-normal leading-tight">
                     Терапевта, подходящего под ваш запрос, с <span className="font-bold text-[#1E2238]">релевантными кейсами</span>
                   </span>
                 </div>
