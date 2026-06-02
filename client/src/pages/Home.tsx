@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { User, Heart, Compass, Search, HelpCircle , ArrowLeft, ArrowRight} from "lucide-react";
@@ -157,6 +157,70 @@ const storiesData: Record<string, Array<{ id: number; text: string; author: stri
 
 
 // Данные для Блока 6 (93% клиентов отмечают эти изменения)
+
+// --- Данные для Блока 8 (Всё для вашего комфорта и спокойствия) ---
+const block8Cards = [
+  {
+    id: 1,
+    title: "Эффективно решаем ваш запрос даже без подробностей ситуации",
+    desc: "Например, если вы не готовы их разглашать или у вас NDA",
+    img: "/manus-storage/b8_shield_only_37fd7610.png",
+    isDark: true
+  },
+  {
+    id: 2,
+    title: "Мы работаем до момента, когда ваше состояние будет комфортным, чтобы завершить сеанс",
+    desc: "Поэтому не заканчиваем сессии строго через 60 минут.",
+    img: "/manus-storage/b8_keyhole_only_f57b8c67.png",
+    isDark: false
+  },
+  {
+    id: 3,
+    title: "Возможность переноса сессии без лимита",
+    desc: "",
+    img: "/manus-storage/Group2087331124_450e4320.png",
+    isDark: true
+  },
+  {
+    id: 4,
+    title: "Полный возврат при отмене за 24 часа",
+    desc: "",
+    img: "/manus-storage/b8_piggy_only_49ff292e.png",
+    isDark: false
+  }
+];
+
+// --- Данные для Блока 9 (Отзывы клиентов) ---
+const block9Reviews = [
+  {
+    id: 1,
+    rating: 5,
+    text: "Пришел в IRT с проблемой прокрастинации и выгорания. Не мог начать новые проекты больше полугода. Уже после второй сессии почувствовал, как спало внутреннее напряжение, пропал страх ошибки. Сейчас активно работаю и чувствую себя отлично!",
+    tag: "Терапия",
+    author: "Анонимно"
+  },
+  {
+    id: 2,
+    rating: 5,
+    text: "Прошла диагностику, чтобы разобраться в причинах постоянной тревожности. Специалист очень бережно провел сессию, разложил все по полочкам и помог составить четкий план действий. Огромное спасибо за профессионализм!",
+    tag: "Диагностика",
+    author: "Анонимно"
+  },
+  {
+    id: 3,
+    rating: 5,
+    text: "Метод IRT действительно работает невероятно быстро. Раньше годами ходила на разговорную терапию, но проблемы с самооценкой возвращались. Здесь за 3 сессии мы полностью убрали триггерные реакции. Ощущение свободы потрясающее.",
+    tag: "Терапия",
+    author: "Анонимно"
+  },
+  {
+    id: 4,
+    rating: 5,
+    text: "Обратилась с запросом на постоянные конфликты в отношениях. Удалось найти и проработать глубинный паттерн поведения, который тянулся из детства. Отношения с партнером вышли на совершенно новый, доверительный уровень.",
+    tag: "Терапия",
+    author: "Анонимно"
+  }
+];
 
 // --- Данные для Блока 7 (Как проходит первая сессия) ---
 const block7Tags = [
@@ -323,6 +387,17 @@ export default function Home() {
   ];
 
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleNextSlide = () => {
     setCurrentSlideIndex((prev) => (prev + 1) % 3);
@@ -1621,6 +1696,183 @@ export default function Home() {
             </div>
           </div>
 
+        </div>
+      </motion.section>
+
+      {/* --- Блок 8: Всё для вашего комфорта и спокойствия --- */}
+      <motion.section 
+        id="block8-section"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="py-16 md:py-24 bg-white"
+      >
+        <div className="container">
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <h2 className="text-[32px] md:text-[44px] font-extrabold tracking-tight text-[#1E2238] leading-[1.1] mb-4">
+              Всё для вашего <br className="md:hidden" />
+              <span className="text-[#4E5BA6]">комфорта и спокойствия</span>
+            </h2>
+          </div>
+
+          {/* Сетка из 4-х карточек */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {block8Cards.map((card) => (
+              <div 
+                key={card.id}
+                className={`rounded-[32px] p-6 md:p-8 flex flex-col justify-between h-[360px] md:h-[400px] transition-all duration-500 hover:scale-[1.02] group relative overflow-hidden ${
+                  card.isDark 
+                    ? "bg-gradient-to-b from-[#4E5BA6] to-[#6A78C4] text-white shadow-[0_20px_48px_rgba(78,91,166,0.15)]" 
+                    : "bg-white border border-[#E2E8F0] text-[#1E2238] shadow-[0_16px_40px_rgba(78,91,166,0.02)] hover:border-[#CBD5E1]"
+                }`}
+              >
+                {/* Содержимое карточки */}
+                <div className="relative z-10">
+                  <h3 className={`text-[16px] md:text-[18px] font-extrabold leading-snug mb-3 ${
+                    card.isDark ? "text-white" : "text-[#1E2238]"
+                  }`}>
+                    {card.title}
+                  </h3>
+                  {card.desc && (
+                    <p className={`text-[13px] font-medium leading-relaxed ${
+                      card.isDark ? "text-white/80" : "text-[#5A6082]"
+                    }`}>
+                      {card.desc}
+                    </p>
+                  )}
+                </div>
+
+                {/* 3D-иллюстрация внизу карточки */}
+                <div className="relative h-44 w-full flex items-end justify-center z-10 overflow-hidden mt-auto">
+                  <img 
+                    src={card.img} 
+                    alt={card.title} 
+                    className={`object-contain max-h-[140px] md:max-h-[160px] transition-transform duration-500 group-hover:scale-110 ${
+                      card.id === 3 ? "scale-[1.2] group-hover:scale-[1.3] -bottom-4 relative" : ""
+                    }`}
+                  />
+                </div>
+
+                {/* Легкое свечение сзади иллюстрации для темных карточек */}
+                {card.isDark && (
+                  <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-40 h-40 bg-white/10 blur-2xl rounded-full pointer-events-none" />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* --- Блок 9: Отзывы клиентов --- */}
+      <motion.section 
+        id="block9-section"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="py-16 md:py-24 bg-[#F4F7FC]"
+      >
+        <div className="container">
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <h2 className="text-[32px] md:text-[44px] font-extrabold tracking-tight text-[#1E2238] leading-[1.1] mb-4">
+              Отзывы тех, кто <span className="text-[#4E5BA6]">уже работал</span> <br />
+              со специалистами IRT
+            </h2>
+          </div>
+
+          {/* Слайдер отзывов */}
+          <div className="relative max-w-5xl mx-auto px-4 md:px-12">
+            
+            {/* Ограничитель слайдов */}
+            <div className="overflow-hidden">
+              <div 
+                className="flex transition-transform duration-500 ease-out gap-6"
+                style={{ transform: `translateX(calc(-${currentReviewIndex * 100}% - ${currentReviewIndex * 24}px))` }}
+              >
+                {block9Reviews.map((review) => (
+                  <div 
+                    key={review.id}
+                    className="min-w-full md:min-w-[calc(50%-12px)] bg-white rounded-[32px] p-6 md:p-8 border border-[#E2E8F0] shadow-[0_16px_40px_rgba(78,91,166,0.02)] flex flex-col justify-between relative overflow-hidden group hover:border-[#CBD5E1] transition-all duration-300"
+                  >
+                    {/* Кавычка на фоне */}
+                    <div className="absolute right-6 bottom-6 text-[#E2E8F0] opacity-40 group-hover:text-[#4E5BA6]/10 transition-colors duration-500 pointer-events-none">
+                      <svg width="48" height="38" viewBox="0 0 48 38" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 22.3043C0 9.91304 8.34783 0 20.8696 0V7.43478C14.6087 7.43478 10.4348 11.5652 10.4348 17.3478H20.8696V38H0V22.3043ZM27.1304 22.3043C27.1304 9.91304 35.4783 0 48 0V7.43478C41.7391 7.43478 37.5652 11.5652 37.5652 17.3478H48V38H27.1304V22.3043Z" />
+                      </svg>
+                    </div>
+
+                    <div>
+                      {/* Звезды рейтинга */}
+                      <div className="flex gap-1 mb-4">
+                        {[...Array(review.rating)].map((_, i) => (
+                          <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.62L12 2L9.19 8.62L2 9.24L7.45 13.97L5.82 21L12 17.27Z" />
+                          </svg>
+                        ))}
+                      </div>
+
+                      {/* Текст отзыва */}
+                      <p className="text-[14px] md:text-[15px] text-[#5A6082] font-medium leading-relaxed mb-6 relative z-10">
+                        {review.text}
+                      </p>
+                    </div>
+
+                    {/* Автор и тег */}
+                    <div className="flex justify-between items-center relative z-10 mt-auto pt-4 border-t border-[#F1F5F9]">
+                      <span className="text-[14px] font-extrabold text-[#1E2238]">
+                        {review.author}
+                      </span>
+                      <span className="px-3 py-1 bg-[#F1F5F9] text-[#5A6082] text-[12px] font-extrabold rounded-full">
+                        {review.tag}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Стрелки навигации */}
+            <div className="flex justify-center items-center gap-4 mt-10">
+              <button 
+                onClick={() => setCurrentReviewIndex(prev => Math.max(0, prev - 1))}
+                disabled={currentReviewIndex === 0}
+                className={`w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300 ${
+                  currentReviewIndex === 0 
+                    ? "border-[#E2E8F0] text-[#CBD5E1] cursor-not-allowed" 
+                    : "border-[#4E5BA6] text-[#4E5BA6] hover:bg-[#4E5BA6] hover:text-white active:scale-95"
+                }`}
+              >
+                <ArrowLeft size={20} />
+              </button>
+
+              {/* Индикатор слайдов */}
+              <div className="flex gap-2">
+                {[...Array(block9Reviews.length - (isMobile ? 0 : 1))].map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrentReviewIndex(i)}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      currentReviewIndex === i ? "w-6 bg-[#4E5BA6]" : "w-2 bg-[#CBD5E1]"
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <button 
+                onClick={() => setCurrentReviewIndex(prev => Math.min(block9Reviews.length - (isMobile ? 1 : 2), prev + 1))}
+                disabled={currentReviewIndex >= block9Reviews.length - (isMobile ? 1 : 2)}
+                className={`w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300 ${
+                  currentReviewIndex >= block9Reviews.length - (isMobile ? 1 : 2)
+                    ? "border-[#E2E8F0] text-[#CBD5E1] cursor-not-allowed" 
+                    : "border-[#4E5BA6] text-[#4E5BA6] hover:bg-[#4E5BA6] hover:text-white active:scale-95"
+                }`}
+              >
+                <ArrowRight size={20} />
+              </button>
+            </div>
+
+          </div>
         </div>
       </motion.section>
 
