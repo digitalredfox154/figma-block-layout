@@ -770,74 +770,74 @@ export default function Home() {
         </div>
 
         {/* Карточки сравнения с разделителем VS */}
-        <div className="w-full max-w-[1100px] flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 relative">
+        <div className="w-full max-w-[1000px] flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:gap-12 relative">
           
           {/* Классическая разговорная терапия */}
           <motion.div 
             whileHover={{ y: -2 }}
-            className="w-full lg:w-[45%] bg-white p-8 sm:p-10 rounded-[32px] border border-[#E2E8F0]/80 shadow-[0_10px_30px_rgba(78,91,166,0.01)] flex flex-col space-y-6 min-h-[420px]"
+            className="w-full lg:w-[46%] bg-white p-8 sm:p-10 rounded-[28px] border border-[#E2E8F0] shadow-sm flex flex-col space-y-6 min-h-[420px]"
           >
             <h3 className="text-[20px] sm:text-[22px] font-extrabold text-[#1E2238] leading-tight">
               Классическая <br />
               разговорная терапия
             </h3>
-            <ul className="space-y-4 text-[13px] sm:text-[14px] text-[#5A6082] font-semibold leading-relaxed">
-              <li className="flex items-start gap-2.5">
-                <span className="text-[#A0AEC0] mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#A0AEC0]" />
+            <ul className="space-y-4 text-[13px] sm:text-[14px] text-[#5A6082] font-medium leading-relaxed">
+              <li className="flex items-start gap-3">
+                <span className="mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full border border-[#CBD5E1] bg-white" />
                 <span>Подробное и длительное обсуждение прошлого опыта</span>
               </li>
-              <li className="flex items-start gap-2.5">
-                <span className="text-[#A0AEC0] mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#A0AEC0]" />
+              <li className="flex items-start gap-3">
+                <span className="mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full border border-[#CBD5E1] bg-white" />
                 <span>Осознание причины деструктивной реакции психики на триггер</span>
               </li>
-              <li className="flex items-start gap-2.5">
-                <span className="text-[#A0AEC0] mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#A0AEC0]" />
+              <li className="flex items-start gap-3">
+                <span className="mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full border border-[#CBD5E1] bg-white" />
                 <span>Смирение с проблемой</span>
               </li>
-              <li className="flex items-start gap-2.5">
-                <span className="text-[#A0AEC0] mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#A0AEC0]" />
+              <li className="flex items-start gap-3">
+                <span className="mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full border border-[#CBD5E1] bg-white" />
                 <span>Обучение себя позитивному отношению к ней</span>
               </li>
-              <li className="flex items-start gap-2.5">
-                <span className="text-[#A0AEC0] mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#A0AEC0]" />
+              <li className="flex items-start gap-3">
+                <span className="mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full border border-[#CBD5E1] bg-white" />
                 <span>Приложение усилий для сдерживания нежелательной реакции</span>
               </li>
             </ul>
           </motion.div>
 
           {/* Разделитель VS */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden lg:flex w-16 h-16 rounded-full bg-[#F4F7FC] items-center justify-center border border-[#E2E8F0] z-10">
-            <span className="text-[24px] font-extrabold text-[#1E2238] tracking-tight">Vs</span>
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden lg:flex items-center justify-center z-10">
+            <span className="text-[44px] font-medium text-[#1E2238] tracking-tight font-sans italic opacity-80">Vs</span>
           </div>
           
           {/* Разделитель VS для мобильных */}
-          <div className="lg:hidden flex w-12 h-12 rounded-full bg-[#F4F7FC] items-center justify-center border border-[#E2E8F0] my-2">
-            <span className="text-[18px] font-extrabold text-[#1E2238]">Vs</span>
+          <div className="lg:hidden flex items-center justify-center my-2">
+            <span className="text-[32px] font-medium text-[#1E2238] italic opacity-80">Vs</span>
           </div>
 
           {/* IRT терапия */}
           <motion.div 
             whileHover={{ y: -2 }}
-            className="w-full lg:w-[45%] bg-[#4E5BA6] p-8 sm:p-10 rounded-[32px] shadow-[0_15px_40px_rgba(78,91,166,0.15)] flex flex-col space-y-6 min-h-[420px] text-white"
+            className="w-full lg:w-[46%] bg-[#6285B5] p-8 sm:p-10 rounded-[28px] shadow-sm flex flex-col space-y-6 min-h-[420px] text-white"
           >
-            <h3 className="text-[20px] sm:text-[22px] font-extrabold leading-tight">
+            <h3 className="text-[20px] sm:text-[22px] font-extrabold leading-tight text-white">
               IRT терапия
             </h3>
-            <ul className="space-y-4 text-[13px] sm:text-[14px] text-white/90 font-semibold leading-relaxed">
-              <li className="flex items-start gap-2.5">
-                <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-white" />
+            <ul className="space-y-4 text-[13px] sm:text-[14px] text-white/90 font-medium leading-relaxed">
+              <li className="flex items-start gap-3">
+                <span className="mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full border border-white/60 bg-white" />
                 <span>Минимум деталей прошлого опыта, <span className="font-extrabold text-white">работаем с конкретной автоматической реакцией</span> на раздражитель</span>
               </li>
-              <li className="flex items-start gap-2.5">
-                <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-white" />
+              <li className="flex items-start gap-3">
+                <span className="mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full border border-white/60 bg-white" />
                 <span>Создание и интеграция в бессознательное новой, желаемой вами реакции на раздражитель</span>
               </li>
-              <li className="flex items-start gap-2.5">
-                <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-white" />
+              <li className="flex items-start gap-3">
+                <span className="mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full border border-white/60 bg-white" />
                 <span>Старая автоматическая реакция без усилия воли <span className="font-extrabold text-white">заменяется на новую, желаемую реакцию</span></span>
               </li>
-              <li className="flex items-start gap-2.5">
-                <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-white" />
+              <li className="flex items-start gap-3">
+                <span className="mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full border border-white/60 bg-white" />
                 <span>Нет необходимости &quot;смиряться с проблемой&quot; т.к. старая реакция больше не воспроизводится</span>
               </li>
             </ul>
@@ -846,9 +846,10 @@ export default function Home() {
         </div>
 
         {/* Промежуточный вывод */}
-        <p className="text-center text-[13px] sm:text-[14px] text-[#5A6082] font-semibold max-w-[720px] leading-relaxed pt-4">
-          Обсуждение и анализ пережитого опыта <span className="text-[#1E2238] font-extrabold">дает понимание своих эмоциональных и поведенческих сценариев</span>, но не меняют их напрямую.
-        </p>
+        <div className="text-center text-[14px] sm:text-[15px] text-[#1E2238] font-medium max-w-[850px] leading-relaxed pt-4 space-y-1">
+          <p>Обсуждение и анализ пережитого опыта <span className="font-extrabold">дает понимание своих эмоциональных</span></p>
+          <p><span className="font-extrabold">и поведенческих сценариев, но не меняют их напрямую.</span></p>
+        </div>
 
         {/* Дополнительный сильный заголовок */}
         <div className="text-center max-w-[1000px] pt-8 border-t border-[#F0F4FA] w-full">
@@ -859,47 +860,47 @@ export default function Home() {
         </div>
 
         {/* Три блока с иллюстрациями */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-[1100px] pt-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 w-full max-w-[1000px] pt-4">
           
           {/* Блок 1: Песочные часы */}
-          <div className="flex flex-col items-center text-center space-y-4">
-            <div className="w-[140px] h-[140px] rounded-[32px] overflow-hidden bg-[#F4F7FC] border border-[#E2E8F0]/40 flex items-center justify-center shadow-sm">
+          <div className="flex flex-col items-center text-center space-y-6">
+            <div className="w-[120px] h-[120px] rounded-[28px] overflow-hidden bg-[#4176B4] flex items-center justify-center shadow-md">
               <img 
                 src="/manus-storage/hourglass_25277f7f.png" 
                 alt="Песочные часы" 
-                className="w-full h-full object-cover"
+                className="w-[85%] h-[85%] object-contain"
               />
             </div>
-            <p className="text-[13px] sm:text-[14px] text-[#5A6082] font-semibold leading-relaxed max-w-[280px]">
-              Вы видите <span className="text-[#1E2238] font-extrabold">изменения уже за 1-5 сессий</span>, а не годы терапии
+            <p className="text-[13px] sm:text-[14px] text-[#1E2238] font-medium leading-relaxed max-w-[280px]">
+              Вы видите <span className="font-extrabold">изменения уже за <br />1-5 сессий</span>, а не годы терапии
             </p>
           </div>
 
           {/* Блок 2: Пазлы */}
-          <div className="flex flex-col items-center text-center space-y-4">
-            <div className="w-[140px] h-[140px] rounded-[32px] overflow-hidden bg-[#F4F7FC] border border-[#E2E8F0]/40 flex items-center justify-center shadow-sm">
+          <div className="flex flex-col items-center text-center space-y-6">
+            <div className="w-[120px] h-[120px] rounded-[28px] overflow-hidden bg-[#4176B4] flex items-center justify-center shadow-md">
               <img 
                 src="/manus-storage/puzzles_b48d725c.png" 
                 alt="Пазлы" 
-                className="w-full h-full object-cover"
+                className="w-[85%] h-[85%] object-contain"
               />
             </div>
-            <p className="text-[13px] sm:text-[14px] text-[#5A6082] font-semibold leading-relaxed max-w-[280px]">
-              Не нужно учиться &quot;справляться с проблемой&quot;, <span className="text-[#1E2238] font-extrabold">нежелательные реакции меняются без волевых усилий</span>
+            <p className="text-[13px] sm:text-[14px] text-[#1E2238] font-medium leading-relaxed max-w-[280px]">
+              Не нужно учиться &quot;справляться <br />с проблемой&quot;, <span className="font-extrabold">нежелательные <br />реакции меняются без <br />волевых усилий</span>
             </p>
           </div>
 
           {/* Блок 3: Якорь в бокале */}
-          <div className="flex flex-col items-center text-center space-y-4">
-            <div className="w-[140px] h-[140px] rounded-[32px] overflow-hidden bg-[#F4F7FC] border border-[#E2E8F0]/40 flex items-center justify-center shadow-sm">
+          <div className="flex flex-col items-center text-center space-y-6">
+            <div className="w-[120px] h-[120px] rounded-[28px] overflow-hidden bg-[#4176B4] flex items-center justify-center shadow-md">
               <img 
                 src="/manus-storage/anchor_9ace7ed1.png" 
                 alt="Якорь в бокале" 
-                className="w-full h-full object-cover"
+                className="w-[85%] h-[85%] object-contain"
               />
             </div>
-            <p className="text-[13px] sm:text-[14px] text-[#5A6082] font-semibold leading-relaxed max-w-[280px]">
-              <span className="text-[#1E2238] font-extrabold">Устойчивые изменения</span> с минимальной вероятностью откатов
+            <p className="text-[13px] sm:text-[14px] text-[#1E2238] font-medium leading-relaxed max-w-[280px]">
+              <span className="font-extrabold">Устойчивые изменения</span> <br />с минимальной вероятностью <br />откатов
             </p>
           </div>
 
