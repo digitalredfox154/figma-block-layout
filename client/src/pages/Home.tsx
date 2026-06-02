@@ -34,11 +34,16 @@ export default function Home() {
         initial="hidden"
         animate="visible"
         variants={containerVariants}
-        className="relative w-full max-w-[1440px] min-h-[752px] bg-gradient-to-br from-[#F8FAFF] via-[#F3F6FC] to-[#EBF1FA] rounded-[40px] shadow-[0_20px_50px_rgba(78,91,166,0.05)] border border-white/60 overflow-hidden flex flex-col justify-between p-8 sm:p-12 lg:p-16"
+        className="relative w-full max-w-[1440px] min-h-[752px] rounded-[40px] shadow-[0_20px_50px_rgba(78,91,166,0.05)] border border-white/60 overflow-hidden flex flex-col justify-between p-8 sm:p-12 lg:p-16 bg-[#F4F7FC]"
+        style={{
+          backgroundImage: "url('/manus-storage/Group2085665064_a3c9c4bc.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center right",
+          backgroundRepeat: "no-repeat"
+        }}
       >
-        {/* Декоративный размытый круг на заднем плане */}
-        <div className="absolute top-[-200px] right-[-200px] w-[600px] h-[600px] bg-[#E2EAF8] rounded-full blur-[120px] pointer-events-none opacity-60" />
-        <div className="absolute bottom-[-100px] left-[-100px] w-[400px] h-[400px] bg-[#EEF3FC] rounded-full blur-[80px] pointer-events-none opacity-50" />
+        {/* Затемнение для улучшения читаемости текста на мобильных */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/40 to-transparent lg:from-white/60 lg:via-transparent lg:to-transparent pointer-events-none z-0" />
 
         {/* Верхняя контентная часть */}
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mt-4 lg:mt-8">
