@@ -2000,12 +2000,12 @@ export default function Home() {
                   {/* Иконка и текст шага в одной горизонтальной карточке */}
                   <div className="w-full max-w-[360px] h-[100px] bg-white rounded-[24px] shadow-[0_8px_24px_rgba(78,91,166,0.02)] border border-white/80 p-3 flex flex-row items-center gap-4 relative hover:scale-105 transition-all duration-300 hover:shadow-[0_16px_32px_rgba(78,91,166,0.05)]">
                     
-                    {/* Внутренний синий контейнер для иконки */}
-                    <div className="w-[76px] h-[76px] shrink-0 bg-[#E1EAF3] rounded-[16px] flex items-center justify-center overflow-hidden">
+                    {/* Внутренний контейнер для иконки (без фонового цвета, так как он встроен в картинку) */}
+                    <div className="w-[76px] h-[76px] shrink-0 rounded-[18px] flex items-center justify-center overflow-hidden">
                       <img 
                         src={step.img} 
                         alt="" 
-                        className="w-[52px] h-[52px] object-contain transition-transform duration-500 group-hover:scale-110"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
                     
