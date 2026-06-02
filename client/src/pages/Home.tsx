@@ -163,25 +163,25 @@ const block8Cards = [
   {
     id: 1,
     desc: "Например, если вы не готовы их разглашать или у вас NDA",
-    bgImg: "/manus-storage/b8_card1_full_c9b1bc77.png",
+    bgImg: "/manus-storage/Maskgroup(10)_e50cdeec.png",
     isDark: true
   },
   {
     id: 2,
     desc: "Поэтому не заканчиваем сессии строго через 60 минут.",
-    bgImg: "/manus-storage/b8_card2_full_67208aef.png",
+    bgImg: "/manus-storage/Group2087331273_452a962d.png",
     isDark: false
   },
   {
     id: 3,
     desc: "",
-    bgImg: "/manus-storage/b8_card3_full_c346d4a6.png",
+    bgImg: "/manus-storage/Group2087331124(1)_53a5d187.png",
     isDark: true
   },
   {
     id: 4,
     desc: "",
-    bgImg: "/manus-storage/b8_card4_full_db6bb665.png",
+    bgImg: "/manus-storage/Rectangle240649662_d7faf38f.png",
     isDark: false
   }
 ];
@@ -1800,8 +1800,7 @@ export default function Home() {
                     }`}>
                       {card.id === 1 && (
                         <>
-                          <span className="font-bold">Эффективно решаем</span>{" "}
-                          ваш запрос даже без{" "}
+                          Эффективно решаем ваш запрос даже без{" "}
                           <span className="font-bold">подробностей ситуации</span>
                         </>
                       )}
@@ -1814,15 +1813,12 @@ export default function Home() {
                       )}
                       {card.id === 3 && (
                         <>
-                          Возможность{" "}
-                          <span className="font-bold">переноса сессии без</span>{" "}
-                          лимита
+                          Возможность <span className="font-bold">переноса сессии</span> без лимита
                         </>
                       )}
                       {card.id === 4 && (
                         <>
-                          Полный возврат{" "}
-                          <span className="font-bold">при отмене за 24 часа</span>
+                          Полный возврат <span className="font-bold">при отмене за 24 часа</span>
                         </>
                       )}
                     </h3>
