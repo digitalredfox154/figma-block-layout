@@ -512,15 +512,15 @@ export default function Home() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
-        className="relative w-full max-w-[1920px] lg:h-[752px] min-h-[752px] rounded-[40px] bg-white overflow-hidden flex flex-col justify-between p-6 sm:p-10 lg:p-12 xl:p-14 border border-[#E2E8F0]/60 shadow-[0_15px_50px_rgba(78,91,166,0.04)]"
+        className="relative w-full max-w-[1920px] lg:h-[752px] min-h-[752px] rounded-[40px] overflow-hidden flex flex-col justify-between p-6 sm:p-10 lg:p-12 xl:p-14 border border-[#E2E8F0]/60 shadow-[0_15px_50px_rgba(78,91,166,0.04)]"
       >
-        {/* Фоновое изображение (3D кресла и мозг) */}
+        {/* Фоновое изображение на всю ширину экрана (3D кресла и мозг) */}
         <div 
           className="absolute inset-0 bg-no-repeat pointer-events-none hidden lg:block"
           style={{
-            backgroundImage: `url('/manus-storage/Group2085665064_b30349a2.png')`,
+            backgroundImage: `url('/manus-storage/hero_bg_new_5af05b8a.png')`,
             backgroundSize: "cover",
-            backgroundPosition: "100% center",
+            backgroundPosition: "center center",
             width: "100%",
             height: "100%",
           }}
@@ -528,9 +528,9 @@ export default function Home() {
 
         {/* Фоновое изображение для мобильных устройств (уменьшено и снизу) */}
         <div 
-          className="absolute bottom-0 right-0 left-0 h-[40%] bg-no-repeat bg-contain bg-bottom pointer-events-none lg:hidden opacity-80"
+          className="absolute bottom-0 right-0 left-0 h-[40%] bg-no-repeat bg-cover bg-center pointer-events-none lg:hidden opacity-80"
           style={{
-            backgroundImage: `url('/manus-storage/Group2085665064_b30349a2.png')`,
+            backgroundImage: `url('/manus-storage/hero_bg_new_5af05b8a.png')`,
           }}
         />
 
@@ -588,7 +588,7 @@ export default function Home() {
           <motion.div 
             whileHover={{ y: -3 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            className="bg-white/95 backdrop-blur-md p-5 sm:p-6 rounded-[28px] border border-[#E2E8F0]/80 shadow-[0_8px_30px_rgba(78,91,166,0.02)] flex flex-row items-start gap-4 transition-all duration-300"
+            className="bg-white/40 backdrop-blur-md p-5 sm:p-6 rounded-[28px] border border-white/30 shadow-[0_8px_30px_rgba(78,91,166,0.02)] flex flex-row items-start gap-4 transition-all duration-300"
           >
             {/* Контейнер иконки */}
             <div className="flex-shrink-0 w-11 h-11 rounded-full bg-[#F0F4FA] border border-[#E2E8F0]/60 flex items-center justify-center shadow-sm">
@@ -611,7 +611,7 @@ export default function Home() {
           <motion.div 
             whileHover={{ y: -3 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            className="bg-white/95 backdrop-blur-md p-5 sm:p-6 rounded-[28px] border border-[#E2E8F0]/80 shadow-[0_8px_30px_rgba(78,91,166,0.02)] flex flex-row items-start gap-4 transition-all duration-300"
+            className="bg-white/40 backdrop-blur-md p-5 sm:p-6 rounded-[28px] border border-white/30 shadow-[0_8px_30px_rgba(78,91,166,0.02)] flex flex-row items-start gap-4 transition-all duration-300"
           >
             {/* Контейнер иконки */}
             <div className="flex-shrink-0 w-11 h-11 rounded-full bg-[#F0F4FA] border border-[#E2E8F0]/60 flex items-center justify-center shadow-sm">
@@ -634,7 +634,7 @@ export default function Home() {
           <motion.div 
             whileHover={{ y: -3 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            className="bg-white/95 backdrop-blur-md p-5 sm:p-6 rounded-[28px] border border-[#E2E8F0]/80 shadow-[0_8px_30px_rgba(78,91,166,0.02)] flex flex-row items-start gap-4 transition-all duration-300"
+            className="bg-white/40 backdrop-blur-md p-5 sm:p-6 rounded-[28px] border border-white/30 shadow-[0_8px_30px_rgba(78,91,166,0.02)] flex flex-row items-start gap-4 transition-all duration-300"
           >
             {/* Контейнер иконки */}
             <div className="flex-shrink-0 w-11 h-11 rounded-full bg-[#F0F4FA] border border-[#E2E8F0]/60 flex items-center justify-center shadow-sm">
