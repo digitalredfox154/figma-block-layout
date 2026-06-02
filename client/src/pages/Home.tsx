@@ -78,14 +78,14 @@ export default function Home() {
             {/* Капсула статистики (белый фон, закругленная) */}
             <motion.div
               variants={itemVariants}
-              className="flex items-center gap-4 pt-4"
+              className="flex flex-col sm:flex-row sm:items-center gap-4 pt-2"
             >
-              <div className="bg-white px-5 py-3 rounded-full shadow-[0_4px_15px_rgba(78,91,166,0.03)] border border-white/80 flex items-center justify-center">
-                <span className="text-base sm:text-lg font-extrabold text-[#1E2238] tracking-tight">
+              <div className="bg-white px-6 py-3 rounded-full shadow-[0_8px_20px_rgba(78,91,166,0.04)] border border-white/80 flex items-center justify-center h-[52px]">
+                <span className="text-base sm:text-lg font-extrabold text-[#1E2238] tracking-tight whitespace-nowrap">
                   67% клиентам
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-[#5A6082] font-medium leading-tight max-w-[240px]">
+              <p className="text-sm text-[#5A6082] font-semibold leading-snug max-w-[280px]">
                 <span className="text-[#1E2238] font-bold">достаточно 3х сессий</span> <br />
                 для полного решения запроса
               </p>
@@ -104,8 +104,10 @@ export default function Home() {
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
             className="bg-white/85 backdrop-blur-md p-6 sm:p-8 rounded-[24px] border border-white/60 shadow-[0_8px_25px_rgba(78,91,166,0.02)] hover:shadow-[0_15px_35px_rgba(78,91,166,0.05)] flex flex-col justify-between space-y-4 transition-all duration-300 group"
           >
-            <div className="w-12 h-12 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
-              <Heart className="w-5 h-5" />
+            <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center border border-[#E2E8F0] shadow-sm group-hover:border-[#4E5BA6]/30 transition-all duration-300">
+              <div className="w-11 h-11 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
+                <Heart className="w-5 h-5" />
+              </div>
             </div>
             <div className="space-y-2">
               <h3 className="text-base sm:text-lg font-bold text-[#1E2238] tracking-tight">
@@ -123,8 +125,10 @@ export default function Home() {
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
             className="bg-white/85 backdrop-blur-md p-6 sm:p-8 rounded-[24px] border border-white/60 shadow-[0_8px_25px_rgba(78,91,166,0.02)] hover:shadow-[0_15px_35px_rgba(78,91,166,0.05)] flex flex-col justify-between space-y-4 transition-all duration-300 group"
           >
-            <div className="w-12 h-12 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
-              <Target className="w-5 h-5" />
+            <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center border border-[#E2E8F0] shadow-sm group-hover:border-[#4E5BA6]/30 transition-all duration-300">
+              <div className="w-11 h-11 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
+                <Target className="w-5 h-5" />
+              </div>
             </div>
             <div className="space-y-2">
               <h3 className="text-base sm:text-lg font-bold text-[#1E2238] tracking-tight">
@@ -142,8 +146,10 @@ export default function Home() {
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
             className="bg-white/85 backdrop-blur-md p-6 sm:p-8 rounded-[24px] border border-white/60 shadow-[0_8px_25px_rgba(78,91,166,0.02)] hover:shadow-[0_15px_35px_rgba(78,91,166,0.05)] flex flex-col justify-between space-y-4 transition-all duration-300 group"
           >
-            <div className="w-12 h-12 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
-              <Search className="w-5 h-5" />
+            <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center border border-[#E2E8F0] shadow-sm group-hover:border-[#4E5BA6]/30 transition-all duration-300">
+              <div className="w-11 h-11 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
+                <Search className="w-5 h-5" />
+              </div>
             </div>
             <div className="space-y-2">
               <h3 className="text-base sm:text-lg font-bold text-[#1E2238] tracking-tight">
