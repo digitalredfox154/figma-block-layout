@@ -33,7 +33,7 @@ export default function Home() {
         initial="hidden"
         animate="visible"
         variants={containerVariants}
-        className="relative w-full max-w-[1920px] lg:h-[752px] min-h-[752px] rounded-[40px] bg-[#F4F7FC] overflow-hidden flex flex-col justify-between p-8 sm:p-12 lg:p-16 xl:py-16 xl:px-20"
+        className="relative w-full max-w-[1920px] lg:h-[752px] min-h-[752px] rounded-[40px] bg-[#F4F7FC] overflow-hidden flex flex-col justify-between p-8 sm:p-10 lg:p-12 xl:py-12 xl:px-14"
       >
         {/* Фоновое изображение из макета, растянутое во весь экран с точным позиционированием */}
         <div 
@@ -49,12 +49,12 @@ export default function Home() {
         <div className="absolute inset-y-0 left-0 w-full lg:w-[45%] bg-gradient-to-r from-[#F4F7FC]/70 via-[#F4F7FC]/30 to-transparent pointer-events-none z-0" />
 
         {/* Верхняя контентная часть */}
-        <div className="relative z-10 flex flex-col items-start mt-2 lg:mt-4">
-          <div className="flex flex-col items-start space-y-6 max-w-[720px]">
+        <div className="relative z-10 flex flex-col items-start mt-1 lg:mt-2">
+          <div className="flex flex-col items-start space-y-4 lg:space-y-4 max-w-[720px]">
             {/* Крупный заголовок с точным размером, межстрочным интервалом и насыщенностью */}
             <motion.h1
               variants={itemVariants}
-              className="text-[36px] sm:text-[46px] lg:text-[52px] xl:text-[58px] font-extrabold text-[#1E2238] leading-[1.08] tracking-[-0.03em] font-sans"
+              className="text-[32px] sm:text-[42px] lg:text-[46px] xl:text-[52px] font-extrabold text-[#1E2238] leading-[1.1] tracking-[-0.03em] font-sans"
             >
               Найдите <br />
               и устраните <br />
@@ -67,7 +67,7 @@ export default function Home() {
             {/* Описание с подчеркиванием */}
             <motion.p
               variants={itemVariants}
-              className="text-[14px] sm:text-[15px] lg:text-[16px] text-[#5A6082] font-semibold max-w-[440px] leading-relaxed"
+              className="text-[13px] sm:text-[14px] lg:text-[15px] text-[#5A6082] font-semibold max-w-[440px] leading-relaxed"
             >
               уже за 1-3-5 сессий вы увидите изменения и начнете{" "}
               <span className="text-[#1E2238] font-bold underline decoration-[#4E5BA6]/30 underline-offset-4">
@@ -76,10 +76,10 @@ export default function Home() {
             </motion.p>
 
             {/* Кнопка действия (без стрелки, точный цвет и скругление) */}
-            <motion.div variants={itemVariants} className="pt-1">
+            <motion.div variants={itemVariants} className="pt-0.5">
               <Button
                 size="lg"
-                className="h-[54px] px-8 bg-[#4E5BA6] hover:bg-[#3F4B93] text-white text-[15px] font-bold rounded-2xl shadow-[0_8px_20px_rgba(78,91,166,0.15)] hover:shadow-[0_12px_25px_rgba(78,91,166,0.25)] transition-all duration-300 transform active:scale-[0.98]"
+                className="h-[48px] px-8 bg-[#4E5BA6] hover:bg-[#3F4B93] text-white text-[14px] font-bold rounded-2xl shadow-[0_8px_20px_rgba(78,91,166,0.15)] hover:shadow-[0_12px_25px_rgba(78,91,166,0.25)] transition-all duration-300 transform active:scale-[0.98]"
               >
                 Получить консультацию
               </Button>
@@ -88,14 +88,14 @@ export default function Home() {
             {/* Капсула статистики (белая закругленная капсула слева, текст справа) */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-row items-center gap-4 pt-2"
+              className="flex flex-row items-center gap-4 pt-1"
             >
-              <div className="bg-white px-6 py-3.5 rounded-full shadow-[0_8px_20px_rgba(78,91,166,0.04)] border border-white/90 flex items-center justify-center h-[48px]">
-                <span className="text-[15px] sm:text-[16px] font-extrabold text-[#1E2238] tracking-tight whitespace-nowrap">
+              <div className="bg-white px-5 py-3 rounded-full shadow-[0_8px_20px_rgba(78,91,166,0.04)] border border-white/90 flex items-center justify-center h-[42px]">
+                <span className="text-[14px] sm:text-[15px] font-extrabold text-[#1E2238] tracking-tight whitespace-nowrap">
                   67% клиентам
                 </span>
               </div>
-              <p className="text-[13px] sm:text-[14px] text-[#5A6082] font-semibold leading-snug max-w-[280px]">
+              <p className="text-[12px] sm:text-[13px] text-[#5A6082] font-semibold leading-snug max-w-[280px]">
                 <span className="text-[#1E2238] font-extrabold">достаточно 3х сессий</span> <br />
                 для полного решения запроса
               </p>
@@ -106,7 +106,7 @@ export default function Home() {
         {/* Нижняя часть: Три карточки преимуществ */}
         <motion.div
           variants={itemVariants}
-          className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 mt-8 lg:mt-4 w-full"
+          className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 mt-6 lg:mt-2 w-full"
         >
           {/* Карточка 1 */}
           <motion.div
