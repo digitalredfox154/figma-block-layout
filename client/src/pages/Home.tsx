@@ -1,293 +1,256 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Heart, Target, Search, User } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { User, Heart, Compass, Search, HelpCircle } from "lucide-react";
 
-// Типы данных для историй клиентов
-interface Story {
-  id: number;
-  text: string;
-  avatarColor: string;
-  author: string;
-  sessions: string;
-}
+// Категории для второго блока (Истории клиентов)
+const categories = [
+  "Нет четкого запроса",
+  "Деньги и реализация",
+  "Психосоматика",
+  "Отношения и секс",
+  "Эмоции и состояния",
+  "Острые запросы"
+];
 
-interface CategoryStories {
-  [key: string]: Story[];
-}
+// Данные для историй клиентов (второй блок)
+const storiesData: Record<string, Array<{ id: number; text: string; author: string; sessions: string; avatarColor: string }>> = {
+  "Нет четкого запроса": [
+    {
+      id: 1,
+      text: "Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание",
+      author: "Анонимно",
+      sessions: "3 сессии",
+      avatarColor: "bg-[#4E5BA6]"
+    },
+    {
+      id: 2,
+      text: "Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание",
+      author: "Анонимно",
+      sessions: "3 сессии",
+      avatarColor: "bg-[#7C8CE4]"
+    },
+    {
+      id: 3,
+      text: "Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание",
+      author: "Анонимно",
+      sessions: "3 сессии",
+      avatarColor: "bg-[#9FB2F0]"
+    }
+  ],
+  "Деньги и реализация": [
+    {
+      id: 4,
+      text: "Клиент пришел с запросом финансового потолка. После проработки старых деструктивных установок и страха проявления, доход вырос в 2 раза уже через месяц.",
+      author: "Анонимно",
+      sessions: "4 сессии",
+      avatarColor: "bg-[#7C8CE4]"
+    },
+    {
+      id: 5,
+      text: "Не могла решиться уйти из найма и открыть свое дело. Устранили синдром самозванца, нашли внутренние опоры и уверенность для запуска своего проекта.",
+      author: "Анонимно",
+      sessions: "3 сессии",
+      avatarColor: "bg-[#4E5BA6]"
+    },
+    {
+      id: 6,
+      text: "Постоянный саботаж и прокрастинация при выполнении важных задач. Обнаружили скрытые выгоды бездействия и переписали автоматическую реакцию.",
+      author: "Анонимно",
+      sessions: "5 сессий",
+      avatarColor: "bg-[#9FB2F0]"
+    }
+  ],
+  "Психосоматика": [
+    {
+      id: 7,
+      text: "Хронический зажим в шее и плечах, врачи не находили физических причин. После высвобождения подавленного гнева и обид боль полностью ушла.",
+      author: "Анонимно",
+      sessions: "3 сессии",
+      avatarColor: "bg-[#9FB2F0]"
+    },
+    {
+      id: 8,
+      text: "Постоянные панические атаки перед публичными выступлениями, сопровождающиеся удушьем. Нашли первопричину в детском опыте и устранили ее.",
+      author: "Анонимно",
+      sessions: "2 сессии",
+      avatarColor: "bg-[#4E5BA6]"
+    },
+    {
+      id: 9,
+      text: "Проблемы со сном и постоянная тревожность в теле. Сменили фокус внимания и автоматические телесные реакции на внешние раздражители.",
+      author: "Анонимно",
+      sessions: "4 сессии",
+      avatarColor: "bg-[#7C8CE4]"
+    }
+  ],
+  "Отношения и секс": [
+    {
+      id: 10,
+      text: "Повторяющийся сценарий в отношениях: созависимость и страх быть покинутой. Проработали детско-родительские травмы, выстроили личные границы.",
+      author: "Анонимно",
+      sessions: "5 сессий",
+      avatarColor: "bg-[#4E5BA6]"
+    },
+    {
+      id: 11,
+      text: "Постоянные конфликты с партнером из-за недопонимания. Научились выражать свои истинные потребности без обвинений и манипуляций.",
+      author: "Анонимно",
+      sessions: "3 сессии",
+      avatarColor: "bg-[#7C8CE4]"
+    },
+    {
+      id: 12,
+      text: "Потеря сексуального влечения к партнеру после нескольких лет брака. Нашли психологические блокировки и вернули эмоциональную близость.",
+      author: "Анонимно",
+      sessions: "4 сессии",
+      avatarColor: "bg-[#9FB2F0]"
+    }
+  ],
+  "Эмоции и состояния": [
+    {
+      id: 13,
+      text: "Постоянное чувство вины и фоновая тревога без видимой причины. Обнаружили интроекты и чужие ожидания, вернули фокус на себя.",
+      author: "Анонимно",
+      sessions: "3 сессии",
+      avatarColor: "bg-[#9FB2F0]"
+    },
+    {
+      id: 14,
+      text: "Апатия, отсутствие энергии и интереса к жизни. Нашли подавленные эмоции, которые забирали весь ресурс, и безопасно их прожили.",
+      author: "Анонимно",
+      sessions: "5 сессий",
+      avatarColor: "bg-[#4E5BA6]"
+    },
+    {
+      id: 15,
+      text: "Вспышки неконтролируемой агрессии на близких. Осознали триггерные механизмы и интегрировали новую спокойную реакцию на раздражители.",
+      author: "Анонимно",
+      sessions: "3 сессии",
+      avatarColor: "bg-[#7C8CE4]"
+    }
+  ],
+  "Острые запросы": [
+    {
+      id: 16,
+      text: "Переживание тяжелого развода и потеря смысла жизни. Помогли бережно прожить горевание, восстановить внутренние опоры и увидеть будущее.",
+      author: "Анонимно",
+      sessions: "4 сессии",
+      avatarColor: "bg-[#7C8CE4]"
+    },
+    {
+      id: 17,
+      text: "Сильный стресс после потери работы и неопределенности. Устранили панику, вернули ясность мышления и уверенность в своих силах.",
+      author: "Анонимно",
+      sessions: "3 сессии",
+      avatarColor: "bg-[#4E5BA6]"
+    },
+    {
+      id: 18,
+      text: "Экзистенциальный кризис среднего возраста. Переоценили ценности, нашли новые смыслы и источники вдохновения для следующего этапа жизни.",
+      author: "Анонимно",
+      sessions: "5 сессий",
+      avatarColor: "bg-[#9FB2F0]"
+    }
+  ]
+};
 
 export default function Home() {
-  // Активный таб во втором блоке
-  const [activeTab, setActiveTab] = useState("Нет четкого запроса");
-
-  // Список категорий (табов)
-  const categories = [
-    "Нет четкого запроса",
-    "Деньги и реализация",
-    "Психосоматика",
-    "Отношения и секс",
-    "Эмоции и состояния",
-    "Острые запросы",
-  ];
-
-  // Рыбный текст историй клиентов для демонстрации (в точности повторяет визуальный паттерн "Описание Описание...")
-  const placeholderText = "Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание";
-
-  // Данные историй по категориям
-  const storiesData: CategoryStories = {
-    "Нет четкого запроса": [
-      {
-        id: 1,
-        text: "Пришел с ощущением, что 'всё нормально, но ничего не радует'. В процессе терапии ИРТ удалось раскопать глубокое подавление собственных желаний с детства. Буквально за 3 сессии вернулся вкус к жизни, появилось понимание, куда двигаться дальше.",
-        avatarColor: "bg-[#7A88D6]",
-        author: "Анонимно",
-        sessions: "3 сессии",
-      },
-      {
-        id: 2,
-        text: "Не мог сформулировать проблему, просто было постоянное фоновое напряжение и тревога. Методы КПТ и гипноза в рамках ИРТ помогли локализовать телесный зажим. Напряжение ушло, дышать стало легче, сон полностью восстановился.",
-        avatarColor: "bg-[#5C6BC0]",
-        author: "Анонимно",
-        sessions: "2 сессии",
-      },
-      {
-        id: 3,
-        text: "Думал, что мне уже ничего не поможет, так как не понимал, в чем конкретно причина упадка сил. Специалист ИРТ бережно вывел на ключевые триггеры. Невероятный метод, изменения начались уже после первой встречи.",
-        avatarColor: "bg-[#8E99E6]",
-        author: "Анонимно",
-        sessions: "4 сессии",
-      },
-    ],
-    "Деньги и реализация": [
-      {
-        id: 4,
-        text: "Уперся в финансовый потолок и не мог вырасти в доходе больше года. Через работу со страхами и глубинными убеждениями в ИРТ осознал синдром самозванца. Сменил позиционирование, поднял чек, доход вырос в 1.8 раза за месяц.",
-        avatarColor: "bg-[#4E5BA6]",
-        author: "Анонимно",
-        sessions: "3 сессии",
-      },
-      {
-        id: 5,
-        text: "Постоянно откладывал запуск своего проекта, прокрастинировал неделями. ИРТ помог выявить страх публичной критики. Проработали за 2 сессии, проект запущен, первые клиенты уже получили результаты. Пропал страх проявляться.",
-        avatarColor: "bg-[#7E8CE0]",
-        author: "Анонимно",
-        sessions: "2 сессии",
-      },
-      {
-        id: 6,
-        text: "Работа приносила только выгорание, но уйти в новое направление было панически страшно. Разобрали самый худший сценарий на сессиях. Появилась уверенность, уволился без тревоги, сейчас успешно прохожу переобучение.",
-        avatarColor: "bg-[#6C7BC8]",
-        author: "Анонимно",
-        sessions: "5 сессий",
-      },
-    ],
-    "Психосоматика": [
-      {
-        id: 7,
-        text: "Полгода мучился от психогенного кашля, врачи разводили руками. На второй сессии ИРТ вышли на подавленную обиду и невысказанные слова близкому человеку. Кашель полностью прошел на следующий день после сессии. Чудо.",
-        avatarColor: "bg-[#5C6BC0]",
-        author: "Анонимно",
-        sessions: "3 сессии",
-      },
-      {
-        id: 8,
-        text: "Постоянные головные боли напряжения в конце рабочего дня. Таблетки давали временный эффект. В терапии связали боли с гиперответственностью и неумением расслабляться. Научился распределять нагрузку, боли отпустили.",
-        avatarColor: "bg-[#7A88D6]",
-        author: "Анонимно",
-        sessions: "4 сессии",
-      },
-      {
-        id: 9,
-        text: "Синдром раздраженного кишечника обострялся перед любым важным событием. Проработали глубинный страх ошибки методами ДПДГ. СРК больше не беспокоит, спокойно выступаю на конференциях и провожу переговоры.",
-        avatarColor: "bg-[#8E99E6]",
-        author: "Анонимно",
-        sessions: "3 сессии",
-      },
-    ],
-    "Отношения и секс": [
-      {
-        id: 10,
-        text: "Постоянно наступала на одни и те же грабли в отношениях, выбирая холодных и избегающих партнеров. ИРТ помог переписать детский сценарий и проработать дефицит внимания. Сейчас в здоровых, теплых и поддерживающих отношениях.",
-        avatarColor: "bg-[#8E99E6]",
-        author: "Анонимно",
-        sessions: "5 сессий",
-      },
-      {
-        id: 11,
-        text: "В браке пропала былая страсть, начались постоянные упреки и холодность. Прошли индивидуальную терапию ИРТ параллельно с партнером. Научились открыто говорить о желаниях без стыда. Сексуальная жизнь заиграла новыми красками.",
-        avatarColor: "bg-[#4E5BA6]",
-        author: "Анонимно",
-        sessions: "4 сессии",
-      },
-      {
-        id: 12,
-        text: "Страх близости мешал строить долгосрочные отношения, сбегал при первых признаках серьезности. Проработали травму отвержения из прошлых отношений. Появился внутренний ресурс доверять людям и открываться без паники.",
-        avatarColor: "bg-[#7E8CE0]",
-        author: "Анонимно",
-        sessions: "3 сессии",
-      },
-    ],
-    "Эмоции и состояния": [
-      {
-        id: 13,
-        text: "Жил в состоянии постоянной апатии и эмоционального онемения, ничего не чувствовал. Терапия ИРТ помогла разблокировать подавленный гнев и выплакать старые потери. Вернулась радость, удивление, интерес к жизни и людям.",
-        avatarColor: "bg-[#6C7BC8]",
-        author: "Анонимно",
-        sessions: "3 сессии",
-      },
-      {
-        id: 14,
-        text: "Накрывали внезапные вспышки ярости из-за мелочей, страдали близкие и коллеги. Выявили истинную причину раздражения — нарушение личных границ. Научился экологично говорить 'нет' и отстаивать себя, вспышки прекратились.",
-        avatarColor: "bg-[#5C6BC0]",
-        author: "Анонимно",
-        sessions: "3 сессии",
-      },
-      {
-        id: 15,
-        text: "Постоянное чувство вины перед всеми: детьми, родителями, руководством. Казалось, что я везде недорабатываю. В ИРТ проработали интроекты должествования. Появилась здоровая самооценка и внутреннее спокойствие.",
-        avatarColor: "bg-[#7A88D6]",
-        author: "Анонимно",
-        sessions: "2 сессии",
-      },
-    ],
-    "Острые запросы": [
-      {
-        id: 16,
-        text: "Переживала тяжелое расставание после 7 лет отношений, не могла спать, постоянно плакала. Метод ДПДГ (EMDR) в рамках ИРТ снизил эмоциональный накал травмы за одну сессию. Спустя 3 сессии смогла отпустить человека с благодарностью.",
-        avatarColor: "bg-[#7E8CE0]",
-        author: "Анонимно",
-        sessions: "3 сессии",
-      },
-      {
-        id: 17,
-        text: "Панические атаки начались после аварии, боялся садиться за руль и даже заходить в метро. За 2 сессии ИРТ полностью убрали вегетативный симптом. Спокойно езжу на машине, паника больше ни разу не возвращалась.",
-        avatarColor: "bg-[#8E99E6]",
-        author: "Анонимно",
-        sessions: "2 сессии",
-      },
-      {
-        id: 18,
-        text: "Острое горе после потери близкого человека затянулось на год, жизнь остановилась. Бережная интегральная терапия помогла пережить стадии утраты и найти новые смыслы жить дальше. Огромная благодарность терапевту.",
-        avatarColor: "bg-[#4E5BA6]",
-        author: "Анонимно",
-        sessions: "5 сессий",
-      },
-    ],
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.05,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 12 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.45,
-        ease: [0.25, 1, 0.5, 1] as [number, number, number, number],
-      },
-    },
-  };
+  const [activeTab, setActiveTab] = useState<string>("Нет четкого запроса");
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-start bg-[#F4F7FC] p-4 sm:p-6 md:p-8 space-y-12 overflow-x-hidden">
+    <div className="min-h-screen bg-[#F4F7FC] flex flex-col items-center py-8 px-4 sm:py-12 sm:px-6 lg:py-16 lg:px-8 space-y-16 overflow-x-hidden font-sans">
       
-      {/* ==================== БЛОК 1: Главный баннер (1920x752) ==================== */}
-      <motion.section
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-        className="relative w-full max-w-[1920px] lg:h-[752px] min-h-[752px] rounded-[40px] bg-white overflow-hidden flex flex-col justify-between p-8 sm:p-10 lg:p-12 xl:py-12 xl:px-14 shadow-[0_20px_50px_rgba(78,91,166,0.03)]"
+      {/* ==================== БЛОК 1: Главный баннер ==================== */}
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
+        className="relative w-full max-w-[1920px] lg:h-[752px] min-h-[752px] rounded-[40px] bg-white overflow-hidden flex flex-col justify-between p-6 sm:p-10 lg:p-12 xl:p-14 border border-[#E2E8F0]/60 shadow-[0_15px_50px_rgba(78,91,166,0.04)]"
       >
-        {/* Фоновое изображение из макета */}
+        {/* Фоновое изображение (3D кресла и мозг) */}
         <div 
-          className="absolute inset-0 w-full h-full bg-no-repeat pointer-events-none z-0"
+          className="absolute inset-0 bg-no-repeat pointer-events-none hidden lg:block"
           style={{
-            backgroundImage: "url('/manus-storage/Group2085665064_a3c9c4bc.png')",
+            backgroundImage: `url('/manus-storage/Group2085665064_b30349a2.png')`,
             backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundPosition: "100% center",
+            width: "100%",
+            height: "100%",
           }}
         />
 
-        {/* Мягкий градиентный оверлей слева */}
-        <div className="absolute inset-y-0 left-0 w-full lg:w-[45%] bg-gradient-to-r from-white/80 via-white/40 to-transparent pointer-events-none z-0" />
+        {/* Фоновое изображение для мобильных устройств (уменьшено и снизу) */}
+        <div 
+          className="absolute bottom-0 right-0 left-0 h-[40%] bg-no-repeat bg-contain bg-bottom pointer-events-none lg:hidden opacity-80"
+          style={{
+            backgroundImage: `url('/manus-storage/Group2085665064_b30349a2.png')`,
+          }}
+        />
 
-        {/* Верхняя контентная часть */}
-        <div className="relative z-10 flex flex-col items-start mt-1 lg:mt-2">
-          <div className="flex flex-col items-start space-y-4 lg:space-y-4 max-w-[720px]">
-            <motion.h1
-              variants={itemVariants}
-              className="text-[30px] sm:text-[38px] lg:text-[42px] xl:text-[46px] font-extrabold text-[#1E2238] leading-[1.1] tracking-[-0.03em] font-sans"
-            >
-              Найдите <br />
-              и устраните <br />
-              <span className="text-[#4E5BA6] relative inline-block">
-                первопричину
-              </span> <br />
-              проблем
-            </motion.h1>
+        {/* Верхняя текстовая и интерактивная часть */}
+        <div className="relative z-10 max-w-full lg:max-w-[55%] xl:max-w-[48%] flex flex-col space-y-5 sm:space-y-6 mt-0">
+          
+          {/* Главный заголовок */}
+          <h1 className="text-[36px] sm:text-[48px] lg:text-[40px] xl:text-[46px] font-extrabold text-[#1E2238] leading-[1.08] tracking-[-0.03em]">
+            Найдите <br />
+            и устраните <br />
+            <span className="text-[#4E5BA6] relative">
+              первопричину
+            </span> <br />
+            проблем
+          </h1>
 
-            <motion.p
-              variants={itemVariants}
-              className="text-[12px] sm:text-[13px] lg:text-[14px] text-[#5A6082] font-semibold max-w-[420px] leading-relaxed"
+          {/* Подзаголовок */}
+          <p className="text-[14px] sm:text-[15px] text-[#5A6082] font-semibold leading-relaxed max-w-[420px]">
+            уже за 1–3–5 сессий вы увидите изменения и начнете <span className="text-[#1E2238] font-extrabold underline decoration-2 decoration-[#4E5BA6]/30 underline-offset-4">действовать по-новому</span>
+          </p>
+
+          {/* Кнопка призыва к действию */}
+          <div className="pt-2">
+            <Button 
+              className="h-[54px] px-10 bg-[#4E5BA6] hover:bg-[#3F4B8C] text-white text-[15px] font-extrabold rounded-2xl shadow-[0_10px_25px_rgba(78,91,166,0.25)] hover:shadow-[0_15px_30px_rgba(78,91,166,0.35)] active:scale-[0.98] transition-all duration-300"
             >
-              уже за 1-3-5 сессий вы увидите изменения и начнете{" "}
-              <span className="text-[#1E2238] font-bold underline decoration-[#4E5BA6]/30 underline-offset-4">
-                действовать по-новому
+              Получить консультацию
+            </Button>
+          </div>
+
+          {/* Плашка со статистикой */}
+          <div className="pt-4 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+            {/* Белая капсула */}
+            <div className="bg-white px-5 py-2.5 rounded-full border border-[#E2E8F0]/80 shadow-[0_4px_15px_rgba(78,91,166,0.03)] flex items-center justify-center self-start sm:self-auto h-[44px]">
+              <span className="text-[14px] font-extrabold text-[#1E2238] whitespace-nowrap">
+                67% клиентам
               </span>
-            </motion.p>
-
-            <motion.div variants={itemVariants} className="pt-0.5">
-              <Button
-                size="lg"
-                className="h-[48px] px-8 bg-[#4E5BA6] hover:bg-[#3F4B93] text-white text-[14px] font-bold rounded-2xl shadow-[0_8px_20px_rgba(78,91,166,0.15)] hover:shadow-[0_12px_25px_rgba(78,91,166,0.25)] transition-all duration-300 transform active:scale-[0.98]"
-              >
-                Получить консультацию
-              </Button>
-            </motion.div>
-
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-row items-center gap-4 pt-1"
-            >
-              <div className="bg-white px-5 py-3 rounded-full shadow-[0_8px_20px_rgba(78,91,166,0.04)] border border-[#E2E8F0] flex items-center justify-center h-[42px]">
-                <span className="text-[14px] sm:text-[15px] font-extrabold text-[#1E2238] tracking-tight whitespace-nowrap">
-                  67% клиентам
-                </span>
-              </div>
-              <p className="text-[12px] sm:text-[13px] text-[#5A6082] font-semibold leading-snug max-w-[280px]">
-                <span className="text-[#1E2238] font-extrabold">достаточно 3х сессий</span> <br />
-                для полного решения запроса
-              </p>
-            </motion.div>
+            </div>
+            {/* Поясняющий текст */}
+            <p className="text-[13px] sm:text-[14px] text-[#5A6082] font-extrabold leading-tight">
+              достаточно 3х сессий <br className="hidden sm:inline" />
+              для полного решения запроса
+            </p>
           </div>
         </div>
 
-        {/* Нижняя часть: Три карточки преимуществ */}
-        <motion.div
-          variants={itemVariants}
-          className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 mt-6 lg:mt-2 w-full"
+        {/* Нижняя часть: Карточки преимуществ */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-5 mt-10 lg:mt-0"
         >
           {/* Карточка 1 */}
-          <motion.div
-            whileHover={{ y: -4 }}
+          <motion.div 
+            whileHover={{ y: -3 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            className="bg-white/85 backdrop-blur-md p-4 sm:p-5 rounded-[20px] border border-white/60 shadow-[0_10px_30px_rgba(78,91,166,0.02)] hover:shadow-[0_15px_35px_rgba(78,91,166,0.05)] flex flex-col justify-between space-y-2.5 transition-all duration-300 group"
+            className="bg-white/95 backdrop-blur-md p-5 sm:p-6 rounded-[28px] border border-[#E2E8F0]/80 shadow-[0_8px_30px_rgba(78,91,166,0.02)] flex flex-row items-start gap-4 transition-all duration-300"
           >
-            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-[#E2E8F0] shadow-sm group-hover:border-[#4E5BA6]/30 transition-all duration-300">
-              <div className="w-8 h-8 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
-                <Heart className="w-4 h-4" />
+            {/* Контейнер иконки */}
+            <div className="flex-shrink-0 w-11 h-11 rounded-full bg-[#F0F4FA] border border-[#E2E8F0]/60 flex items-center justify-center shadow-sm">
+              <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center border border-[#E2E8F0]/30">
+                <Heart className="w-4.5 h-4.5 text-[#4E5BA6]" />
               </div>
             </div>
+            {/* Текст */}
             <div className="space-y-1">
               <h3 className="text-[15px] sm:text-[16px] font-extrabold text-[#1E2238] tracking-tight">
                 Четкий запрос не обязателен
@@ -299,16 +262,18 @@ export default function Home() {
           </motion.div>
 
           {/* Карточка 2 */}
-          <motion.div
-            whileHover={{ y: -4 }}
+          <motion.div 
+            whileHover={{ y: -3 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            className="bg-white/85 backdrop-blur-md p-4 sm:p-5 rounded-[20px] border border-white/60 shadow-[0_10px_30px_rgba(78,91,166,0.02)] hover:shadow-[0_15px_35px_rgba(78,91,166,0.05)] flex flex-col justify-between space-y-2.5 transition-all duration-300 group"
+            className="bg-white/95 backdrop-blur-md p-5 sm:p-6 rounded-[28px] border border-[#E2E8F0]/80 shadow-[0_8px_30px_rgba(78,91,166,0.02)] flex flex-row items-start gap-4 transition-all duration-300"
           >
-            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-[#E2E8F0] shadow-sm group-hover:border-[#4E5BA6]/30 transition-all duration-300">
-              <div className="w-8 h-8 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
-                <Target className="w-4 h-4" />
+            {/* Контейнер иконки */}
+            <div className="flex-shrink-0 w-11 h-11 rounded-full bg-[#F0F4FA] border border-[#E2E8F0]/60 flex items-center justify-center shadow-sm">
+              <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center border border-[#E2E8F0]/30">
+                <Compass className="w-4.5 h-4.5 text-[#4E5BA6]" />
               </div>
             </div>
+            {/* Текст */}
             <div className="space-y-1">
               <h3 className="text-[15px] sm:text-[16px] font-extrabold text-[#1E2238] tracking-tight">
                 ИРТ подходит как для первого опыта терапии
@@ -320,22 +285,24 @@ export default function Home() {
           </motion.div>
 
           {/* Карточка 3 */}
-          <motion.div
-            whileHover={{ y: -4 }}
+          <motion.div 
+            whileHover={{ y: -3 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            className="bg-white/85 backdrop-blur-md p-4 sm:p-5 rounded-[20px] border border-white/60 shadow-[0_10px_30px_rgba(78,91,166,0.02)] hover:shadow-[0_15px_35px_rgba(78,91,166,0.05)] flex flex-col justify-between space-y-2.5 transition-all duration-300 group"
+            className="bg-white/95 backdrop-blur-md p-5 sm:p-6 rounded-[28px] border border-[#E2E8F0]/80 shadow-[0_8px_30px_rgba(78,91,166,0.02)] flex flex-row items-start gap-4 transition-all duration-300"
           >
-            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-[#E2E8F0] shadow-sm group-hover:border-[#4E5BA6]/30 transition-all duration-300">
-              <div className="w-8 h-8 bg-[#F0F4FA] rounded-full flex items-center justify-center text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white transition-all duration-300">
-                <Search className="w-4 h-4" />
+            {/* Контейнер иконки */}
+            <div className="flex-shrink-0 w-11 h-11 rounded-full bg-[#F0F4FA] border border-[#E2E8F0]/60 flex items-center justify-center shadow-sm">
+              <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center border border-[#E2E8F0]/30">
+                <Search className="w-4.5 h-4.5 text-[#4E5BA6]" />
               </div>
             </div>
+            {/* Текст */}
             <div className="space-y-1">
               <h3 className="text-[15px] sm:text-[16px] font-extrabold text-[#1E2238] tracking-tight">
                 Найдите и устраните первопричину проблем
               </h3>
               <p className="text-[12px] sm:text-[13px] text-[#5A6082] font-medium leading-relaxed">
-                ИРТ комбинирует научные методы психотерапии: КПТ, ДПДГ (EMDR), гипноз и другие.
+                IRT комбинирует научные методы психотерапии: КПТ, ДПДГ (EMDR), гипноз и другие.
               </p>
             </div>
           </motion.div>
@@ -428,7 +395,6 @@ export default function Home() {
 
         {/* Кнопка «Смотреть все» */}
         <motion.div 
-          variants={itemVariants}
           className="pt-4 w-full flex justify-center"
         >
           <Button
@@ -438,6 +404,160 @@ export default function Home() {
             Смотреть все
           </Button>
         </motion.div>
+      </motion.section>
+
+      {/* ==================== БЛОК 3: Сравнение классической терапии и IRT ==================== */}
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+        className="w-full max-w-[1920px] rounded-[40px] bg-white border border-[#E2E8F0]/60 shadow-[0_15px_50px_rgba(78,91,166,0.02)] flex flex-col items-center p-6 sm:p-12 lg:p-16 xl:py-16 xl:px-20 space-y-12"
+      >
+        {/* Заголовок блока сравнения */}
+        <div className="text-center max-w-[1000px] space-y-3">
+          <h2 className="text-[32px] sm:text-[40px] lg:text-[44px] font-extrabold text-[#1E2238] leading-[1.1] tracking-[-0.02em]">
+            IRT — для тех, кто устал <br className="hidden sm:inline" />
+            говорить о проблеме и хочет <br className="hidden sm:inline" />
+            <span className="text-[#4E5BA6]">ВИДИМОГО результата</span>
+          </h2>
+        </div>
+
+        {/* Карточки сравнения с разделителем VS */}
+        <div className="w-full max-w-[1100px] flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 relative">
+          
+          {/* Классическая разговорная терапия */}
+          <motion.div 
+            whileHover={{ y: -2 }}
+            className="w-full lg:w-[45%] bg-white p-8 sm:p-10 rounded-[32px] border border-[#E2E8F0]/80 shadow-[0_10px_30px_rgba(78,91,166,0.01)] flex flex-col space-y-6 min-h-[420px]"
+          >
+            <h3 className="text-[20px] sm:text-[22px] font-extrabold text-[#1E2238] leading-tight">
+              Классическая <br />
+              разговорная терапия
+            </h3>
+            <ul className="space-y-4 text-[13px] sm:text-[14px] text-[#5A6082] font-semibold leading-relaxed">
+              <li className="flex items-start gap-2.5">
+                <span className="text-[#A0AEC0] mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#A0AEC0]" />
+                <span>Подробное и длительное обсуждение прошлого опыта</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="text-[#A0AEC0] mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#A0AEC0]" />
+                <span>Осознание причины деструктивной реакции психики на триггер</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="text-[#A0AEC0] mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#A0AEC0]" />
+                <span>Смирение с проблемой</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="text-[#A0AEC0] mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#A0AEC0]" />
+                <span>Обучение себя позитивному отношению к ней</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="text-[#A0AEC0] mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#A0AEC0]" />
+                <span>Приложение усилий для сдерживания нежелательной реакции</span>
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* Разделитель VS */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden lg:flex w-16 h-16 rounded-full bg-[#F4F7FC] items-center justify-center border border-[#E2E8F0] z-10">
+            <span className="text-[24px] font-extrabold text-[#1E2238] tracking-tight">Vs</span>
+          </div>
+          
+          {/* Разделитель VS для мобильных */}
+          <div className="lg:hidden flex w-12 h-12 rounded-full bg-[#F4F7FC] items-center justify-center border border-[#E2E8F0] my-2">
+            <span className="text-[18px] font-extrabold text-[#1E2238]">Vs</span>
+          </div>
+
+          {/* IRT терапия */}
+          <motion.div 
+            whileHover={{ y: -2 }}
+            className="w-full lg:w-[45%] bg-[#4E5BA6] p-8 sm:p-10 rounded-[32px] shadow-[0_15px_40px_rgba(78,91,166,0.15)] flex flex-col space-y-6 min-h-[420px] text-white"
+          >
+            <h3 className="text-[20px] sm:text-[22px] font-extrabold leading-tight">
+              IRT терапия
+            </h3>
+            <ul className="space-y-4 text-[13px] sm:text-[14px] text-white/90 font-semibold leading-relaxed">
+              <li className="flex items-start gap-2.5">
+                <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-white" />
+                <span>Минимум деталей прошлого опыта, <span className="font-extrabold text-white">работаем с конкретной автоматической реакцией</span> на раздражитель</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-white" />
+                <span>Создание и интеграция в бессознательное новой, желаемой вами реакции на раздражитель</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-white" />
+                <span>Старая автоматическая реакция без усилия воли <span className="font-extrabold text-white">заменяется на новую, желаемую реакцию</span></span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-white" />
+                <span>Нет необходимости &quot;смиряться с проблемой&quot; т.к. старая реакция больше не воспроизводится</span>
+              </li>
+            </ul>
+          </motion.div>
+
+        </div>
+
+        {/* Промежуточный вывод */}
+        <p className="text-center text-[13px] sm:text-[14px] text-[#5A6082] font-semibold max-w-[720px] leading-relaxed pt-4">
+          Обсуждение и анализ пережитого опыта <span className="text-[#1E2238] font-extrabold">дает понимание своих эмоциональных и поведенческих сценариев</span>, но не меняют их напрямую.
+        </p>
+
+        {/* Дополнительный сильный заголовок */}
+        <div className="text-center max-w-[1000px] pt-8 border-t border-[#F0F4FA] w-full">
+          <h2 className="text-[24px] sm:text-[32px] lg:text-[36px] font-extrabold text-[#1E2238] leading-[1.2] tracking-[-0.02em]">
+            Мы не обсуждаем проблемы годами, а находим и <br className="hidden sm:inline" />
+            меняем механизм, <span className="text-[#4E5BA6]">который их создает</span>
+          </h2>
+        </div>
+
+        {/* Три блока с иллюстрациями */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-[1100px] pt-4">
+          
+          {/* Блок 1: Песочные часы */}
+          <div className="flex flex-col items-center text-center space-y-4">
+            <div className="w-[140px] h-[140px] rounded-[32px] overflow-hidden bg-[#F4F7FC] border border-[#E2E8F0]/40 flex items-center justify-center shadow-sm">
+              <img 
+                src="/manus-storage/hourglass_25277f7f.png" 
+                alt="Песочные часы" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <p className="text-[13px] sm:text-[14px] text-[#5A6082] font-semibold leading-relaxed max-w-[280px]">
+              Вы видите <span className="text-[#1E2238] font-extrabold">изменения уже за 1-5 сессий</span>, а не годы терапии
+            </p>
+          </div>
+
+          {/* Блок 2: Пазлы */}
+          <div className="flex flex-col items-center text-center space-y-4">
+            <div className="w-[140px] h-[140px] rounded-[32px] overflow-hidden bg-[#F4F7FC] border border-[#E2E8F0]/40 flex items-center justify-center shadow-sm">
+              <img 
+                src="/manus-storage/puzzles_b48d725c.png" 
+                alt="Пазлы" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <p className="text-[13px] sm:text-[14px] text-[#5A6082] font-semibold leading-relaxed max-w-[280px]">
+              Не нужно учиться &quot;справляться с проблемой&quot;, <span className="text-[#1E2238] font-extrabold">нежелательные реакции меняются без волевых усилий</span>
+            </p>
+          </div>
+
+          {/* Блок 3: Якорь в бокале */}
+          <div className="flex flex-col items-center text-center space-y-4">
+            <div className="w-[140px] h-[140px] rounded-[32px] overflow-hidden bg-[#F4F7FC] border border-[#E2E8F0]/40 flex items-center justify-center shadow-sm">
+              <img 
+                src="/manus-storage/anchor_9ace7ed1.png" 
+                alt="Якорь в бокале" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <p className="text-[13px] sm:text-[14px] text-[#5A6082] font-semibold leading-relaxed max-w-[280px]">
+              <span className="text-[#1E2238] font-extrabold">Устойчивые изменения</span> с минимальной вероятностью откатов
+            </p>
+          </div>
+
+        </div>
 
       </motion.section>
     </div>
