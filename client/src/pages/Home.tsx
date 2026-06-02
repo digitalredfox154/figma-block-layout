@@ -1783,13 +1783,13 @@ export default function Home() {
             {block8Cards.map((card) => (
               <div 
                 key={card.id}
-                className={`rounded-[24px] p-6 md:p-8 flex flex-col justify-between h-[380px] md:h-[420px] transition-all duration-500 hover:scale-[1.02] group relative overflow-hidden shadow-[0_16px_40px_rgba(78,91,166,0.03)] border border-[#E2E8F0]/20`}
+                className={`rounded-[24px] p-6 md:p-8 flex flex-col justify-between aspect-[286/462] w-full transition-all duration-500 hover:scale-[1.02] group relative overflow-hidden shadow-[0_16px_40px_rgba(78,91,166,0.03)] border border-[#E2E8F0]/20`}
               >
                 {/* Background Image */}
                 <img 
                   src={card.bgImg} 
                   alt="" 
-                  className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none transition-transform duration-500 group-hover:scale-105"
+                  className="absolute inset-0 w-full h-full object-contain z-0 pointer-events-none transition-transform duration-500 group-hover:scale-105"
                 />
 
                 {/* Content on top of background */}
