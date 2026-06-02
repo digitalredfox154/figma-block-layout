@@ -2189,6 +2189,190 @@ export default function Home() {
         </div>
       </motion.section>
 
+      {/* --- Блок 12: Команда IRT --- */}
+      <motion.section
+        id="block12-section"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="py-16 md:py-24 bg-white relative overflow-hidden"
+      >
+        <div className="container">
+          {/* Большой синий контейнер с закругленными углами */}
+          <div className="bg-[#4E5BA6] rounded-[32px] md:rounded-[48px] p-8 md:p-16 text-center relative overflow-hidden shadow-[0_20px_50px_rgba(78,91,166,0.15)]">
+            
+            {/* Заголовок */}
+            <h2 className="text-[28px] md:text-[40px] font-normal text-white leading-[1.2] tracking-[-0.01em] font-unbounded mb-12 md:mb-16">
+              Команда IRT
+            </h2>
+
+            {/* Сетка из 3-х карточек специалистов */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              {[1, 2, 3].map((item) => (
+                <div key={item} className="flex flex-col items-center">
+                  
+                  {/* Белая карточка с фото */}
+                  <div className="bg-white rounded-[32px] p-6 w-full aspect-[286/360] flex items-center justify-center shadow-sm mb-6 transition-transform duration-500 hover:scale-[1.03] group">
+                    <div className="w-full h-full rounded-[24px] overflow-hidden bg-[#F1F5F9]">
+                      <img 
+                        src="/manus-storage/founder_yana_646603a2.png" 
+                        alt="Специалист IRT" 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Имя */}
+                  <h3 className="text-[18px] md:text-[20px] font-bold text-white mb-3">
+                    Имя
+                  </h3>
+
+                  {/* Описание */}
+                  <p className="text-[13px] md:text-[14px] text-white/80 leading-relaxed max-w-[280px]">
+                    Повседневная практика показывает, что постоянное обеспечение нашей деятельности влечет за собой процесс внедрения и модернизации новых предложений.
+                  </p>
+
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </motion.section>
+
+      {/* --- Блок 13: Вас может заинтересовать --- */}
+      <motion.section
+        id="block13-section"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="py-16 md:py-24 relative overflow-hidden bg-cover bg-center"
+        style={{ backgroundImage: "url('/manus-storage/block13_bg_9e21cc81.png')" }}
+      >
+        <div className="container relative z-10">
+          
+          {/* Заголовок */}
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <h2 className="text-[24px] sm:text-[28px] lg:text-[32px] font-normal text-[#1E2238] leading-[1.3] tracking-[-0.01em] font-unbounded">
+              Вас может <span className="text-[#4E5BA6] font-medium">заинтересовать</span>
+            </h2>
+          </div>
+
+          {/* Слайдер видео-карточек */}
+          <div className="relative max-w-6xl mx-auto px-4 md:px-12">
+            
+            {/* Кнопка Влево */}
+            <button 
+              onClick={() => {
+                const el = document.getElementById('video-cards-container');
+                if (el) el.scrollBy({ left: -300, behavior: 'smooth' });
+              }}
+              className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/80 hover:bg-white text-[#1E2238] shadow-md border border-gray-100 flex items-center justify-center transition-all duration-300 z-20 hover:scale-105 active:scale-95"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            {/* Кнопка Вправо */}
+            <button 
+              onClick={() => {
+                const el = document.getElementById('video-cards-container');
+                if (el) el.scrollBy({ left: 300, behavior: 'smooth' });
+              }}
+              className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/80 hover:bg-white text-[#1E2238] shadow-md border border-gray-100 flex items-center justify-center transition-all duration-300 z-20 hover:scale-105 active:scale-95"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            {/* Контейнер карточек */}
+            <div 
+              id="video-cards-container"
+              className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-4"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {[
+                {
+                  id: 1,
+                  image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=400&auto=format&fit=crop",
+                  views: "5 292",
+                  title: "Интервью с основателем"
+                },
+                {
+                  id: 2,
+                  image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?q=80&w=400&auto=format&fit=crop",
+                  views: "3 158",
+                  title: "Особенности ИРТ метода"
+                },
+                {
+                  id: 3,
+                  image: "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?q=80&w=400&auto=format&fit=crop",
+                  views: "4 820",
+                  title: "Как избавиться от тревоги"
+                },
+                {
+                  id: 4,
+                  image: "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?q=80&w=400&auto=format&fit=crop",
+                  views: "1 188",
+                  title: "Уютная терапия дома"
+                },
+                {
+                  id: 5,
+                  image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop",
+                  views: "2 092",
+                  title: "Реальные кейсы клиентов"
+                }
+              ].map((card) => (
+                <div 
+                  key={card.id}
+                  className="flex-shrink-0 w-[240px] sm:w-[280px] aspect-[9/16] rounded-[24px] overflow-hidden relative group shadow-lg snap-start cursor-pointer border border-white/10"
+                >
+                  {/* Фоновое изображение */}
+                  <img 
+                    src={card.image} 
+                    alt={card.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+                  />
+                  
+                  {/* Темный градиентный оверлей */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30 transition-opacity duration-500 group-hover:opacity-90" />
+
+                  {/* Кнопка воспроизведения */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-14 h-14 rounded-full bg-[#4E5BA6] text-white flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:bg-[#5C6CBF]">
+                      <svg className="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Информация внизу */}
+                  <div className="absolute bottom-6 left-6 right-6 text-white z-10">
+                    <p className="text-[13px] font-bold tracking-wide mb-1 flex items-center gap-1.5 opacity-90">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                      {card.views}
+                    </p>
+                    <h3 className="text-[14px] sm:text-[15px] font-bold leading-snug tracking-tight text-white/95 line-clamp-2">
+                      {card.title}
+                    </h3>
+                  </div>
+
+                </div>
+              ))}
+            </div>
+
+          </div>
+
+        </div>
+      </motion.section>
+
 
 
 
