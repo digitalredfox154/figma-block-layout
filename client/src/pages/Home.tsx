@@ -2372,6 +2372,233 @@ export default function Home() {
         </div>
       </motion.section>
 
+      {/* Блок 15: Тарифы */}
+      <motion.section
+        id="block15-section"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
+        className="py-16 md:py-24 px-4 max-w-7xl mx-auto border-t border-gray-100/50"
+      >
+        <div className="text-center mb-12">
+          <h2 className="font-unbounded text-[28px] md:text-[40px] font-bold text-[#1E2238] mb-3">
+            Тарифы
+          </h2>
+          <p className="text-[15px] md:text-[16px] text-gray-500 font-medium">
+            на работу с психологами IRT
+          </p>
+        </div>
+
+        {/* Сетка тарифов */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          
+          {/* MINI */}
+          <div className="bg-white rounded-[28px] p-6 md:p-8 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.015)] flex flex-col justify-between hover:shadow-[0_20px_50px_rgba(78,91,166,0.06)] hover:-translate-y-1 transition-all duration-300">
+            <div>
+              <div className="relative w-full aspect-[16/10] rounded-[20px] overflow-hidden mb-6 bg-slate-50 flex items-center justify-center">
+                <img 
+                  src="/manus-storage/Rectangle646_401eda68.png" 
+                  alt="Пакет сессий MINI" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="font-unbounded text-[18px] md:text-[20px] font-bold text-[#1E2238] mb-4">
+                Пакет сессий MINI
+              </h3>
+              <ul className="space-y-3 text-[14px] text-gray-600 leading-relaxed mb-8">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#4E5BA6] font-bold mt-0.5">•</span>
+                  <span><strong>3 личных сессии</strong> (длительностью 60-90 мин)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#4E5BA6] font-bold mt-0.5">•</span>
+                  <span>Длительность работы: 3-4 недели</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#4E5BA6] font-bold mt-0.5">•</span>
+                  <span>Работа по индивидуальной стратегии и темпу, подходящему под ваш запрос</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#4E5BA6] font-bold mt-0.5">•</span>
+                  <span>Возможность приобрести разовые сессии</span>
+                </li>
+              </ul>
+            </div>
+            <div className="pt-6 border-t border-gray-50 text-center">
+              <div className="text-[24px] md:text-[28px] font-bold text-[#1E2238] mb-4">
+                54.900₽
+              </div>
+              <button className="w-full bg-[#F1F4F9] hover:bg-[#E2E7F3] text-[#1E2238] font-bold py-3 px-6 rounded-full text-[14px] transition-all duration-300">
+                Записаться
+              </button>
+            </div>
+          </div>
+
+          {/* PREMIUM */}
+          <div className="bg-white rounded-[28px] p-6 md:p-8 border-2 border-[#4E5BA6]/20 shadow-[0_12px_40px_rgba(78,91,166,0.04)] flex flex-col justify-between hover:shadow-[0_20px_50px_rgba(78,91,166,0.08)] hover:-translate-y-1 transition-all duration-300 relative">
+            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#4E5BA6] text-white text-[11px] font-bold tracking-wider uppercase py-1 px-4 rounded-full">
+              Популярно
+            </div>
+            <div>
+              <div className="relative w-full aspect-[16/10] rounded-[20px] overflow-hidden mb-6 bg-slate-50 flex items-center justify-center">
+                <img 
+                  src="/manus-storage/Rectangle646(1)_6aeec581.png" 
+                  alt="Пакет сессий PREMIUM" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="font-unbounded text-[18px] md:text-[20px] font-bold text-[#1E2238] mb-4">
+                Пакет сессий PREMIUM
+              </h3>
+              <ul className="space-y-3 text-[14px] text-gray-600 leading-relaxed mb-8">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#4E5BA6] font-bold mt-0.5">•</span>
+                  <span><strong>8 личных сессий</strong> (длительностью 60-90 мин)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#4E5BA6] font-bold mt-0.5">•</span>
+                  <span>Длительность работы: 2-2.5 месяца</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#4E5BA6] font-bold mt-0.5">•</span>
+                  <span>Регулярная поддержка и домашние задания для закрепления результатов</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#4E5BA6] font-bold mt-0.5">•</span>
+                  <span>Полная проработка 1-2 глубинных запросов</span>
+                </li>
+              </ul>
+            </div>
+            <div className="pt-6 border-t border-gray-50 text-center">
+              <div className="text-[24px] md:text-[28px] font-bold text-[#4E5BA6] mb-4">
+                134.900₽
+              </div>
+              <button className="w-full bg-[#4E5BA6] hover:bg-[#3D4B93] text-white font-bold py-3 px-6 rounded-full text-[14px] transition-all duration-300 shadow-sm shadow-[#4E5BA6]/10">
+                Записаться
+              </button>
+            </div>
+          </div>
+
+          {/* CLASSIC */}
+          <div className="bg-white rounded-[28px] p-6 md:p-8 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.015)] flex flex-col justify-between hover:shadow-[0_20px_50px_rgba(78,91,166,0.06)] hover:-translate-y-1 transition-all duration-300">
+            <div>
+              <div className="relative w-full aspect-[16/10] rounded-[20px] overflow-hidden mb-6 bg-slate-50 flex items-center justify-center">
+                <img 
+                  src="/manus-storage/Rectangle646(2)_ed456847.png" 
+                  alt="Пакет сессий CLASSIC" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="font-unbounded text-[18px] md:text-[20px] font-bold text-[#1E2238] mb-4">
+                Пакет сессий CLASSIC
+              </h3>
+              <ul className="space-y-3 text-[14px] text-gray-600 leading-relaxed mb-8">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#4E5BA6] font-bold mt-0.5">•</span>
+                  <span><strong>5 личных сессий</strong> (длительностью 60-90 мин)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#4E5BA6] font-bold mt-0.5">•</span>
+                  <span>Длительность работы: 1.5-2 месяца</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#4E5BA6] font-bold mt-0.5">•</span>
+                  <span>Проработка ключевых триггеров и создание новых поведенческих сценариев</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#4E5BA6] font-bold mt-0.5">•</span>
+                  <span>Оптимальный формат для большинства запросов</span>
+                </li>
+              </ul>
+            </div>
+            <div className="pt-6 border-t border-gray-50 text-center">
+              <div className="text-[24px] md:text-[28px] font-bold text-[#1E2238] mb-4">
+                84.900₽
+              </div>
+              <button className="w-full bg-[#F1F4F9] hover:bg-[#E2E7F3] text-[#1E2238] font-bold py-3 px-6 rounded-full text-[14px] transition-all duration-300">
+                Записаться
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Личная работа с Яной */}
+        <div className="bg-[#1E2238] rounded-[32px] md:rounded-[48px] p-6 md:p-10 lg:p-12 text-white relative overflow-hidden flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+          
+          {/* Левая часть: Фото Яны */}
+          <div className="w-full lg:w-[45%] flex justify-center relative z-10">
+            <div className="relative w-full max-w-[400px] aspect-[4/3] lg:aspect-square rounded-[24px] overflow-hidden bg-black/20">
+              <img 
+                src="/manus-storage/yana_highres_bdb66ff6.png" 
+                alt="Яна Миргородская" 
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+          </div>
+
+          {/* Правая часть: Описание и белая карточка */}
+          <div className="w-full lg:w-[55%] flex flex-col justify-between h-full relative z-10">
+            <div className="mb-6 lg:mb-8 text-center lg:text-left">
+              <h3 className="font-unbounded text-[22px] md:text-[28px] font-bold mb-3">
+                Личная работа с Яной
+              </h3>
+              <p className="text-gray-400 text-[14px] md:text-[15px] leading-relaxed max-w-xl">
+                Индивидуальный премиальный формат сопровождения от основателя метода IRT для тех, кому нужны глубокие фундаментальные изменения под личным контролем автора метода.
+              </p>
+            </div>
+
+            {/* Внутренняя белая карточка с ценой и кнопкой */}
+            <div className="bg-white rounded-[24px] p-6 md:p-8 text-[#1E2238] flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+              <div className="flex-1">
+                <ul className="space-y-2.5 text-[13px] md:text-[14px] text-gray-600 leading-relaxed">
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#4E5BA6] font-bold">•</span>
+                    <span>Глубокая проработка первопричин ваших ограничений</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#4E5BA6] font-bold">•</span>
+                    <span>Индивидуальный график и темп работы</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#4E5BA6] font-bold">•</span>
+                    <span>Поддержка и ведение между сессиями</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="text-center md:text-right pt-4 md:pt-0 border-t md:border-t-0 md:border-l border-gray-100 md:pl-8 min-w-[180px]">
+                <div className="text-[24px] md:text-[28px] font-bold text-[#1E2238] mb-3">
+                  50.000₽
+                </div>
+                <button className="w-full bg-[#4E5BA6] hover:bg-[#3D4B93] text-white font-bold py-3 px-6 rounded-full text-[14px] transition-all duration-300 shadow-sm">
+                  Записаться
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Декоративный фоновый свет */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#4E5BA6]/10 rounded-full blur-[120px] pointer-events-none" />
+        </div>
+
+        {/* Кнопка "Подобрать" и подпись */}
+        <div className="text-center mt-16">
+          <button className="bg-[#4E5BA6] hover:bg-[#3D4B93] text-white font-bold px-12 py-4 rounded-full text-[16px] md:text-[17px] transition-all duration-300 shadow-lg shadow-[#4E5BA6]/15 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] mb-4">
+            Подобрать терапевта
+          </button>
+          <p className="text-[12px] md:text-[13px] text-gray-400 max-w-xl mx-auto leading-relaxed">
+            Если вы сомневаетесь, какой формат работы вам подходит, наш специалист поможет подобрать оптимальный вариант под ваш запрос на бесплатной ознакомительной консультации.
+          </p>
+        </div>
+      </motion.section>
+
+      {/* Блок 16: FAQ (Есть вопрос?) */}
+      <FAQSection />
+
+      {/* Блок 16: Синий CTA Баннер */}
+      <BlueCTABanner />
+
       {/* Блок 14: Узнайте больше о методе IRT и Наши соцсети */}
       <motion.section 
         initial={{ opacity: 0, y: 30 }}
@@ -2535,9 +2762,231 @@ export default function Home() {
         </div>
       </motion.section>
 
+      {/* Официальный подвал (Footer) */}
+      <footer className="bg-[#0E0F19] text-white py-12 md:py-16 border-t border-gray-800/20 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+            
+            {/* Левая колонка: Логотип и реквизиты */}
+            <div className="md:col-span-4 flex flex-col space-y-4">
+              <div className="flex items-center space-x-2">
+                <img
+                  src="/manus-storage/Group789633(1)_348015d8.png"
+                  alt="IRT Logo"
+                  className="h-12 md:h-14 object-contain brightness-0 invert"
+                />
+              </div>
+              <div className="text-[11px] md:text-[12px] text-gray-500 space-y-1.5 leading-relaxed">
+                <p>Индивидуальный предприниматель</p>
+                <p className="font-semibold text-gray-400">Миргородская Яна</p>
+                <p>ИНН 971302319475</p>
+              </div>
+            </div>
 
+            {/* Средняя колонка: Ссылки и соцсети */}
+            <div className="md:col-span-4 flex flex-col items-center md:items-center space-y-6">
+              {/* Ссылки */}
+              <nav className="flex items-center space-x-8 text-[14px] md:text-[15px] font-medium text-gray-400">
+                <a href="#hero" className="hover:text-white transition-colors duration-300">Главная</a>
+                <a href="#blog" className="hover:text-white transition-colors duration-300">Блог</a>
+                <a href="#reviews" className="hover:text-white transition-colors duration-300">Отзывы</a>
+              </nav>
+              
+              {/* Иконки соцсетей */}
+              <div className="flex items-center space-x-4">
+                <img
+                  src="/manus-storage/Group2087331105_9ec126df.png"
+                  alt="Social Icons"
+                  className="h-8 md:h-9 object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
+            </div>
 
+            {/* Правая колонка: Контакты и кнопка звонка */}
+            <div className="md:col-span-4 flex flex-col items-start md:items-end space-y-4">
+              <div className="text-left md:text-right">
+                <p className="text-[11px] text-gray-500 uppercase tracking-wider mb-1">Специалист готов ответить на звонок</p>
+                <a href="tel:+77770000000" className="text-[18px] md:text-[20px] font-bold text-white hover:text-[#4E5BA6] transition-colors duration-300">
+                  +7 (777) 000-00-00
+                </a>
+              </div>
+              <div>
+                <button className="border border-gray-700 hover:border-white text-white hover:bg-white hover:text-[#0E0F19] font-semibold px-6 py-2.5 rounded-full text-[13px] md:text-[14px] transition-all duration-300">
+                  Заказать звонок
+                </button>
+              </div>
+              <div className="flex items-center space-x-2 text-[13px] md:text-[14px] text-gray-400 hover:text-white transition-colors duration-300">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <a href="mailto:info@irt-method.ru">info@irt-method.ru</a>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Нижняя плашка копирайта */}
+          <div className="border-t border-gray-800/30 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] md:text-[12px] text-gray-600">
+            <p>© {new Date().getFullYear()} Метод IRT. Все права защищены.</p>
+            <p className="hover:text-gray-400 transition-colors duration-300">
+              Создатель сайта — <span className="font-semibold text-gray-500">Асташко Никита</span>
+            </p>
+          </div>
+        </div>
+      </footer>
 
     </div>
   );
+}
+
+// ==========================================
+// Блок 16: FAQ (Есть вопрос? Ответы для вас)
+// ==========================================
+function FAQSection() {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
+  const faqs = [
+    {
+      question: "Что такое метод IRT?",
+      answer: "IRT (Integral Resolution Therapy) — это интегральный метод краткосрочной психотерапии, объединяющий лучшие инструменты когнитивно-поведенческой терапии, гештальт-терапии и телесных практик. Метод направлен на поиск и устранение корневого механизма проблемы, а не на временное облегчение симптомов."
+    },
+    {
+      question: "Сколько сессий обычно требуется?",
+      answer: "Благодаря глубокой работе с первопричинами, первые устойчивые изменения клиенты замечают уже после 1-3 сессий. Для полного разрешения большинства запросов и закрепления результата обычно требуется курс из 5-8 сессий."
+    },
+    {
+      question: "Как проходит сессия?",
+      answer: "Сессия длится 60-90 минут в комфортном онлайн-формате. Мы начинаем с анализа вашего текущего состояния, находим корневой триггер, прорабатываем его на эмоциональном и телесном уровнях, а в конце формируем новые поддерживающие паттерны поведения."
+    },
+    {
+      question: "Кому подходит метод IRT?",
+      answer: "Метод эффективен при работе с тревожностью, страхами, эмоциональным выгоранием, трудностями в отношениях, неуверенностью в себе и психосоматическими проявлениями. Он идеально подходит тем, кто хочет получить реальный результат без многолетних разговоров о прошлом."
+    }
+  ];
+
+  return (
+    <motion.section
+      id="faq-section"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
+      className="py-16 md:py-24 px-4 max-w-7xl mx-auto"
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        {/* Левая колонка: Заголовок */}
+        <div className="lg:col-span-5 lg:sticky lg:top-24">
+          <h2 className="font-unbounded text-[28px] md:text-[38px] font-bold leading-[1.2] tracking-tight text-[#1E2238]">
+            Есть вопрос? <br />
+            <span className="text-[#4E5BA6]">Мы подготовили</span> <br />
+            ответы для вас
+          </h2>
+        </div>
+
+        {/* Правая колонка: Список вопросов */}
+        <div className="lg:col-span-7 space-y-4">
+          {faqs.map((faq, idx) => {
+            const isExpanded = expandedIndex === idx;
+            return (
+              <div
+                key={idx}
+                className="bg-[#F1F4F9] rounded-[20px] md:rounded-[24px] overflow-hidden border border-gray-100/50 transition-all duration-300"
+              >
+                <button
+                  onClick={() => setExpandedIndex(isExpanded ? null : idx)}
+                  className="w-full text-left p-6 md:p-7 flex items-center justify-between gap-4 focus:outline-none"
+                >
+                  <span className="text-[16px] md:text-[18px] font-bold text-[#1E2238] leading-snug">
+                    {faq.question}
+                  </span>
+                  <div
+                    className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 flex-shrink-0 ${
+                      isExpanded
+                        ? "bg-[#1E2238] text-white rotate-45"
+                        : "bg-[#4E5BA6] text-white"
+                    }`}
+                  >
+                    <svg
+                      className="w-5 h-5 fill-none stroke-current"
+                      viewBox="0 0 24 24"
+                      strokeWidth="2.5"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                    </svg>
+                  </div>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isExpanded && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
+                    >
+                      <div className="px-6 pb-6 md:px-7 md:pb-7 text-[14px] md:text-[15px] text-gray-600 leading-relaxed border-t border-gray-200/20 pt-2">
+                        {faq.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </motion.section>
+  )
+}
+
+// ==========================================
+// Блок 16: Синий CTA Баннер (Первый шаг к стойким изменениям)
+// ==========================================
+function BlueCTABanner() {
+  return (
+    <motion.section
+      id="blue-cta-banner"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
+      className="py-12 px-4 max-w-7xl mx-auto"
+    >
+      <div className="relative overflow-hidden bg-gradient-to-br from-[#4E5BA6] to-[#6375B8] rounded-[32px] md:rounded-[48px] shadow-[0_20px_50px_rgba(78,91,166,0.15)]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0 items-center min-h-[420px]">
+          
+          {/* Левая колонка: Текст и кнопка */}
+          <div className="lg:col-span-7 p-8 md:p-12 lg:p-16 flex flex-col justify-center text-white relative z-10">
+            <h2 className="font-unbounded text-[22px] md:text-[32px] lg:text-[36px] font-bold leading-[1.25] tracking-tight mb-4">
+              Первый шаг к стойким изменениям — найти корневой механизм происходящего
+            </h2>
+            <p className="text-[14px] md:text-[16px] text-white/80 leading-relaxed mb-8 max-w-xl">
+              А не работать с его следствием. Начните глубокую терапию по методу IRT уже сегодня.
+            </p>
+            <div>
+              <button className="bg-white hover:bg-white/95 text-[#4E5BA6] hover:text-[#3D4B93] font-bold px-10 py-4 rounded-full text-[15px] md:text-[16px] transition-all duration-300 shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]">
+                Записаться
+              </button>
+            </div>
+          </div>
+
+          {/* Правая колонка: Иллюстрация */}
+          <div className="lg:col-span-5 h-full relative self-stretch flex items-end justify-end overflow-hidden min-h-[300px] lg:min-h-0">
+            {/* Фоновый свет для иллюстрации */}
+            <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-l from-[#4E5BA6]/0 to-[#4E5BA6]/50 lg:to-transparent z-0 pointer-events-none" />
+            <img
+              src="/manus-storage/Rectangle240649630_b33e3de7.png"
+              alt="3D David Illustration"
+              className="w-full h-full object-cover lg:absolute lg:right-0 lg:bottom-0 lg:w-[110%] lg:h-[110%] max-h-[450px] lg:max-h-none z-10"
+            />
+          </div>
+
+        </div>
+
+        {/* Декоративные фоновые элементы */}
+        <div className="absolute -top-12 -left-12 w-48 h-48 bg-white/5 rounded-full blur-2xl pointer-events-none" />
+        <div className="absolute -bottom-24 -right-24 w-72 h-72 bg-white/5 rounded-full blur-3xl pointer-events-none" />
+      </div>
+    </motion.section>
+  )
 }
