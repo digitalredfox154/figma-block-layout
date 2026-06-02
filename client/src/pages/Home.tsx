@@ -1769,7 +1769,8 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
-        className="py-16 md:py-24 bg-white"
+        className="py-16 md:py-24 relative overflow-hidden bg-cover bg-center"
+        style={{ backgroundImage: "url('/manus-storage/Rectangle240649373_87d5a31a.png')" }}
       >
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
