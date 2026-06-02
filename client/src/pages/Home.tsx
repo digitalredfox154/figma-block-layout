@@ -162,30 +162,26 @@ const storiesData: Record<string, Array<{ id: number; text: string; author: stri
 const block8Cards = [
   {
     id: 1,
-    title: "Эффективно решаем ваш запрос даже без подробностей ситуации",
     desc: "Например, если вы не готовы их разглашать или у вас NDA",
-    img: "/manus-storage/b8_shield_only_37fd7610.png",
+    bgImg: "/manus-storage/b8_card1_full_c9b1bc77.png",
     isDark: true
   },
   {
     id: 2,
-    title: "Мы работаем до момента, когда ваше состояние будет комфортным, чтобы завершить сеанс",
     desc: "Поэтому не заканчиваем сессии строго через 60 минут.",
-    img: "/manus-storage/b8_keyhole_only_f57b8c67.png",
+    bgImg: "/manus-storage/b8_card2_full_67208aef.png",
     isDark: false
   },
   {
     id: 3,
-    title: "Возможность переноса сессии без лимита",
     desc: "",
-    img: "/manus-storage/Group2087331124_450e4320.png",
+    bgImg: "/manus-storage/b8_card3_full_c346d4a6.png",
     isDark: true
   },
   {
     id: 4,
-    title: "Полный возврат при отмене за 24 часа",
     desc: "",
-    img: "/manus-storage/b8_piggy_only_49ff292e.png",
+    bgImg: "/manus-storage/b8_card4_full_db6bb665.png",
     isDark: false
   }
 ];
@@ -1777,9 +1773,8 @@ export default function Home() {
       >
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-            <h2 className="text-[32px] md:text-[44px] font-extrabold tracking-tight text-[#1E2238] leading-[1.1] mb-4">
-              Всё для вашего <br className="md:hidden" />
-              <span className="text-[#4E5BA6]">комфорта и спокойствия</span>
+            <h2 className="text-[24px] sm:text-[28px] lg:text-[32px] font-normal text-[#1E2238] leading-[1.3] tracking-[-0.01em] font-unbounded">
+              Всё для вашего <span className="text-[#4E5BA6] font-medium">комфорта и спокойствия</span>
             </h2>
           </div>
 
@@ -1788,43 +1783,58 @@ export default function Home() {
             {block8Cards.map((card) => (
               <div 
                 key={card.id}
-                className={`rounded-[32px] p-6 md:p-8 flex flex-col justify-between h-[360px] md:h-[400px] transition-all duration-500 hover:scale-[1.02] group relative overflow-hidden ${
-                  card.isDark 
-                    ? "bg-gradient-to-b from-[#4E5BA6] to-[#6A78C4] text-white shadow-[0_20px_48px_rgba(78,91,166,0.15)]" 
-                    : "bg-white border border-[#E2E8F0] text-[#1E2238] shadow-[0_16px_40px_rgba(78,91,166,0.02)] hover:border-[#CBD5E1]"
-                }`}
+                className={`rounded-[24px] p-6 md:p-8 flex flex-col justify-between h-[380px] md:h-[420px] transition-all duration-500 hover:scale-[1.02] group relative overflow-hidden shadow-[0_16px_40px_rgba(78,91,166,0.03)] border border-[#E2E8F0]/20`}
               >
-                {/* Содержимое карточки */}
-                <div className="relative z-10">
-                  <h3 className={`text-[16px] md:text-[18px] font-extrabold leading-snug mb-3 ${
-                    card.isDark ? "text-white" : "text-[#1E2238]"
-                  }`}>
-                    {card.title}
-                  </h3>
-                  {card.desc && (
-                    <p className={`text-[13px] font-medium leading-relaxed ${
-                      card.isDark ? "text-white/80" : "text-[#5A6082]"
+                {/* Background Image */}
+                <img 
+                  src={card.bgImg} 
+                  alt="" 
+                  className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none transition-transform duration-500 group-hover:scale-105"
+                />
+
+                {/* Content on top of background */}
+                <div className="relative z-10 flex flex-col h-full justify-between">
+                  <div>
+                    <h3 className={`text-[16px] md:text-[18px] font-normal leading-snug mb-3 ${
+                      card.isDark ? "text-white" : "text-[#1E2238]"
                     }`}>
-                      {card.desc}
-                    </p>
-                  )}
+                      {card.id === 1 && (
+                        <>
+                          <span className="font-bold">Эффективно решаем</span>{" "}
+                          ваш запрос даже без{" "}
+                          <span className="font-bold">подробностей ситуации</span>
+                        </>
+                      )}
+                      {card.id === 2 && (
+                        <>
+                          Мы работаем до момента,{" "}
+                          <span className="font-bold">когда ваше состояние будет комфортным</span>,{" "}
+                          чтобы завершить сеанс
+                        </>
+                      )}
+                      {card.id === 3 && (
+                        <>
+                          Возможность{" "}
+                          <span className="font-bold">переноса сессии без</span>{" "}
+                          лимита
+                        </>
+                      )}
+                      {card.id === 4 && (
+                        <>
+                          Полный возврат{" "}
+                          <span className="font-bold">при отмене за 24 часа</span>
+                        </>
+                      )}
+                    </h3>
+                    {card.desc && (
+                      <p className={`text-[13px] font-normal leading-relaxed ${
+                        card.isDark ? "text-white/80" : "text-[#5A6082]"
+                      }`}>
+                        {card.desc}
+                      </p>
+                    )}
+                  </div>
                 </div>
-
-                {/* 3D-иллюстрация внизу карточки */}
-                <div className="relative h-44 w-full flex items-end justify-center z-10 overflow-hidden mt-auto">
-                  <img 
-                    src={card.img} 
-                    alt={card.title} 
-                    className={`object-contain max-h-[140px] md:max-h-[160px] transition-transform duration-500 group-hover:scale-110 ${
-                      card.id === 3 ? "scale-[1.2] group-hover:scale-[1.3] -bottom-4 relative" : ""
-                    }`}
-                  />
-                </div>
-
-                {/* Легкое свечение сзади иллюстрации для темных карточек */}
-                {card.isDark && (
-                  <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-40 h-40 bg-white/10 blur-2xl rounded-full pointer-events-none" />
-                )}
               </div>
             ))}
           </div>
