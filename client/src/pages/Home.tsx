@@ -222,6 +222,46 @@ const block9Reviews = [
   }
 ];
 
+// --- Данные для Блока 10 (Маршрут к новым эмоциям) ---
+const block10Steps = [
+  {
+    id: 1,
+    title: "Вы отвечаете на",
+    boldText: "7 простых вопросов",
+    img: "/manus-storage/Rectangle_240649678_e7a0d03a.png"
+  },
+  {
+    id: 2,
+    title: "Мы подбираем лучшего",
+    boldText: "терапевта для решения вашей ситуации",
+    img: "/manus-storage/Rectangle_240649677_14fefd1a.png"
+  },
+  {
+    id: 3,
+    title: "Вы получаете",
+    boldText: "персональный план после диагностики",
+    img: "/manus-storage/Rectangle_240649676_7e5d3a83.png"
+  },
+  {
+    id: 4,
+    title: "Оплачиваете подходящее",
+    boldText: "вам количество сессий",
+    img: "/manus-storage/Rectangle_240649675_a35e1c8f.png"
+  },
+  {
+    id: 5,
+    title: "С радостью занимаетесь",
+    boldText: "с психологом IRT",
+    img: "/manus-storage/Rectangle_240649674_43c807f7.png"
+  },
+  {
+    id: 6,
+    title: "Наслаждаетесь новой",
+    boldText: "версией себя и желаемыми результатами в жизни",
+    img: "/manus-storage/Rectangle_240649673_c01521bc.png"
+  }
+];
+
 // --- Данные для Блока 7 (Как проходит первая сессия) ---
 const block7Tags = [
   "Длительность сессии до 90 минут",
@@ -1873,6 +1913,207 @@ export default function Home() {
             </div>
 
           </div>
+        </div>
+      </motion.section>
+
+      {/* --- Блок 10: Маршрут к новым эмоциям --- */}
+      <motion.section 
+        id="block10-section"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="py-16 md:py-24 bg-[#E1EAF3] relative overflow-hidden"
+      >
+        {/* Декоративные фоновые элементы */}
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40">
+          <div className="absolute top-1/4 left-10 w-96 h-96 bg-[#4E5BA6]/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
+        </div>
+
+        <div className="container relative z-10">
+          <div className="text-center max-w-4xl mx-auto mb-12 md:mb-20">
+            <h2 className="text-[28px] md:text-[40px] font-extrabold tracking-tight text-[#1E2238] leading-[1.2] mb-4">
+              Посмотрите на наш маршрут <br />
+              <span className="text-[#4E5BA6]">к вашим новым эмоциям,</span> <br />
+              действиям и результатам
+            </h2>
+          </div>
+
+          {/* Сетка шагов маршрута */}
+          <div className="relative max-w-6xl mx-auto mb-16 md:mb-24">
+            
+            {/* Соединительная линия (только для десктопа) */}
+            <div className="hidden md:block absolute top-[90px] left-[10%] right-[10%] h-[2px] pointer-events-none">
+              {/* Пунктирная линия в два ряда с переходом */}
+              <svg className="w-full h-[220px]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* Линия первого ряда (шаги 1-3) */}
+                <path d="M 0,2 L 800,2" stroke="#4E5BA6" strokeWidth="2" strokeDasharray="6 6" className="opacity-30" />
+                {/* Соединитель между рядами (зигзаг от шага 3 вниз к шагу 4) */}
+                <path d="M 800,2 L 800,210 L 0,210" stroke="#4E5BA6" strokeWidth="2" strokeDasharray="6 6" className="opacity-30" />
+              </svg>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-12 md:gap-y-36 gap-x-8">
+              {block10Steps.map((step, idx) => (
+                <div key={step.id} className="flex flex-col items-center text-center relative group">
+                  
+                  {/* Иконка шага в карточке */}
+                  <div className="w-[180px] h-[120px] bg-white rounded-[24px] shadow-[0_12px_32px_rgba(78,91,166,0.04)] border border-white/80 p-3 flex items-center justify-center mb-6 relative hover:scale-105 transition-all duration-300 hover:shadow-[0_20px_40px_rgba(78,91,166,0.08)]">
+                    <img 
+                      src={step.img} 
+                      alt={step.boldText} 
+                      className="max-w-[85px] max-h-[85px] object-contain"
+                    />
+                    
+                    {/* Номер шага (бейджик на иконке) */}
+                    <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white border border-[#E2E8F0] shadow-sm flex items-center justify-center text-[14px] font-extrabold text-[#4E5BA6] group-hover:bg-[#4E5BA6] group-hover:text-white group-hover:border-[#4E5BA6] transition-all duration-300">
+                      {step.id}
+                    </div>
+                  </div>
+
+                  {/* Текст шага */}
+                  <div className="px-4 max-w-[280px]">
+                    <p className="text-[14px] md:text-[15px] text-[#5A6082] leading-relaxed">
+                      {step.title} <span className="font-extrabold text-[#1E2238]">{step.boldText}</span>
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Финальная плашка CTA */}
+          <div className="max-w-5xl mx-auto bg-white rounded-[32px] p-6 md:p-10 border border-white/60 shadow-[0_20px_50px_rgba(78,91,166,0.05)] flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12 relative overflow-hidden">
+            {/* Блик на фоне */}
+            <div className="absolute -top-12 -right-12 w-48 h-48 bg-[#4E5BA6]/5 rounded-full blur-2xl pointer-events-none" />
+            
+            <div className="flex-1 text-center md:text-left relative z-10">
+              <h3 className="text-[20px] md:text-[28px] font-extrabold text-[#1E2238] leading-[1.2] mb-2">
+                Нажмите на кнопку <br className="hidden md:block" />
+                и оставьте заявку,
+              </h3>
+              <p className="text-[13px] md:text-[14px] text-[#5A6082] font-medium">
+                чтобы назначить сессию и получить рекомендации по подготовке уже сегодня
+              </p>
+            </div>
+
+            <div className="relative z-10 w-full md:w-auto">
+              <Button 
+                onClick={() => {
+                  const el = document.getElementById('quiz-section');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="w-full md:w-auto px-8 py-6 h-auto text-[15px] font-extrabold bg-[#4E5BA6] hover:bg-[#3D4A8F] text-white rounded-full shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+              >
+                Записаться
+              </Button>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* --- Блок 11: Основатель метода IRT --- */}
+      <motion.section 
+        id="block11-section"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="py-16 md:py-24 bg-white relative overflow-hidden"
+      >
+        <div className="container relative z-10">
+          
+          {/* Заголовок секции */}
+          <div className="text-center max-w-xl mx-auto mb-12 md:mb-16">
+            <h2 className="text-[28px] md:text-[40px] font-extrabold tracking-tight text-[#1E2238] leading-[1.2]">
+              Основатель <br className="md:hidden" /><span className="text-[#4E5BA6]">метода IRT</span>
+            </h2>
+          </div>
+
+          {/* Карточка основателя (Большой контейнер с закругленными углами) */}
+          <div className="max-w-5xl mx-auto bg-[#F8FAFC] rounded-[32px] border border-[#E2E8F0] p-6 md:p-12 shadow-sm flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
+            
+            {/* Левая колонка: Фотография основателя */}
+            <div className="w-full lg:w-[420px] shrink-0 relative group">
+              {/* Элегантная рамка для фото */}
+              <div className="rounded-[24px] overflow-hidden bg-[#F1F5F9] border border-white/60 shadow-md relative aspect-[4/5] max-w-[380px] mx-auto lg:max-w-none">
+                <img 
+                  src="/manus-storage/founder_yana_646603a2.png" 
+                  alt="Яна Миргородская" 
+                  className="w-full h-full object-cover group-hover:scale-[1.03] transition-all duration-700"
+                />
+              </div>
+            </div>
+
+            {/* Правая колонка: Информация об основателе */}
+            <div className="flex-1 flex flex-col justify-center text-left">
+              
+              {/* Плашка с именем */}
+              <div className="bg-[#4E5BA6] text-white rounded-[24px] p-6 md:p-8 mb-6 shadow-sm relative overflow-hidden">
+                {/* Блик */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-xl pointer-events-none" />
+                
+                <p className="text-[12px] md:text-[13px] font-bold text-white/70 uppercase tracking-widest mb-1">
+                  Основатель метода IRT
+                </p>
+                <h3 className="text-[24px] md:text-[32px] font-extrabold leading-[1.2] mb-3">
+                  Яна Миргородская
+                </h3>
+                <p className="text-[13px] md:text-[14px] text-white/90 leading-relaxed font-medium">
+                  Член общероссийской профессиональной психотерапевтической лиги
+                </p>
+              </div>
+
+              {/* Плашка с опытом */}
+              <div className="bg-[#F1F5F9] rounded-[24px] p-6 md:p-8 mb-6 border border-[#E2E8F0]">
+                <p className="text-[11px] md:text-[12px] font-extrabold text-[#4E5BA6] tracking-wider uppercase mb-3">
+                  Опыт:
+                </p>
+                <p className="text-[14px] md:text-[15px] text-[#5A6082] leading-relaxed mb-4">
+                  За более чем <span className="font-extrabold text-[#1E2238]">6 лет</span>, опробовала на себе большинство методов психотерапии и решила свой "нерешаемый" запрос, с которым большинство психологов не могли справиться.
+                </p>
+                <p className="text-[14px] md:text-[15px] text-[#5A6082] leading-relaxed font-medium">
+                  Вывела самые эффективные связки техник и методик для решения различных запросов, объединив лучшие научные методы психотерапии в единое целое — в IRT.
+                </p>
+              </div>
+
+              {/* Счетчик отзывов */}
+              <div className="flex items-center gap-4 mb-8 pl-2">
+                <div className="flex items-baseline">
+                  <span className="text-[36px] md:text-[44px] font-black text-[#1E2238] tracking-tight leading-none">
+                    350
+                  </span>
+                  <span className="text-[24px] md:text-[28px] font-bold text-[#4E5BA6] ml-0.5 leading-none">
+                    +
+                  </span>
+                </div>
+                <p className="text-[13px] md:text-[14px] text-[#5A6082] leading-snug font-medium max-w-[280px]">
+                  <span className="font-extrabold text-[#1E2238]">восторженных отзывов от клиентов</span>, решивших свои запросы за несколько сессий
+                </p>
+              </div>
+
+              {/* Кнопка "Подробнее о Яне" */}
+              <div className="flex justify-start">
+                <Button 
+                  onClick={() => {
+                    const el = document.getElementById('quiz-section');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  variant="outline"
+                  className="px-8 py-5 h-auto text-[14px] font-extrabold border-[#4E5BA6] text-[#4E5BA6] hover:bg-[#4E5BA6] hover:text-white rounded-full transition-all duration-300 active:scale-95 flex items-center gap-2"
+                >
+                  <span>Подробнее о Яне</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                  </svg>
+                </Button>
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
       </motion.section>
 
