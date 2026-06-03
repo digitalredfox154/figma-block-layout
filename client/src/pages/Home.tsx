@@ -2528,7 +2528,7 @@ export default function Home() {
 
         {/* Личная работа с Яной */}
         <div 
-          className="rounded-[32px] md:rounded-[48px] p-6 md:p-8 lg:p-10 relative overflow-hidden flex flex-col lg:flex-row items-stretch gap-8 lg:gap-10 min-h-[420px] bg-cover bg-center"
+          className="rounded-[32px] md:rounded-[48px] p-6 md:p-8 lg:p-10 relative flex flex-col lg:flex-row items-stretch gap-8 lg:gap-10 min-h-[420px] bg-cover bg-center mt-12 md:mt-20 overflow-visible"
           style={{ backgroundImage: "url('/manus-storage/Rectangle33_b0650a6c.png')" }}
         >
           
@@ -2548,15 +2548,13 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Центральная колонка: Фото Яны по центру */}
-          <div className="w-full lg:w-[30%] flex items-end justify-center relative z-10 self-end lg:-mb-10">
-            <div className="relative w-full max-w-[280px] aspect-[3/4] overflow-hidden">
-              <img 
-                src="/manus-storage/yana_highres_bdb66ff6.png" 
-                alt="Яна Миргородская" 
-                className="w-full h-full object-contain object-bottom"
-              />
-            </div>
+          {/* Центральная колонка: Фото Яны по центру с выходом за границы (overflow-visible) */}
+          <div className="w-full lg:w-[30%] flex items-end justify-center relative z-20 lg:static pointer-events-none">
+            <img 
+              src="/manus-storage/yana_highres_bdb66ff6.png" 
+              alt="Яна Миргородская" 
+              className="w-full lg:absolute lg:bottom-0 lg:left-1/2 lg:-translate-x-1/2 lg:h-[130%] max-w-[320px] lg:max-w-none object-contain object-bottom z-20 origin-bottom"
+            />
           </div>
 
           {/* Правая колонка: Описание (список услуг) и кнопка Записаться */}
