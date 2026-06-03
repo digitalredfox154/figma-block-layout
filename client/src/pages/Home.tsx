@@ -2599,9 +2599,6 @@ export default function Home() {
       {/* Блок 16: FAQ (Есть вопрос?) */}
       <FAQSection />
 
-      {/* Блок 16: Синий CTA Баннер */}
-      <BlueCTABanner />
-
       {/* Блок 14: Узнайте больше о методе IRT и Наши соцсети */}
       <motion.section 
         initial={{ opacity: 0, y: 30 }}
@@ -2766,6 +2763,9 @@ export default function Home() {
         </div>
         </div>
       </motion.section>
+
+      {/* Блок 16: Синий CTA Баннер */}
+      <BlueCTABanner />
 
       {/* Официальный подвал (Footer) */}
       <footer className="bg-[#0E0F19] text-white pt-24 pb-12 border-t border-gray-800/10 relative z-10 w-full">
