@@ -501,9 +501,10 @@ export default function Home() {
 
 
   return (
-    <div className="min-h-screen bg-[#F4F7FC] flex flex-col items-center py-8 px-4 sm:py-12 sm:px-6 lg:py-16 lg:px-8 space-y-16 overflow-x-hidden font-sans">
+    <div className="min-h-screen bg-[#F4F7FC] flex flex-col items-center py-8 sm:py-12 space-y-16 overflow-x-hidden font-sans w-full">
       
       {/* ==================== БЛОК 1: Главный баннер ==================== */}
+      {/* We wrap individual top blocks in px-4 sm:px-6 lg:px-8 if they need standard page padding, but the outer container itself shouldn't restrict them */}
       <motion.section 
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -2379,8 +2380,9 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-        className="py-16 md:py-24 px-4 max-w-7xl mx-auto border-t border-gray-100/50"
+        className="py-16 md:py-24 w-full border-t border-gray-100/50 bg-white"
       >
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="text-center mb-12">
           <h2 className="font-unbounded text-[28px] md:text-[40px] font-bold text-[#1E2238] mb-3">
             Тарифы
@@ -2591,6 +2593,7 @@ export default function Home() {
             Если вы сомневаетесь, какой формат работы вам подходит, наш специалист поможет подобрать оптимальный вариант под ваш запрос на бесплатной ознакомительной консультации.
           </p>
         </div>
+        </div>
       </motion.section>
 
       {/* Блок 16: FAQ (Есть вопрос?) */}
@@ -2605,8 +2608,9 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-        className="py-12 md:py-20 px-4 max-w-7xl mx-auto"
+        className="py-12 md:py-20 w-full bg-[#F4F7FC]"
       >
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           
           {/* Левая карточка: Узнайте больше о методе IRT */}
@@ -2760,10 +2764,11 @@ export default function Home() {
           </div>
 
         </div>
+        </div>
       </motion.section>
 
       {/* Официальный подвал (Footer) */}
-      <footer className="bg-[#0E0F19] text-white pt-24 pb-12 border-t border-gray-800/10 relative z-10">
+      <footer className="bg-[#0E0F19] text-white pt-24 pb-12 border-t border-gray-800/10 relative z-10 w-full">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
             
@@ -2871,8 +2876,9 @@ function FAQSection() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-      className="py-12 md:py-16 px-4 max-w-7xl mx-auto"
+      className="py-12 md:py-16 w-full bg-[#F4F7FC]"
     >
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
       {/* Большой белый контейнер FAQ */}
       <div className="bg-white rounded-[32px] md:rounded-[48px] p-8 md:p-12 lg:p-16 border border-[#E2E7F3] shadow-[0_15px_40px_rgba(78,91,166,0.04)]">
         {/* Заголовок сверху */}
@@ -2935,6 +2941,7 @@ function FAQSection() {
           })}
         </div>
       </div>
+      </div>
     </motion.section>
   )
 }
@@ -2950,8 +2957,9 @@ function BlueCTABanner() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-      className="px-4 max-w-7xl mx-auto relative z-20 -mb-16 md:-mb-24"
+      className="w-full relative z-20 -mb-16 md:-mb-24 bg-[#F4F7FC]"
     >
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
       <div className="relative overflow-hidden bg-gradient-to-br from-[#4E5BA6] to-[#6375B8] rounded-[32px] md:rounded-[48px] shadow-[0_20px_50px_rgba(78,91,166,0.15)]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0 items-center min-h-[400px] lg:min-h-[440px]">
           
@@ -2986,6 +2994,7 @@ function BlueCTABanner() {
         {/* Декоративные фоновые элементы */}
         <div className="absolute -top-12 -left-12 w-48 h-48 bg-white/5 rounded-full blur-2xl pointer-events-none" />
         <div className="absolute -bottom-24 -right-24 w-72 h-72 bg-white/5 rounded-full blur-3xl pointer-events-none" />
+      </div>
       </div>
     </motion.section>
   )
