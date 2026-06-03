@@ -2553,7 +2553,7 @@ export default function Home() {
             <img 
               src="/manus-storage/yana_highres_bdb66ff6.png" 
               alt="Яна Миргородская" 
-              className="w-full lg:absolute lg:bottom-0 lg:left-1/2 lg:-translate-x-1/2 lg:h-[130%] max-w-[320px] lg:max-w-none object-contain object-bottom z-20 origin-bottom"
+              className="w-full lg:absolute lg:bottom-0 lg:left-[45%] lg:-translate-x-1/2 lg:h-[120%] max-w-[320px] lg:max-w-none object-contain object-bottom z-20 origin-bottom"
             />
           </div>
 
@@ -2561,20 +2561,9 @@ export default function Home() {
           <div className="w-full lg:w-[35%] flex flex-col justify-between relative z-10">
             <div className="bg-white/90 backdrop-blur-md rounded-[24px] p-6 md:p-8 flex flex-col justify-between h-full shadow-lg border border-white/40">
               <div>
-                <ul className="space-y-4 text-[13px] md:text-[14px] text-gray-700 leading-relaxed">
-                  <li className="flex items-start gap-3">
-                    <span className="text-[#4E5BA6] font-bold mt-0.5">•</span>
-                    <span>Глубокая проработка первопричин ваших ограничений</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-[#4E5BA6] font-bold mt-0.5">•</span>
-                    <span>Индивидуальный график и темп работы</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-[#4E5BA6] font-bold mt-0.5">•</span>
-                    <span>Поддержка и ведение между сессиями</span>
-                  </li>
-                </ul>
+                <p className="text-[13px] md:text-[14px] text-gray-700 leading-relaxed">
+                  Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание Описание
+                </p>
               </div>
               
               <div className="mt-8 pt-6 border-t border-gray-100">
