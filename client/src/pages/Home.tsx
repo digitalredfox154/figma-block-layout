@@ -2373,6 +2373,174 @@ export default function Home() {
         </div>
       </motion.section>
 
+      
+
+      {/* Блок 14: Узнайте больше о методе IRT и Наши соцсети */}
+      <motion.section 
+        id="block14-section"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
+        className="py-12 md:py-20 w-full bg-[#F4F7FC]"
+      >
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+          
+          {/* Левая карточка: Узнайте больше о методе IRT */}
+          <div className="bg-gradient-to-br from-[#E2E7F3] to-[#F1F4F9] rounded-[32px] md:rounded-[48px] p-6 md:p-10 flex flex-col justify-between border border-[#D5DCEB]">
+            <div className="mb-8">
+              <h2 className="font-unbounded text-[24px] md:text-[32px] !text-[#1E2238] font-bold leading-tight tracking-tight max-w-md">
+                Узнайте больше <br />о методе IRT
+              </h2>
+            </div>
+
+            {/* Внутренняя белая карточка */}
+            <div className="bg-white rounded-[24px] p-5 md:p-6 shadow-sm border border-gray-100/80 flex flex-col md:flex-row items-center md:items-stretch justify-between gap-6">
+              {/* Левая часть внутренней карточки */}
+              <div className="flex flex-col justify-between flex-1">
+                <div>
+                  {/* Надзаголовок с иконкой Play */}
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full border border-gray-200 bg-gray-50 !text-[#1E2238]">
+                      <svg className="w-2.5 h-2.5 fill-current ml-0.5" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </span>
+                    <span className="text-[12px] md:text-[13px] !text-gray-500 font-medium tracking-wide">
+                      Главное про IRT за 10 минут
+                    </span>
+                  </div>
+
+                  {/* Основной текст */}
+                  <h3 className="text-[15px] md:text-[17px] font-bold !text-[#1E2238] leading-snug tracking-tight mb-6">
+                    Как добиться устойчивых изменений в жизни без многолетних разговоров о прошлом
+                  </h3>
+                </div>
+
+                {/* Ряд с кнопкой и ссылкой */}
+                <div className="flex flex-wrap items-center gap-4 mt-auto">
+                  <button 
+                    onClick={() => {
+                      const quizEl = document.getElementById('quiz-section');
+                      if (quizEl) quizEl.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="bg-[#1E2238] hover:bg-[#2B3050] text-white px-6 py-3 rounded-full text-[14px] font-bold transition-all duration-300 hover:scale-105 active:scale-95 shadow-sm"
+                  >
+                    Записаться
+                  </button>
+
+                  <a 
+                    href="#about-video" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      alert("В этом видео основатель метода Яна Миргородская подробно рассказывает о принципах работы IRT, почему он действует быстрее классической терапии и как достигаются устойчивые изменения за несколько сессий.");
+                    }}
+                    className="inline-flex items-center gap-1.5 text-[13px] md:text-[14px] text-gray-600 font-semibold hover:text-[#4E5BA6] transition-colors duration-300 group"
+                  >
+                    <span className="underline underline-offset-4 decoration-gray-300 group-hover:decoration-[#4E5BA6]">О чем видео?</span>
+                    <svg className="w-4 h-4 text-gray-400 group-hover:text-[#4E5BA6] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* Правая часть: 3D абстрактный рендер */}
+              <div className="w-full md:w-[150px] lg:w-[160px] aspect-[4/5] md:aspect-auto rounded-[16px] overflow-hidden flex-shrink-0 bg-gray-50 flex items-center justify-center">
+                <img 
+                  src="/manus-storage/Rectangle240649626_61640bbf.png" 
+                  alt="IRT Method 3D Illustration" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Правая карточка: Наши соцсети */}
+          <div className="bg-white rounded-[32px] md:rounded-[48px] p-6 md:p-10 shadow-sm border border-gray-100 flex flex-col justify-between">
+            <div>
+              {/* Заголовок */}
+              <h2 className="font-unbounded text-[24px] md:text-[32px] !text-[#1E2238] font-bold leading-tight tracking-tight mb-8">
+                Наши соцсети
+              </h2>
+
+              {/* Список соцсетей */}
+              <div className="space-y-4">
+                {[
+                  {
+                    name: "Канал в Max",
+                    url: "https://max.ru",
+                    icon: (
+                      <svg className="w-5 h-5 fill-current text-[#1E2238] group-hover:text-[#4E5BA6] transition-colors duration-300" viewBox="0 0 24 24">
+                        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z" />
+                      </svg>
+                    )
+                  },
+                  {
+                    name: "Telegram канал",
+                    url: "https://t.me/irt_method",
+                    icon: (
+                      <svg className="w-5 h-5 fill-current text-[#1E2238] group-hover:text-[#4E5BA6] transition-colors duration-300" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.65-.35-1 .22-1.67.15-.15 2.72-2.5 2.77-2.73.01-.03.01-.15-.06-.21-.07-.06-.17-.04-.25-.02-.11.02-1.84 1.16-5.2 2.39-.49.17-.94.25-1.34.24-.44-.01-1.3-.25-1.93-.46-.78-.25-1.4-.39-1.35-.83.03-.23.35-.46.97-.71 3.8-1.65 6.34-2.74 7.61-3.26 3.62-1.48 4.37-1.74 4.86-1.75.11 0 .35.03.5.13.13.09.17.21.18.33-.01.07-.01.19-.02.26z" />
+                      </svg>
+                    )
+                  },
+                  {
+                    name: "Сообщество ВКонтакте",
+                    url: "https://vk.com/irt_method",
+                    icon: (
+                      <svg className="w-5 h-5 fill-current text-[#1E2238] group-hover:text-[#4E5BA6] transition-colors duration-300" viewBox="0 0 24 24">
+                        <path d="M15.012 22c-8.733 0-13.73-6.16-13.73-14.838 0-2.628.536-5.072 1.498-7.162h3.693c.69 1.95 1.632 3.844 2.793 5.586.81-1.144 1.474-2.43 1.968-3.794h3.692c-.655 2.213-1.642 4.286-2.91 6.134 1.28 1.432 2.784 2.656 4.433 3.594V22zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z" />
+                      </svg>
+                    )
+                  },
+                  {
+                    name: "Instagram*",
+                    url: "https://instagram.com/irt_method",
+                    icon: (
+                      <svg className="w-5 h-5 fill-current text-[#1E2238] group-hover:text-[#4E5BA6] transition-colors duration-300" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.79.073 7.151.014 8.433 0 8.84 0 12s.014 3.567.072 4.849c.2 4.36 2.618 6.778 6.98 6.978 1.28.058 1.688.072 4.848.072 3.16 0 3.567-.014 4.849-.072 4.36-.2 6.778-2.618 6.978-6.98.058-1.28.072-1.688.072-4.849 0-3.16-.014-3.567-.072-4.849-.2-4.36-2.618-6.778-6.978-6.979C15.667.014 15.26 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                      </svg>
+                    )
+                  }
+                ].map((item, idx) => (
+                  <a 
+                    key={idx}
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-2.5 rounded-[16px] hover:bg-gray-50 transition-all duration-300 group"
+                  >
+                    {/* Круглая подложка под иконку */}
+                    <div className="w-12 h-12 rounded-[14px] bg-[#F1F4F9] flex items-center justify-center text-[#1E2238] group-hover:bg-[#E2E7F3] group-hover:text-[#4E5BA6] transition-all duration-300">
+                      {item.icon}
+                    </div>
+                    {/* Текст */}
+                    <span className="text-[15px] md:text-[16px] font-semibold !text-[#1E2238] group-hover:!text-[#4E5BA6] transition-colors duration-300">
+                      {item.name}
+                    </span>
+                    {/* Стрелочка */}
+                    <svg className="w-4 h-4 text-gray-300 ml-auto group-hover:text-[#4E5BA6] group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Юридический дисклеймер */}
+            <div className="mt-8 pt-6 border-t border-gray-100">
+              <p className="text-[11px] leading-relaxed text-gray-400">
+                *«Meta Platforms Inc. (владелец Instagram*) — организация признана экстремистской, её деятельность запрещена на территории РФ»
+              </p>
+            </div>
+          </div>
+
+        </div>
+        </div>
+      </motion.section>
+
       {/* Блок 15: Тарифы */}
       <motion.section
         id="block15-section"
@@ -2589,171 +2757,6 @@ export default function Home() {
 
       {/* Блок 16: FAQ (Есть вопрос?) */}
       <FAQSection />
-
-      {/* Блок 14: Узнайте больше о методе IRT и Наши соцсети */}
-      <motion.section 
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-        className="py-12 md:py-20 w-full bg-[#F4F7FC]"
-      >
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-          
-          {/* Левая карточка: Узнайте больше о методе IRT */}
-          <div className="bg-gradient-to-br from-[#E2E7F3] to-[#F1F4F9] rounded-[32px] md:rounded-[48px] p-6 md:p-10 flex flex-col justify-between border border-[#D5DCEB]">
-            <div className="mb-8">
-              <h2 className="font-unbounded text-[24px] md:text-[32px] !text-[#1E2238] font-bold leading-tight tracking-tight max-w-md">
-                Узнайте больше <br />о методе IRT
-              </h2>
-            </div>
-
-            {/* Внутренняя белая карточка */}
-            <div className="bg-white rounded-[24px] p-5 md:p-6 shadow-sm border border-gray-100/80 flex flex-col md:flex-row items-center md:items-stretch justify-between gap-6">
-              {/* Левая часть внутренней карточки */}
-              <div className="flex flex-col justify-between flex-1">
-                <div>
-                  {/* Надзаголовок с иконкой Play */}
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full border border-gray-200 bg-gray-50 !text-[#1E2238]">
-                      <svg className="w-2.5 h-2.5 fill-current ml-0.5" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </span>
-                    <span className="text-[12px] md:text-[13px] !text-gray-500 font-medium tracking-wide">
-                      Главное про IRT за 10 минут
-                    </span>
-                  </div>
-
-                  {/* Основной текст */}
-                  <h3 className="text-[15px] md:text-[17px] font-bold !text-[#1E2238] leading-snug tracking-tight mb-6">
-                    Как добиться устойчивых изменений в жизни без многолетних разговоров о прошлом
-                  </h3>
-                </div>
-
-                {/* Ряд с кнопкой и ссылкой */}
-                <div className="flex flex-wrap items-center gap-4 mt-auto">
-                  <button 
-                    onClick={() => {
-                      const quizEl = document.getElementById('quiz-section');
-                      if (quizEl) quizEl.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className="bg-[#1E2238] hover:bg-[#2B3050] text-white px-6 py-3 rounded-full text-[14px] font-bold transition-all duration-300 hover:scale-105 active:scale-95 shadow-sm"
-                  >
-                    Записаться
-                  </button>
-
-                  <a 
-                    href="#about-video" 
-                    onClick={(e) => {
-                      e.preventDefault();
-                      alert("В этом видео основатель метода Яна Миргородская подробно рассказывает о принципах работы IRT, почему он действует быстрее классической терапии и как достигаются устойчивые изменения за несколько сессий.");
-                    }}
-                    className="inline-flex items-center gap-1.5 text-[13px] md:text-[14px] text-gray-600 font-semibold hover:text-[#4E5BA6] transition-colors duration-300 group"
-                  >
-                    <span className="underline underline-offset-4 decoration-gray-300 group-hover:decoration-[#4E5BA6]">О чем видео?</span>
-                    <svg className="w-4 h-4 text-gray-400 group-hover:text-[#4E5BA6] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-
-              {/* Правая часть: 3D абстрактный рендер */}
-              <div className="w-full md:w-[150px] lg:w-[160px] aspect-[4/5] md:aspect-auto rounded-[16px] overflow-hidden flex-shrink-0 bg-gray-50 flex items-center justify-center">
-                <img 
-                  src="/manus-storage/Rectangle240649626_61640bbf.png" 
-                  alt="IRT Method 3D Illustration" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Правая карточка: Наши соцсети */}
-          <div className="bg-white rounded-[32px] md:rounded-[48px] p-6 md:p-10 shadow-sm border border-gray-100 flex flex-col justify-between">
-            <div>
-              {/* Заголовок */}
-              <h2 className="font-unbounded text-[24px] md:text-[32px] !text-[#1E2238] font-bold leading-tight tracking-tight mb-8">
-                Наши соцсети
-              </h2>
-
-              {/* Список соцсетей */}
-              <div className="space-y-4">
-                {[
-                  {
-                    name: "Канал в Мах",
-                    url: "https://max.ru",
-                    icon: (
-                      <svg className="w-5 h-5 fill-current text-[#1E2238] group-hover:text-[#4E5BA6] transition-colors duration-300" viewBox="0 0 24 24">
-                        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z" />
-                      </svg>
-                    )
-                  },
-                  {
-                    name: "Telegram канал",
-                    url: "https://t.me/irt_method",
-                    icon: (
-                      <svg className="w-5 h-5 fill-current text-[#1E2238] group-hover:text-[#4E5BA6] transition-colors duration-300" viewBox="0 0 24 24">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.65-.35-1 .22-1.67.15-.15 2.72-2.5 2.77-2.73.01-.03.01-.15-.06-.21-.07-.06-.17-.04-.25-.02-.11.02-1.84 1.16-5.2 2.39-.49.17-.94.25-1.34.24-.44-.01-1.3-.25-1.93-.46-.78-.25-1.4-.39-1.35-.83.03-.23.35-.46.97-.71 3.8-1.65 6.34-2.74 7.61-3.26 3.62-1.48 4.37-1.74 4.86-1.75.11 0 .35.03.5.13.13.09.17.21.18.33-.01.07-.01.19-.02.26z" />
-                      </svg>
-                    )
-                  },
-                  {
-                    name: "Сообщество ВКонтакте",
-                    url: "https://vk.com/irt_method",
-                    icon: (
-                      <svg className="w-5 h-5 fill-current text-[#1E2238] group-hover:text-[#4E5BA6] transition-colors duration-300" viewBox="0 0 24 24">
-                        <path d="M15.012 22c-8.733 0-13.73-6.16-13.73-14.838 0-2.628.536-5.072 1.498-7.162h3.693c.69 1.95 1.632 3.844 2.793 5.586.81-1.144 1.474-2.43 1.968-3.794h3.692c-.655 2.213-1.642 4.286-2.91 6.134 1.28 1.432 2.784 2.656 4.433 3.594V22zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z" />
-                      </svg>
-                    )
-                  },
-                  {
-                    name: "Instagram*",
-                    url: "https://instagram.com/irt_method",
-                    icon: (
-                      <svg className="w-5 h-5 fill-current text-[#1E2238] group-hover:text-[#4E5BA6] transition-colors duration-300" viewBox="0 0 24 24">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.79.073 7.151.014 8.433 0 8.84 0 12s.014 3.567.072 4.849c.2 4.36 2.618 6.778 6.98 6.978 1.28.058 1.688.072 4.848.072 3.16 0 3.567-.014 4.849-.072 4.36-.2 6.778-2.618 6.978-6.98.058-1.28.072-1.688.072-4.849 0-3.16-.014-3.567-.072-4.849-.2-4.36-2.618-6.778-6.978-6.979C15.667.014 15.26 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-                      </svg>
-                    )
-                  }
-                ].map((item, idx) => (
-                  <a 
-                    key={idx}
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-2.5 rounded-[16px] hover:bg-gray-50 transition-all duration-300 group"
-                  >
-                    {/* Круглая подложка под иконку */}
-                    <div className="w-12 h-12 rounded-[14px] bg-[#F1F4F9] flex items-center justify-center text-[#1E2238] group-hover:bg-[#E2E7F3] group-hover:text-[#4E5BA6] transition-all duration-300">
-                      {item.icon}
-                    </div>
-                    {/* Текст */}
-                    <span className="text-[15px] md:text-[16px] font-semibold !text-[#1E2238] group-hover:!text-[#4E5BA6] transition-colors duration-300">
-                      {item.name}
-                    </span>
-                    {/* Стрелочка */}
-                    <svg className="w-4 h-4 text-gray-300 ml-auto group-hover:text-[#4E5BA6] group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Юридический дисклеймер */}
-            <div className="mt-8 pt-6 border-t border-gray-100">
-              <p className="text-[11px] leading-relaxed text-gray-400">
-                *«Meta Platforms Inc. (владелец Instagram*) — организация признана экстремистской, её деятельность запрещена на территории РФ»
-              </p>
-            </div>
-          </div>
-
-        </div>
-        </div>
-      </motion.section>
 
       {/* Блок 16: Синий CTA Баннер */}
       <BlueCTABanner />
