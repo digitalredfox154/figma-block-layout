@@ -2768,7 +2768,7 @@ export default function Home() {
       <BlueCTABanner />
 
       {/* Официальный подвал (Footer) */}
-      <footer className="bg-[#0E0F19] text-white pt-24 pb-12 border-t border-gray-800/10 relative z-10 w-full">
+      <footer className="bg-[#0E0F19] text-white pt-20 md:pt-24 pb-12 border-t border-gray-800/10 relative z-10 w-full">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
             
@@ -2957,7 +2957,7 @@ function BlueCTABanner() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-      className="w-full relative z-20 -mb-16 md:-mb-24 bg-transparent"
+      className="w-full relative z-20 -mb-10 md:-mb-14 bg-transparent"
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div 
