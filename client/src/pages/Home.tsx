@@ -2527,11 +2527,11 @@ export default function Home() {
         </div>
 
         {/* Личная работа с Яной */}
-        <div className="bg-[#1E2238] rounded-[32px] md:rounded-[48px] p-6 md:p-10 lg:p-12 text-white relative overflow-hidden flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+        <div className="bg-[#13182C] rounded-[32px] md:rounded-[48px] p-6 md:p-8 lg:p-10 text-white relative overflow-hidden flex flex-col lg:flex-row items-stretch gap-8 lg:gap-12">
           
           {/* Левая часть: Фото Яны */}
-          <div className="w-full lg:w-[45%] flex justify-center relative z-10">
-            <div className="relative w-full max-w-[400px] aspect-[4/3] lg:aspect-square rounded-[24px] overflow-hidden bg-black/20">
+          <div className="w-full lg:w-[40%] flex justify-center relative z-10">
+            <div className="relative w-full aspect-[4/5] rounded-[24px] overflow-hidden bg-[#1E2238]/40">
               <img 
                 src="/manus-storage/yana_highres_bdb66ff6.png" 
                 alt="Яна Миргородская" 
@@ -2541,39 +2541,43 @@ export default function Home() {
           </div>
 
           {/* Правая часть: Описание и белая карточка */}
-          <div className="w-full lg:w-[55%] flex flex-col justify-between h-full relative z-10">
-            <div className="mb-6 lg:mb-8 text-center lg:text-left">
-              <h3 className="font-unbounded text-[22px] md:text-[28px] font-bold mb-3">
+          <div className="w-full lg:w-[60%] flex flex-col justify-center relative z-10">
+            <div className="mb-6 lg:mb-8 text-left">
+              <h3 className="font-unbounded text-[24px] md:text-[32px] font-bold mb-4 tracking-tight">
                 Личная работа с Яной
               </h3>
-              <p className="text-gray-400 text-[14px] md:text-[15px] leading-relaxed max-w-xl">
+              <p className="text-gray-400 text-[14px] md:text-[15px] leading-relaxed max-w-2xl">
                 Индивидуальный премиальный формат сопровождения от основателя метода IRT для тех, кому нужны глубокие фундаментальные изменения под личным контролем автора метода.
               </p>
             </div>
 
             {/* Внутренняя белая карточка с ценой и кнопкой */}
-            <div className="bg-white rounded-[24px] p-6 md:p-8 text-[#1E2238] flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
-              <div className="flex-1">
-                <ul className="space-y-2.5 text-[13px] md:text-[14px] text-gray-600 leading-relaxed">
-                  <li className="flex items-start gap-2">
-                    <span className="text-[#4E5BA6] font-bold">•</span>
+            <div className="bg-white rounded-[24px] p-6 md:p-8 text-[#1E2238] flex flex-col md:flex-row items-stretch justify-between gap-6 md:gap-8 shadow-xl">
+              <div className="flex-1 flex flex-col justify-center">
+                <ul className="space-y-4 text-[13px] md:text-[14px] text-gray-600 leading-relaxed">
+                  <li className="flex items-start gap-3">
+                    <span className="text-[#4E5BA6] font-bold mt-0.5">•</span>
                     <span>Глубокая проработка первопричин ваших ограничений</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[#4E5BA6] font-bold">•</span>
+                  <li className="flex items-start gap-3">
+                    <span className="text-[#4E5BA6] font-bold mt-0.5">•</span>
                     <span>Индивидуальный график и темп работы</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[#4E5BA6] font-bold">•</span>
+                  <li className="flex items-start gap-3">
+                    <span className="text-[#4E5BA6] font-bold mt-0.5">•</span>
                     <span>Поддержка и ведение между сессиями</span>
                   </li>
                 </ul>
               </div>
-              <div className="text-center md:text-right pt-4 md:pt-0 border-t md:border-t-0 md:border-l border-gray-100 md:pl-8 min-w-[180px]">
-                <div className="text-[24px] md:text-[28px] font-bold text-[#1E2238] mb-3">
+              
+              {/* Вертикальная линия разделения */}
+              <div className="hidden md:block w-px bg-gray-100 self-stretch" />
+              
+              <div className="flex flex-col justify-center items-center md:items-end pt-6 md:pt-0 border-t md:border-t-0 border-gray-100 min-w-[180px]">
+                <div className="text-[32px] md:text-[36px] font-bold text-[#13182C] mb-4 font-unbounded">
                   50.000₽
                 </div>
-                <button className="w-full bg-[#4E5BA6] hover:bg-[#3D4B93] text-white font-bold py-3 px-6 rounded-full text-[14px] transition-all duration-300 shadow-sm">
+                <button className="w-full md:w-auto bg-[#4E5BA6] hover:bg-[#3D4B93] text-white font-bold py-3 px-8 rounded-full text-[14px] transition-all duration-300 shadow-md shadow-[#4E5BA6]/10 hover:shadow-lg active:scale-[0.98]">
                   Записаться
                 </button>
               </div>
