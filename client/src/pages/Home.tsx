@@ -2957,44 +2957,42 @@ function BlueCTABanner() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-      className="w-full relative z-20 -mb-16 md:-mb-24 bg-[#F4F7FC]"
+      className="w-full relative z-20 -mb-16 md:-mb-24 bg-transparent"
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-      <div className="relative overflow-hidden bg-gradient-to-br from-[#4E5BA6] to-[#6375B8] rounded-[32px] md:rounded-[48px] shadow-[0_20px_50px_rgba(78,91,166,0.15)]">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0 items-center min-h-[400px] lg:min-h-[440px]">
+        <div 
+          className="relative overflow-hidden bg-cover bg-right md:bg-center rounded-[32px] md:rounded-[48px] shadow-[0_20px_50px_rgba(78,91,166,0.15)] bg-no-repeat"
+          style={{ backgroundImage: "url('/manus-storage/Rectangle240649630(1)_d16e0e57.png')" }}
+        >
+          {/* Полупрозрачный слой для лучшей читаемости текста на мобильных устройствах */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent pointer-events-none md:hidden" />
           
-          {/* Левая колонка: Текст и кнопка */}
-          <div className="lg:col-span-7 p-8 md:p-12 lg:p-16 flex flex-col justify-center text-white relative z-10">
-            <h2 className="font-unbounded text-[22px] md:text-[30px] lg:text-[34px] font-bold leading-[1.3] tracking-tight mb-3">
-              Первый шаг к стойким изменениям — найти корневой механизм происходящего
-            </h2>
-            <p className="text-[14px] md:text-[15px] text-white/80 leading-relaxed mb-8 max-w-xl">
-              А не работать с его следствием.
-            </p>
-            <div>
-              <button className="bg-white hover:bg-white/95 text-[#4E5BA6] hover:text-[#3D4B93] font-bold px-12 py-3.5 rounded-full text-[14px] md:text-[15px] transition-all duration-300 shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]">
-                Записаться
-              </button>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0 items-center min-h-[400px] lg:min-h-[440px]">
+            
+            {/* Левая колонка: Текст и кнопка */}
+            <div className="lg:col-span-8 p-8 md:p-12 lg:p-16 flex flex-col justify-center text-white relative z-10">
+              <h2 className="font-unbounded text-[22px] md:text-[30px] lg:text-[34px] font-bold leading-[1.3] tracking-tight mb-3 max-w-2xl">
+                Первый шаг к стойким изменениям — найти корневой механизм происходящего
+              </h2>
+              <p className="text-[14px] md:text-[15px] text-white/80 leading-relaxed mb-8 max-w-xl">
+                А не работать с его следствием.
+              </p>
+              <div>
+                <button className="bg-white hover:bg-white/95 text-[#4E5BA6] hover:text-[#3D4B93] font-bold px-12 py-3.5 rounded-full text-[14px] md:text-[15px] transition-all duration-300 shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]">
+                  Записаться
+                </button>
+              </div>
             </div>
+
+            {/* Правая часть пустая, так как изображение является фоном */}
+            <div className="hidden lg:block lg:col-span-4" />
+
           </div>
 
-          {/* Правая колонка: Иллюстрация */}
-          <div className="lg:col-span-5 h-full relative self-stretch flex items-end justify-end overflow-hidden min-h-[280px] lg:min-h-0">
-            {/* Фоновый свет для иллюстрации */}
-            <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-l from-[#4E5BA6]/0 to-[#4E5BA6]/40 lg:to-transparent z-0 pointer-events-none" />
-            <img
-              src="/manus-storage/Rectangle240649630_b33e3de7.png"
-              alt="3D David Illustration"
-              className="w-full h-full object-cover lg:absolute lg:right-0 lg:bottom-0 lg:w-[105%] lg:h-[105%] max-h-[380px] lg:max-h-none z-10"
-            />
-          </div>
-
+          {/* Декоративные фоновые элементы */}
+          <div className="absolute -top-12 -left-12 w-48 h-48 bg-white/5 rounded-full blur-2xl pointer-events-none" />
+          <div className="absolute -bottom-24 -right-24 w-72 h-72 bg-white/5 rounded-full blur-3xl pointer-events-none" />
         </div>
-
-        {/* Декоративные фоновые элементы */}
-        <div className="absolute -top-12 -left-12 w-48 h-48 bg-white/5 rounded-full blur-2xl pointer-events-none" />
-        <div className="absolute -bottom-24 -right-24 w-72 h-72 bg-white/5 rounded-full blur-3xl pointer-events-none" />
-      </div>
       </div>
     </motion.section>
   )
