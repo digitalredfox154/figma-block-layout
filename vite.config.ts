@@ -154,11 +154,20 @@ function vitePluginStorageProxy(): Plugin {
   return {
     name: "manus-storage-proxy",
     configureServer(server: ViteDevServer) {
-      server.middlewares.use("/manus-storage", async (req, res) => {
-        const key = req.url?.replace(/^\//, "");
+      server.middlewares.use("/manus-storage", async (req, res, next) => {
+        const key = decodeURIComponent(new URL(req.url || "/", "http://localhost").pathname.replace(/^\//, ""));
         if (!key) {
           res.writeHead(400, { "Content-Type": "text/plain" });
           res.end("Missing storage key");
+          return;
+        }
+
+        // Prefer restored files committed to client/public/manus-storage.
+        // Calling next() lets Vite's static middleware serve them normally.
+        const localStorageDir = path.resolve(PROJECT_ROOT, "client", "public", "manus-storage");
+        const localFile = path.resolve(localStorageDir, key);
+        if (localFile.startsWith(`${localStorageDir}${path.sep}`) && fs.existsSync(localFile) && fs.statSync(localFile).isFile()) {
+          next();
           return;
         }
 
